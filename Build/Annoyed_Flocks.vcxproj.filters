@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Slingshot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6B5F35D8-B28F-3B71-B519-3FF2C34EA5BE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4F2B6265-DDA8-3AC4-A1CE-A7F2A11AC826}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

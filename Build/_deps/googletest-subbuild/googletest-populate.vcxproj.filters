@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\73cf1e7d00ce799bc09ee665a3afef42\googletest-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\73cf1e7d00ce799bc09ee665a3afef42\googletest-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\73cf1e7d00ce799bc09ee665a3afef42\googletest-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\73cf1e7d00ce799bc09ee665a3afef42\googletest-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\73cf1e7d00ce799bc09ee665a3afef42\googletest-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\73cf1e7d00ce799bc09ee665a3afef42\googletest-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\73cf1e7d00ce799bc09ee665a3afef42\googletest-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\73cf1e7d00ce799bc09ee665a3afef42\googletest-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\ee9a2f4f5ec484f20377b042fc3f3018\googletest-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\26bdb78785d7f459464bd92bd5a9dc0d\googletest-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-subbuild\CMakeFiles\googletest-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{639831F1-CC87-36FE-8503-80FAD255DFA1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

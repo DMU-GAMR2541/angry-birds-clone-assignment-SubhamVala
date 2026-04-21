@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "Enemy.h"
+#include "Slingshot.h"
 
 /// <summary>
 ///Taken from the GoogleTest primer. 
@@ -40,17 +41,72 @@ protected:
 
 };
 
+class SlingshotTest : public testing::Test {
+public:
+    std::unique_ptr<Slingshot> slingshot;
+
+protected:
+
+    SlingshotTest() {
+        //constructor
+
+    }
+
+    ~SlingshotTest() override {
+        //deconstructor
+
+    }
+
+
+    void SetUp() override {
+        slingshot = std::make_unique<Slingshot>(100);
+    }
+
+    void TearDown() override {
+
+    }
+};
+
+
+//Enemy Test.
 //A single test, not a fixture. No setup is called.
-TEST(Enemy, First_test) {
+TEST(Enemy, First_Enemy_test) {
     Enemy e(100);
+    //EXPECT_GT(e.getHealth(), 100);
     EXPECT_GT(e.getHealth(), 100);
-    SUCCEED() << "Test test passed";
-    FAIL() << "Test didn't pass";
+    /*SUCCEED() << "Test test passed";
+    FAIL() << "Test didn't pass";*/
 }
 
+//Enemy Test.
+//Fixture test, setup created for damage.
 TEST_F(EnemyTest, LethalDamagePopsPig) {
     enemy->takeDamage(60);
     EXPECT_TRUE(enemy->checkIfPopped());
+}
+
+//Enemy Test.
+//Second test, not a fixture. No setup is called,
+TEST(Enemy, Second_Enemy_test) {
+    Enemy d(0);
+    ASSERT_NE(d.getHealth(), 0);
+}
+
+
+//Slingshot Test.
+//First test, not fixture. Not setup is called.
+TEST(Slingshot, First_Slingshot_Test) {
+    Slingshot t(99);
+    EXPECT_LT(t.getTension(), 100);
+    
+}
+//Slingshot Test.
+//Second slingshot test, check bird colour
+TEST(Slingshot, BirdColour) {
+    std::string str = "Red";
+    const char* c = str.c_str();
+    ASSERT_EQ(c, "Red");
+    
 }
 
 int main(int argc, char** argv) {

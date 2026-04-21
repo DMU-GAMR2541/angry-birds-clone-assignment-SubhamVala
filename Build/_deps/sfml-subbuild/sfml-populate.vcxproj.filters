@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\ac694dba732260d03a6e30f506d50712\sfml-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\ac694dba732260d03a6e30f506d50712\sfml-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\ac694dba732260d03a6e30f506d50712\sfml-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\ac694dba732260d03a6e30f506d50712\sfml-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\ac694dba732260d03a6e30f506d50712\sfml-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\ac694dba732260d03a6e30f506d50712\sfml-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\ac694dba732260d03a6e30f506d50712\sfml-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\ac694dba732260d03a6e30f506d50712\sfml-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\218be82daaa235d4a728cb8824f54754\sfml-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\d9be0e6dad69c7e7f23c00c6ecd44e4e\sfml-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-subbuild\CMakeFiles\sfml-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CEE06BC4-6A30-3CA8-9091-733C55F1D4B3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
