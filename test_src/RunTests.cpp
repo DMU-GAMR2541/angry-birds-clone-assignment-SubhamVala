@@ -59,7 +59,8 @@ protected:
 
 
     void SetUp() override {
-        slingshot = std::make_unique<Slingshot>(100);
+        slingshot = std::make_unique<Slingshot>(100, "Red");
+        
     }
 
     void TearDown() override {
@@ -96,16 +97,17 @@ TEST(Enemy, Second_Enemy_test) {
 //Slingshot Test.
 //First test, not fixture. Not setup is called.
 TEST(Slingshot, First_Slingshot_Test) {
-    Slingshot t(99);
+    Slingshot t(99, "Red");
     EXPECT_LT(t.getTension(), 100);
     
 }
 //Slingshot Test.
 //Second slingshot test, check bird colour
-TEST(Slingshot, BirdColour) {
+TEST_F(SlingshotTest, BirdColour) {
+    slingshot->loadBird("Red");
     std::string str = "Red";
     const char* c = str.c_str();
-    ASSERT_EQ(c, "Red");
+    EXPECT_EQ(slingshot->getBirdType(), c);
     
 }
 
