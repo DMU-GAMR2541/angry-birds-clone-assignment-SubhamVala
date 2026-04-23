@@ -4,12 +4,33 @@
     <ClCompile Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Bird.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Slingshot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bird.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

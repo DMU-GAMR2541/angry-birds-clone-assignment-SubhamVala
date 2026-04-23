@@ -8,6 +8,7 @@ int main() {
     window.setFramerateLimit(60);
 
     //Box2D works in meters. SFML works in pixels.
+    
     const float SCALE = 30.0f;
 
     //Can set a definition for PI.
@@ -69,6 +70,7 @@ int main() {
     sf_plankVisual.setFillColor(sf::Color(139, 69, 19)); // Brown
 
     //Create a ball that is fired when space is pressed. We need to first have a dynamic ball to do it.
+
     b2BodyDef b2_ballDef;
     b2_ballDef.type = b2_dynamicBody;
     b2_ballDef.position.Set(100.0f / SCALE, 500.0f / SCALE);
@@ -77,11 +79,14 @@ int main() {
     b2CircleShape b2_circleShape;
     b2_circleShape.m_radius = 15.0f / SCALE;
 
+
+
     b2FixtureDef b2_ballFixture;
     b2_ballFixture.shape = &b2_circleShape;
     b2_ballFixture.density = 1.0f;
-    b2_ballFixture.restitution = 0.5f; // Bounciness
+    b2_ballFixture.restitution = 0.5f;                   // Bounciness
     b2_ballBody->CreateFixture(&b2_ballFixture);
+
 
     sf::CircleShape sf_ballVisual(15.0f);
     sf_ballVisual.setOrigin(15.0f, 15.0f);
