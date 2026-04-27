@@ -35,8 +35,11 @@ public:
 
 	void Update(float gravity, b2Vec2 b2_impule, bool b_make);
 
+	sf::CircleShape& sf_ballVisual() { return circle; }
+
 protected:
 	b2FixtureDef b2_fixtureDef;
 	b2Body* b2_body;
+	sf::CircleShape circle;
 
 };
