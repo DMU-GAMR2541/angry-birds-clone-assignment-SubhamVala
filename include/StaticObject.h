@@ -4,7 +4,7 @@
 #include <box2d/box2d.h>
 #include <iostream>
 
-class StaticObject {
+class StaticObject : public GameObject{
 public:
 
 	const float SCALE = 30.0f;

@@ -1,5 +1,5 @@
 # CMake generation dependency list for this directory.
-D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-src/src/CMakeLists.txt
-D:/Uni Work/share/cmake-4.3/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
-D:/Uni Work/share/cmake-4.3/Modules/CMakePackageConfigHelpers.cmake
-D:/Uni Work/share/cmake-4.3/Modules/WriteBasicConfigVersionFile.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake
+H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-src/src/CMakeLists.txt

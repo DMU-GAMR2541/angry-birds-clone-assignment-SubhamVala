@@ -23,6 +23,7 @@ int main() {
     b2Vec2 b2_gravity(0.0f, 9.8f); // Earth-like gravity
     b2World world(b2_gravity);
 
+    
     // bird class.
     Bird bird(world, 100.0f, 500.0f, 15.0f);
     Plank plank(world, 500.0f, 450.0f, 10.0f, 60.0f);
