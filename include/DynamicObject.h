@@ -37,9 +37,11 @@ public:
 
 	sf::CircleShape& sf_ballVisual() { return circle; }
 
+	sf::RectangleShape& sf_plankVisual() { return rectangle; }
+
 protected:
 	b2FixtureDef b2_fixtureDef;
 	b2Body* b2_body;
 	sf::CircleShape circle;
-
+	sf::RectangleShape rectangle;
 };

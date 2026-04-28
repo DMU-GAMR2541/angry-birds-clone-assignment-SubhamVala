@@ -51,6 +51,7 @@ public:
 	}
 
 	void Update() {
+
 		circle.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
 		circle.setRotation(b2_body->GetAngle() * (180.0f / PI));
 	}

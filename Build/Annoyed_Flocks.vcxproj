@@ -420,6 +420,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="..\include\Bird.h" />
     <ClInclude Include="..\include\DynamicObject.h" />
     <ClInclude Include="..\include\GameObject.h" />
+    <ClInclude Include="..\include\Plank.h" />
     <ClInclude Include="..\include\StaticObject.h" />
     <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Enemy.h" />
     <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Slingshot.h" />

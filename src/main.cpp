@@ -2,6 +2,8 @@
 #include <box2d/box2d.h>
 #include "DynamicObject.h"
 #include "Bird.h"
+#include "Plank.h"
+
 #include <iostream>
 
 int main() {
@@ -23,6 +25,7 @@ int main() {
 
     // bird class.
     Bird bird(world, 100.0f, 500.0f, 15.0f);
+    Plank plank(world, 500.0f, 450.0f, 10.0f, 60.0f);
 
     //Setup ground for the circle to move / bounce on.
     //Needs to have a body definition and a body. We use a raw pointer for the b2Body as Box2d does the management itself.
@@ -55,29 +58,6 @@ int main() {
     sf_wallVisual.setOrigin(10.0f, 80.0f);
     sf_wallVisual.setFillColor(sf::Color::Red);
 
-    //Rather than having an immovable wall, we can use the dynamic body type to create one that can have velocity etc.
-    b2BodyDef b2_plankDef;
-
-    b2_plankDef.type = b2_dynamicBody;
-    b2_plankDef.position.Set(550.0f / SCALE, 450.0f / SCALE);
-    b2Body* b2_plankBody = world.CreateBody(&b2_plankDef);
-
-    b2PolygonShape b2_plankBox;
-    b2_plankBox.SetAsBox(10.0f / SCALE, 60.0f / SCALE);
-
-    b2FixtureDef b2_plankFixture;
-    b2_plankFixture.shape = &b2_plankBox;
-    b2_plankFixture.density = 1.5f;   // Light wood
-    b2_plankFixture.friction = 0.3f;
-    b2_plankBody->CreateFixture(&b2_plankFixture);
-
-    sf::RectangleShape sf_plankVisual(sf::Vector2f(20.0f, 120.0f));
-    sf_plankVisual.setOrigin(10.0f, 60.0f);
-    sf_plankVisual.setFillColor(sf::Color(139, 69, 19)); // Brown
-
-
-
-
     // --- 7. MAIN LOOP ---
     while (window.isOpen()) {
         sf::Event event;
@@ -88,8 +68,6 @@ int main() {
             // INPUT HANDLING: Press SPACE to launch
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::Space) {
-
-
                     bird.launch();
 
                 }
@@ -99,24 +77,22 @@ int main() {
         // Update Physics
         world.Step(1.0f / 60.0f, 8, 3);
 
-        bird.Update();
-
         //All of the visuals needs to be synced with the physics.
             
+        // derived class update positions.
+        bird.Update();
+        plank.update();
+
         //Static objects usually don't move, but we set the position once.
         sf_groundVisual.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
         sf_wallVisual.setPosition(b2_wallBody->GetPosition().x * SCALE, b2_wallBody->GetPosition().y * SCALE);
-
-        // Dynamic wall.
-        sf_plankVisual.setPosition(b2_plankBody->GetPosition().x * SCALE, b2_plankBody->GetPosition().y * SCALE);
-        sf_plankVisual.setRotation(b2_plankBody->GetAngle() * (180.0f / PI));
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
 
         window.draw(sf_groundVisual);
         window.draw(sf_wallVisual);
-        window.draw(sf_plankVisual);
+        plank.draw(window);
         bird.draw(window);
 
         window.display();

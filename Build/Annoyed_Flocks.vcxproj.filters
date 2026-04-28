@@ -36,6 +36,9 @@
     <ClInclude Include="..\include\DynamicObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\Plank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\CMakeLists.txt" />
