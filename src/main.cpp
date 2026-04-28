@@ -3,6 +3,7 @@
 #include "DynamicObject.h"
 #include "Bird.h"
 #include "Plank.h"
+#include "Non-Interactable.h"
 
 #include <iostream>
 
@@ -24,9 +25,13 @@ int main() {
     b2World world(b2_gravity);
 
     
-    // bird class.
+    // Inherited classes, setting parameter values.
     Bird bird(world, 100.0f, 500.0f, 15.0f);
     Plank plank(world, 500.0f, 450.0f, 10.0f, 60.0f);
+    Wall wall(world, 750.0f, 500.0f, 10.0f, 80.0f);
+    Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
+
+       
 
     //Setup ground for the circle to move / bounce on.
     //Needs to have a body definition and a body. We use a raw pointer for the b2Body as Box2d does the management itself.
@@ -82,7 +87,9 @@ int main() {
             
         // derived class update positions.
         bird.Update();
-        plank.update();
+        plank.Update();
+        ground.Start();
+        wall.Start();
 
         //Static objects usually don't move, but we set the position once.
         sf_groundVisual.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
@@ -91,11 +98,13 @@ int main() {
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
 
-        window.draw(sf_groundVisual);
-        window.draw(sf_wallVisual);
+        //window.draw(sf_groundVisual);
+        //window.draw(sf_wallVisual);
+
         plank.draw(window);
         bird.draw(window);
-
+        ground.draw(window);
+        wall.draw(window);
         window.display();
     }
 

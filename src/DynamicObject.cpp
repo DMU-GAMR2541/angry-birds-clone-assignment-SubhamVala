@@ -12,11 +12,7 @@ DynamicObject::~DynamicObject()
 
 DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string str_sprite)
 {
-	std::cout << b2_Pos.x << b2_Pos.y;
-
-	// issue! b2_Pos does not have the value from bird.h
-	b2_bodyDef.position = b2_Pos;
-	//b2_bodyDef.position.Set(100 / SCALE, 500 / SCALE);
+	b2_bodyDef.position.Set(b2_Pos.x / SCALE, b2_Pos.y / SCALE);
 
 	b2_bodyDef.type = b2_dynamicBody;
 

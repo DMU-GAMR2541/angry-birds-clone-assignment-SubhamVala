@@ -14,24 +14,16 @@ private:
 public:
 
 	Bird() = default;
-	~Bird() = default;
-	Bird(b2World& world, float xPos, float yPos, float radius) : DynamicObject(world, b2Vec2(xPos / SCALE, yPos / SCALE), "") {
+
+	Bird(b2World& world, float xPos, float yPos, float radius) : DynamicObject(world, b2Vec2(xPos, yPos), "") {
 
 		this->xPos = xPos;
 		this->yPos = yPos;
 		this->radius = radius;
 
-		//Create a ball that is fired when space is pressed. We need to first have a dynamic ball to do it.
-
-		//b2_bodyDef.position.Set(xPos / SCALE, yPos / SCALE);
-		//b2_bodyDef.type = b2_dynamicBody;
-
-		//b2_body = world.CreateBody(&b2_bodyDef);
-
+		//Creates a dynamic ball.
 
 		b2_circleShape.m_radius = radius / SCALE;
-
-		b2_ballFixture.shape = &b2_circleShape;
 		b2_ballFixture.density = 1.0f;
 		b2_ballFixture.restitution = 0.5f; // Bounciness
 
