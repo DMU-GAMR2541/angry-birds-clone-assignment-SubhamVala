@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=url
-command=D:/Uni Work/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake;COMMAND;D:/Uni Work/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/verify-googletest-populate.cmake;COMMAND;D:/Uni Work/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake
-source_dir=D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/googletest-src
-work_dir=D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps
+command=C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake;COMMAND;C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/verify-googletest-populate.cmake;COMMAND;C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake
+source_dir=H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/googletest-src
+work_dir=H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps
 url(s)=https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
 hash=
       no_extract=

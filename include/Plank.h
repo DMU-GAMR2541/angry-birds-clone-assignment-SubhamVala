@@ -12,7 +12,7 @@ private:
 public:
 	Plank() = default;
 
-	Plank(b2World& world, float xPos, float yPos, float halfX, float halfY) : DynamicObject(world, b2Vec2(xPos / SCALE, yPos / SCALE), "") {
+	Plank(b2World& world, float xPos, float yPos, float halfX, float halfY) : DynamicObject(world, b2Vec2(xPos, yPos), "") {
 		this->xPos = xPos;
 		this->yPos = yPos;
 

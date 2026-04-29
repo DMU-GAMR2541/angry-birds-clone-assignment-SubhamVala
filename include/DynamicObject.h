@@ -28,6 +28,8 @@ public:
 	sf::Sprite sp_sprites;
 	sf::Texture te_Texture;
 
+
+
 	bool isCollided = false;
 	bool isDamaged = false;
 

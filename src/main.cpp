@@ -26,43 +26,12 @@ int main() {
 
     
     // Inherited classes, setting parameter values.
-    Bird bird(world, 100.0f, 500.0f, 15.0f);
+    Bird bird(world, 100.0f, 500.0f, 15.0f, "../assets/Ang_Birds/MainBird.png");
     Plank plank(world, 500.0f, 450.0f, 10.0f, 60.0f);
     Wall wall(world, 750.0f, 500.0f, 10.0f, 80.0f);
     Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
 
-       
 
-    //Setup ground for the circle to move / bounce on.
-    //Needs to have a body definition and a body. We use a raw pointer for the b2Body as Box2d does the management itself.
-    //A body can be defined as having a position, velocity, and mass. 
-    b2BodyDef b2_groundBodyDef;
-    b2_groundBodyDef.position.Set(400.0f / SCALE, 590.0f / SCALE);
-    b2Body* b2_groundBody = world.CreateBody(&b2_groundBodyDef);
-
-    //Define a fixture shape that relates to the collision for the ground.
-    b2PolygonShape b2_groundBox;
-    b2_groundBox.SetAsBox(400.0f / SCALE, 10.0f / SCALE);
-    b2_groundBody->CreateFixture(&b2_groundBox, 0.0f);
-
-    //Set up the ground visualisation.
-    sf::RectangleShape sf_groundVisual(sf::Vector2f(800.0f, 20.0f));
-    sf_groundVisual.setOrigin(400.0f, 10.0f);
-    sf_groundVisual.setFillColor(sf::Color(34, 139, 34)); // Forest Green
-
-    //Setting up a wall for the ball to hit.
-    b2BodyDef b2_wallDef;
-    b2_wallDef.position.Set(750.0f / SCALE, 500.0f / SCALE);
-    b2Body* b2_wallBody = world.CreateBody(&b2_wallDef);
-
-
-    b2PolygonShape b2_wallBox;
-    b2_wallBox.SetAsBox(10.0f / SCALE, 80.0f / SCALE);
-    b2_wallBody->CreateFixture(&b2_wallBox, 0.0f);
-
-    sf::RectangleShape sf_wallVisual(sf::Vector2f(20.0f, 160.0f));
-    sf_wallVisual.setOrigin(10.0f, 80.0f);
-    sf_wallVisual.setFillColor(sf::Color::Red);
 
     // --- 7. MAIN LOOP ---
     while (window.isOpen()) {
@@ -72,6 +41,7 @@ int main() {
                 window.close();
 
             // INPUT HANDLING: Press SPACE to launch
+
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::Space) {
                     bird.launch();
@@ -90,10 +60,6 @@ int main() {
         plank.Update();
         ground.Start();
         wall.Start();
-
-        //Static objects usually don't move, but we set the position once.
-        sf_groundVisual.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
-        sf_wallVisual.setPosition(b2_wallBody->GetPosition().x * SCALE, b2_wallBody->GetPosition().y * SCALE);
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue

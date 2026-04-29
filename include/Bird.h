@@ -10,12 +10,13 @@ private:
 	float xPos = 100.0f;
 	float yPos = 500.0f;
 	float radius = 15.0f;
+	
 
 public:
 
 	Bird() = default;
 
-	Bird(b2World& world, float xPos, float yPos, float radius) : DynamicObject(world, b2Vec2(xPos, yPos), "") {
+	Bird(b2World& world, float xPos, float yPos, float radius, std::string birdTexture) : DynamicObject(world, b2Vec2(xPos, yPos), birdTexture) {
 
 		this->xPos = xPos;
 		this->yPos = yPos;
@@ -29,23 +30,17 @@ public:
 
 		b2_body->CreateFixture(&b2_ballFixture);
 	
-		circle.setOrigin(radius, radius);
-		circle.setFillColor(sf::Color::Yellow);
-		circle.setRadius(radius);
-
-
-
 	}
 
 	void draw(sf::RenderWindow& window) override {
-		window.draw(circle);
+		window.draw(sp_sprites);
 
 	}
 
 	void Update() {
 		
-		circle.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
-		circle.setRotation(b2_body->GetAngle() * (180.0f / PI));
+		sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
+		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI));
 	}
 
 	void launch() {
