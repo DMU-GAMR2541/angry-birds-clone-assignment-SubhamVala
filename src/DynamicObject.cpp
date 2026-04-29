@@ -4,6 +4,7 @@
 #include <iostream>
 #include "DynamicObject.h"
 #include "Bird.h"
+#include "StaticObject.h"
 
 
 DynamicObject::~DynamicObject()
@@ -21,6 +22,7 @@ DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string st
 	b2_body = b2_WorldPos.CreateBody(&b2_bodyDef);
 
 	b2_ballFixture.shape = &b2_circleShape;
+	b2_PigFixture.shape = &b2_circleShape;
 
 
 
@@ -45,8 +47,12 @@ void DynamicObject::Render(sf::RenderWindow* sf_window)
 
 
 
-
 void DynamicObject::Update(float gravity, b2Vec2 b2_impule, bool b_make)
 {
-	
+	sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
+	sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI));
+
+	// Dynamic plank.
+	rectangle.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
+	rectangle.setRotation(b2_body->GetAngle() * (180.0f / PI));
 }

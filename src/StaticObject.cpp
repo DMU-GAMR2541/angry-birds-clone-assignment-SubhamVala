@@ -18,4 +18,13 @@ StaticObject::StaticObject(b2World& b2_WorldPos, b2Vec2 b2_GroundPos, b2Vec2 b2_
 
 	b2_groundBody->CreateFixture(&b2_groundBox, 0.0f);
 	b2_wallBody->CreateFixture(&b2_wallBox, 0.0f);
+
+
 }
+
+void StaticObject::Update() 
+{
+	GroundRectangle.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
+	WallRectangle.setPosition(b2_wallBody->GetPosition().x * SCALE, b2_wallBody->GetPosition().y * SCALE);
+}
+

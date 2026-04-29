@@ -24,15 +24,17 @@ public:
 
 
 
-	sf::RectangleShape& sf_groundVisual() { return Rectangle; }
-	sf::RectangleShape& sf_WallVisual() { return Rectangle2; }
+	sf::RectangleShape& sf_groundVisual() { return GroundRectangle; }
+	sf::RectangleShape& sf_WallVisual() { return WallRectangle; }
 
 
 	void Render(sf::RenderWindow* sf_window);
 
+	void Update();
+
 protected:
 	b2Body* b2_groundBody;
 	b2Body* b2_wallBody;
-	sf::RectangleShape Rectangle;
-	sf::RectangleShape Rectangle2;
+	sf::RectangleShape GroundRectangle;
+	sf::RectangleShape WallRectangle;
 };

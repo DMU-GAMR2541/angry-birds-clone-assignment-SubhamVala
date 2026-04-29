@@ -23,6 +23,7 @@ public:
 	b2CircleShape b2_circleShape;
 
 	b2FixtureDef b2_ballFixture;
+	b2FixtureDef b2_PigFixture;
 	b2FixtureDef b2_plankFixture;
 
 	sf::Sprite sp_sprites;

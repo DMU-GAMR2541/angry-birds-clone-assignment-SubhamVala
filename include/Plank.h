@@ -40,11 +40,4 @@ public:
 
 	}
 
-	void Update()
-	{
-		// Dynamic wall.
-		rectangle.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
-		rectangle.setRotation(b2_body->GetAngle() * (180.0f / PI));
-	}
-
 };

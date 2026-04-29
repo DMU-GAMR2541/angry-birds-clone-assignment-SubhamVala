@@ -21,21 +21,16 @@ public:
 		this->GroundWidth = GroundWidth;
 		this->GroundHeight = GroundHeight;
 
-		Rectangle.setSize(sf::Vector2(800.0f, 20.0f));
-		Rectangle.setOrigin(GroundWidth, GroundHeight);
-		Rectangle.setFillColor(sf::Color(34, 139, 34));
+		GroundRectangle.setSize(sf::Vector2(800.0f, 20.0f));
+		GroundRectangle.setOrigin(GroundWidth, GroundHeight);
+		GroundRectangle.setFillColor(sf::Color(34, 139, 34));
 
 
 
-	}
-
-	void Start() {
-
-		Rectangle.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
 	}
 
 	void draw(sf::RenderWindow& window) override {
-		window.draw(Rectangle);
+		window.draw(GroundRectangle);
 	}
 };
 
@@ -59,21 +54,16 @@ public:
 		this->WallWidth = WallWidth;
 		this->WallHeight = WallHeight;
 
-		Rectangle2.setSize(sf::Vector2(20.0f, 160.0f));
-		Rectangle2.setOrigin(WallWidth, WallHeight);
-		Rectangle2.setFillColor(sf::Color::Red);
+		WallRectangle.setSize(sf::Vector2(20.0f, 160.0f));
+		WallRectangle.setOrigin(WallWidth, WallHeight);
+		WallRectangle.setFillColor(sf::Color::Red);
 
 
 
-	}
-
-	void Start() {
-
-		Rectangle2.setPosition(b2_wallBody->GetPosition().x * SCALE, b2_wallBody->GetPosition().y * SCALE);
 	}
 
 	void draw(sf::RenderWindow& window) override {
-		window.draw(Rectangle2);
+		window.draw(WallRectangle);
 
 	}
 };

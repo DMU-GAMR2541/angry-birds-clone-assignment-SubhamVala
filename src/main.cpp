@@ -4,6 +4,7 @@
 #include "Bird.h"
 #include "Plank.h"
 #include "Non-Interactable.h"
+#include "Pig.h"
 
 #include <iostream>
 
@@ -27,6 +28,7 @@ int main() {
     
     // Inherited classes, setting parameter values.
     Bird bird(world, 100.0f, 500.0f, 15.0f, "../assets/Ang_Birds/MainBird.png");
+    Pig pig(world, 495.0f, 350.0f, 15.0f, "../assets/Ang_Birds/Pig.png");
     Plank plank(world, 500.0f, 450.0f, 10.0f, 60.0f);
     Wall wall(world, 750.0f, 500.0f, 10.0f, 80.0f);
     Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
@@ -56,8 +58,6 @@ int main() {
         //All of the visuals needs to be synced with the physics.
             
         // derived class update positions.
-        bird.Update();
-        plank.Update();
         ground.Start();
         wall.Start();
 
@@ -71,6 +71,7 @@ int main() {
         bird.draw(window);
         ground.draw(window);
         wall.draw(window);
+        pig.draw(window);
         window.display();
     }
 
