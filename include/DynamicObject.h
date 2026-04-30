@@ -47,4 +47,6 @@ protected:
 	b2Body* b2_body;
 	sf::CircleShape circle;
 	sf::RectangleShape rectangle;
+	
+
 };

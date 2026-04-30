@@ -12,7 +12,7 @@ private:
 public:
 	Plank() = default;
 
-	Plank(b2World& world, float xPos, float yPos, float halfX, float halfY) : DynamicObject(world, b2Vec2(xPos, yPos), "") {
+	Plank(b2World& world, float xPos, float yPos, float halfX, float halfY, std::string plankTexture) : DynamicObject(world, b2Vec2(xPos, yPos), plankTexture) {
 		this->xPos = xPos;
 		this->yPos = yPos;
 
@@ -30,14 +30,17 @@ public:
 
 		b2_body->CreateFixture(&b2_plankFixture);
 
-		rectangle.setSize(sf::Vector2(20.0f, 120.0f));
-		rectangle.setOrigin(halfX, halfY);
-		rectangle.setFillColor(sf::Color(139, 69, 19));
+		sp_sprites.setScale(0.73, 1.0f);
 	}
 
 	void draw(sf::RenderWindow& window) override {
-		window.draw(rectangle);
+		window.draw(sp_sprites);
 
+	}
+
+	void update() {
+		sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
+		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI) + 90.0f);
 	}
 
 };

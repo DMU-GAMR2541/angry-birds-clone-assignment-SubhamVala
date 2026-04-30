@@ -1,3 +1,7 @@
+
+#include <SFML/Graphics.hpp>
+#include <box2d/box2d.h>
+#include <iostream>
 #include "StaticObject.h"
 
 StaticObject::~StaticObject()
@@ -24,7 +28,7 @@ StaticObject::StaticObject(b2World& b2_WorldPos, b2Vec2 b2_GroundPos, b2Vec2 b2_
 
 void StaticObject::Update() 
 {
-	GroundRectangle.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
-	WallRectangle.setPosition(b2_wallBody->GetPosition().x * SCALE, b2_wallBody->GetPosition().y * SCALE);
+
+
 }
 

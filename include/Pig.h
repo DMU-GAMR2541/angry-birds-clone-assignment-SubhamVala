@@ -29,4 +29,8 @@ public:
 
 	}
 
+	void update() {
+		sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
+		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI));
+	}
 };

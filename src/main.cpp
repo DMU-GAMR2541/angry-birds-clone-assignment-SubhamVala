@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
 #include "DynamicObject.h"
+#include "StaticObject.h"
 #include "Bird.h"
 #include "Plank.h"
 #include "Non-Interactable.h"
@@ -22,14 +23,15 @@ int main() {
     const float PI = 3.1415927;
 
     //setup world.
+    
     b2Vec2 b2_gravity(0.0f, 9.8f); // Earth-like gravity
     b2World world(b2_gravity);
-
     
     // Inherited classes, setting parameter values.
+
     Bird bird(world, 100.0f, 500.0f, 15.0f, "../assets/Ang_Birds/MainBird.png");
-    Pig pig(world, 495.0f, 350.0f, 15.0f, "../assets/Ang_Birds/Pig.png");
-    Plank plank(world, 500.0f, 450.0f, 10.0f, 60.0f);
+    Pig pig(world, 500.0f, 420.0f, 15.0f, "../assets/Ang_Birds/Pig.png");
+    Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");
     Wall wall(world, 750.0f, 500.0f, 10.0f, 80.0f);
     Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
 
@@ -39,14 +41,18 @@ int main() {
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
+
             if (event.type == sf::Event::Closed)
                 window.close();
 
             // INPUT HANDLING: Press SPACE to launch
 
             if (event.type == sf::Event::KeyPressed) {
+
+                
                 if (event.key.code == sf::Keyboard::Space) {
                     bird.launch();
+
 
                 }
             }
@@ -55,11 +61,13 @@ int main() {
         // Update Physics
         world.Step(1.0f / 60.0f, 8, 3);
 
-        //All of the visuals needs to be synced with the physics.
-            
-        // derived class update positions.
-        ground.Start();
-        wall.Start();
+        ground.update();
+        wall.update();
+        bird.update();
+        plank.update();
+        pig.update();
+        
+           
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue

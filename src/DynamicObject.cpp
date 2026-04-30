@@ -49,10 +49,7 @@ void DynamicObject::Render(sf::RenderWindow* sf_window)
 
 void DynamicObject::Update(float gravity, b2Vec2 b2_impule, bool b_make)
 {
-	sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
-	sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI));
+	//All of the visuals needs to be synced with the physics.
+	
 
-	// Dynamic plank.
-	rectangle.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
-	rectangle.setRotation(b2_body->GetAngle() * (180.0f / PI));
 }

@@ -32,6 +32,10 @@ public:
 	void draw(sf::RenderWindow& window) override {
 		window.draw(GroundRectangle);
 	}
+
+	void update() {
+		GroundRectangle.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
+	}
 };
 
 
@@ -65,5 +69,9 @@ public:
 	void draw(sf::RenderWindow& window) override {
 		window.draw(WallRectangle);
 
+	}
+
+	void update() {
+		WallRectangle.setPosition(b2_wallBody->GetPosition().x * SCALE, b2_wallBody->GetPosition().y * SCALE);
 	}
 };

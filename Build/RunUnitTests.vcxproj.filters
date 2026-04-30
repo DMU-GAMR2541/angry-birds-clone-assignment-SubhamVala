@@ -1,57 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\Bird.cpp">
+    <ClCompile Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\Bird.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\DynamicObject.cpp">
+    <ClCompile Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\DynamicObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\Enemy.cpp">
+    <ClCompile Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\StaticObject.cpp">
+    <ClCompile Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\StaticObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\test_src\RunTests.cpp">
+    <ClCompile Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\test_src\RunTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Bird.h">
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Bird.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\DynamicObject.h">
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\DynamicObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Enemy.h">
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\GameObject.h">
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Non-Interactable.h">
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Non-Interactable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Plank.h">
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Pig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Slingshot.h">
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Plank.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\StaticObject.h">
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Slingshot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\StaticObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\CMakeLists.txt" />
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{459EC0D3-AC0B-3403-96A7-160BE864934C}</UniqueIdentifier>
+      <UniqueIdentifier>{6B5F35D8-B28F-3B71-B519-3FF2C34EA5BE}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{AABB8326-8102-3B40-BB64-0FE0CFFF6D4C}</UniqueIdentifier>
+      <UniqueIdentifier>{4F2B6265-DDA8-3AC4-A1CE-A7F2A11AC826}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

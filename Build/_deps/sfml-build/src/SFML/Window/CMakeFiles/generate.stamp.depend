@@ -1,5 +1,5 @@
 # CMake generation dependency list for this directory.
-D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt
-D:/Uni Work/share/cmake-4.3/Modules/FindOpenGL.cmake
-D:/Uni Work/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake
-D:/Uni Work/share/cmake-4.3/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindPackageMessage.cmake
+H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt
