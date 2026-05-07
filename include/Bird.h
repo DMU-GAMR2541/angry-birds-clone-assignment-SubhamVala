@@ -18,7 +18,7 @@ public:
 
 	Bird() = default;
 
-	Bird(b2World& world, float xPos, float yPos, float radius, std::string birdTexture) : DynamicObject(world, b2Vec2(xPos, yPos), birdTexture) {
+	Bird(b2World& world, float xPos, float yPos, float radius, float density, float restitution, std::string birdTexture) : DynamicObject(world, b2Vec2(xPos, yPos), birdTexture) {
 
 
 
@@ -29,11 +29,12 @@ public:
 		//Creates a dynamic ball.
 
 		b2_circleShape.m_radius = radius / SCALE;
-		b2_ballFixture.density = 1.0f;
-		b2_ballFixture.restitution = 0.5f; // Bounciness
+		b2_ballFixture.density = density;
+		b2_ballFixture.restitution = restitution; // Bounciness
 
 		b2_body->CreateFixture(&b2_ballFixture);
 
+		sp_sprites.setScale(0.045, 0.045);
 	
 
 

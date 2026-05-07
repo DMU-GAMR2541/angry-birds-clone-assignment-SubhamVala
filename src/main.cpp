@@ -7,6 +7,8 @@
 #include "Non-Interactable.h"
 #include <vector>
 #include <list>
+#include <set>
+#include <map>
 #include "Pig.h"
 
 #include <iostream>
@@ -32,25 +34,26 @@ int main() {
     
     // Inherited classes, setting parameter values.
 
-    Bird bird(world, 100.0f, 500.0f, 15.0f, "../assets/Ang_Birds/MainBird.png");
+    //Bird bird(world, 100.0f, 500.0f, 15.0f, "../assets/Ang_Birds/MainBird.png");
     //Pig pig(world, 500.0f, 420.0f, 15.0f, "../assets/Ang_Birds/Pig.png");
     Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");
     Wall wall(world, 750.0f, 500.0f, 10.0f, 80.0f);
     Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
 
     std::vector<std::shared_ptr<Pig>> pigPtr;
-
+    std::set<Bird> bird;
 
     std::list<std::shared_ptr<Bird>> birdPtr;
-    //std::list<Bird> currentBird;
+    std::vector<std::string> birdTextures = { "../assets/Ang_Birds/BlueBird.png", "../assets/Ang_Birds/MainBird.png",  "../assets/Ang_Birds/YellowBird.png", "../assets/Ang_Birds/BlackBird.png" };
+   
 
 
     for (int i = 0; i < 3; i++) {
         pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 40.0f)), 400.0f, 15.0f, "../assets/Ang_Birds/Pig.png"));
     }
 
-    for (int i = 0; i < 3; i++) {
-        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, "../assets/Ang_Birds/MainBird.png"));
+    for (int i = 0; i < 4; i++) {
+        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, (1.0f + (i * 0.15)), (0.5f + (i * -0.05)), birdTextures[i]));
     }
 
 
@@ -77,22 +80,14 @@ int main() {
                         
                         currentBird->launch();
                         
-                    }
-                   
-
-
+                    }         
                 }
 
                 if (event.key.code == sf::Keyboard::L ) 
-                {
-                    
-                    //birdPtr.erase(birdPtr.begin());
+                {     
                     world.DestroyBody(birdPtr.front()->getBody());
                     birdPtr.pop_front();
-                    isDestroyed = true;
-
-                }
-                 
+                }   
             }
         }
 
@@ -101,7 +96,6 @@ int main() {
 
         ground.update();
         wall.update();
-        bird.update();
         plank.update();
 
         // goes through all pigs in the pointer and updates its physics
@@ -119,10 +113,6 @@ int main() {
                 break;
             }
         }
-
-        
-        
-           
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue

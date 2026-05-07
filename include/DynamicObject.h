@@ -30,7 +30,6 @@ public:
 	sf::Sprite sp_sprites;
 	sf::Texture te_Texture;
 
-	b2Body* getBody();
 
 	bool isCollided = false;
 	bool isDamaged = false;
@@ -43,7 +42,7 @@ public:
 
 	sf::RectangleShape& sf_plankVisual() { return rectangle; }
 
-	
+	b2Body* getBody() { return b2_body; }
 
 protected:
 
