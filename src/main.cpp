@@ -30,10 +30,17 @@ int main() {
     // Inherited classes, setting parameter values.
 
     Bird bird(world, 100.0f, 500.0f, 15.0f, "../assets/Ang_Birds/MainBird.png");
-    Pig pig(world, 500.0f, 420.0f, 15.0f, "../assets/Ang_Birds/Pig.png");
+    //Pig pig(world, 500.0f, 420.0f, 15.0f, "../assets/Ang_Birds/Pig.png");
     Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");
     Wall wall(world, 750.0f, 500.0f, 10.0f, 80.0f);
     Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
+
+    std::vector<std::shared_ptr<Pig>> pigPtr;
+    std::vector<Pig>::iterator pigIt;
+
+    for (int i = 0; i < 3; i++) {
+        pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 40.0f)), 400.0f, 15.0f, "../assets/Ang_Birds/Pig.png"));
+    }
 
 
 
@@ -65,7 +72,13 @@ int main() {
         wall.update();
         bird.update();
         plank.update();
-        pig.update();
+
+        // goes through all pigs in the pointer and updates its physics
+        for (auto it = pigPtr.begin(); it != pigPtr.end(); ++it) {
+            auto& pig = *it;
+            pig->update();
+        }
+        
         
            
 
@@ -75,11 +88,16 @@ int main() {
         //window.draw(sf_groundVisual);
         //window.draw(sf_wallVisual);
 
+        // goes through all pigs in the pointer and draws them.
+        for (auto it = pigPtr.begin(); it != pigPtr.end(); ++it) {
+            auto& pig = *it;
+            pig->draw(window);
+        }
+
         plank.draw(window);
         bird.draw(window);
         ground.draw(window);
         wall.draw(window);
-        pig.draw(window);
         window.display();
     }
 

@@ -5,7 +5,7 @@
 #include "DynamicObject.h"
 #pragma once
 
-class Pig : public DynamicObject, Enemy {
+class Pig : public DynamicObject, public Enemy {
 
 public:
 	Pig() = default;
@@ -19,7 +19,6 @@ public:
 		b2_body->CreateFixture(&b2_PigFixture);
 		sp_sprites.setScale(0.1, 0.1);
 
-		
 
 
 	}

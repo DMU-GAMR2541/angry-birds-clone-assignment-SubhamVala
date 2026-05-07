@@ -14,7 +14,6 @@ DynamicObject::~DynamicObject()
 DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string str_sprite)
 {
 	b2_bodyDef.position.Set(b2_Pos.x / SCALE, b2_Pos.y / SCALE);
-	
 
 	b2_bodyDef.type = b2_dynamicBody;
 
