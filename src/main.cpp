@@ -5,6 +5,8 @@
 #include "Bird.h"
 #include "Plank.h"
 #include "Non-Interactable.h"
+#include <vector>
+#include <list>
 #include "Pig.h"
 
 #include <iostream>
@@ -21,6 +23,7 @@ int main() {
 
     //Can set a definition for PI.
     const float PI = 3.1415927;
+    bool isDestroyed = false;
 
     //setup world.
     
@@ -36,12 +39,19 @@ int main() {
     Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
 
     std::vector<std::shared_ptr<Pig>> pigPtr;
-    std::vector<Pig>::iterator pigIt;
+
+
+    std::list<std::shared_ptr<Bird>> birdPtr;
+    //std::list<Bird> currentBird;
+
 
     for (int i = 0; i < 3; i++) {
         pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 40.0f)), 400.0f, 15.0f, "../assets/Ang_Birds/Pig.png"));
     }
 
+    for (int i = 0; i < 3; i++) {
+        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, "../assets/Ang_Birds/MainBird.png"));
+    }
 
 
     // --- 7. MAIN LOOP ---
@@ -56,12 +66,33 @@ int main() {
 
             if (event.type == sf::Event::KeyPressed) {
 
-                
+                auto &currentBird = birdPtr.front();
+
+
                 if (event.key.code == sf::Keyboard::Space) {
-                    bird.launch();
+                    
+                    std::vector<Pig>::iterator pigIt;
+                    for (auto it = birdPtr.begin(); it != birdPtr.end(); ++it) {
+                        auto& bird = *it;
+                        
+                        currentBird->launch();
+                        
+                    }
+                   
 
 
                 }
+
+                if (event.key.code == sf::Keyboard::L ) 
+                {
+                    
+                    //birdPtr.erase(birdPtr.begin());
+                    world.DestroyBody(birdPtr.front()->getBody());
+                    birdPtr.pop_front();
+                    isDestroyed = true;
+
+                }
+                 
             }
         }
 
@@ -77,7 +108,18 @@ int main() {
         for (auto it = pigPtr.begin(); it != pigPtr.end(); ++it) {
             auto& pig = *it;
             pig->update();
+
         }
+
+        for (auto it = birdPtr.begin(); it != birdPtr.end(); ++it) {
+            auto& bird = *it;
+            bird->update();
+
+            if (isDestroyed == true) {
+                break;
+            }
+        }
+
         
         
            
@@ -94,8 +136,13 @@ int main() {
             pig->draw(window);
         }
 
+        for (auto it = birdPtr.begin(); it != birdPtr.end(); ++it) {
+            auto& bird = *it;
+            bird->draw(window);
+        }
+
         plank.draw(window);
-        bird.draw(window);
+        //bird.draw(window);
         ground.draw(window);
         wall.draw(window);
         window.display();

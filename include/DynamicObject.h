@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
 #include <iostream>
+#include <ctime>
 
 class DynamicObject : public GameObject {
 
@@ -29,7 +30,7 @@ public:
 	sf::Sprite sp_sprites;
 	sf::Texture te_Texture;
 
-
+	b2Body* getBody();
 
 	bool isCollided = false;
 	bool isDamaged = false;
@@ -42,7 +43,10 @@ public:
 
 	sf::RectangleShape& sf_plankVisual() { return rectangle; }
 
+	
+
 protected:
+
 	b2FixtureDef b2_fixtureDef;
 	b2Body* b2_body;
 	sf::CircleShape circle;
@@ -50,3 +54,4 @@ protected:
 	
 
 };
+

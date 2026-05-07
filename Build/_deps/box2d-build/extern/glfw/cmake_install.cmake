@@ -1,4 +1,4 @@
-# Install script for directory: D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-src/extern/glfw
+# Install script for directory: H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-src/extern/glfw
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,9 +32,3 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-build/extern/glfw/install_local_manifest.txt"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
-endif()

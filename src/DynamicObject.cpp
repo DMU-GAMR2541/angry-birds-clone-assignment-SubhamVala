@@ -37,6 +37,8 @@ DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string st
 
 }
 
+b2Body* DynamicObject::getBody() { return b2_body; }
+
 
 
 

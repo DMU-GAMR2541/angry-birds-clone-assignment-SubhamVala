@@ -10,6 +10,8 @@ private:
 	float xPos = 100.0f;
 	float yPos = 500.0f;
 	float radius = 15.0f;
+
+	
 	
 
 public:
@@ -17,6 +19,8 @@ public:
 	Bird() = default;
 
 	Bird(b2World& world, float xPos, float yPos, float radius, std::string birdTexture) : DynamicObject(world, b2Vec2(xPos, yPos), birdTexture) {
+
+
 
 		this->xPos = xPos;
 		this->yPos = yPos;
@@ -29,6 +33,10 @@ public:
 		b2_ballFixture.restitution = 0.5f; // Bounciness
 
 		b2_body->CreateFixture(&b2_ballFixture);
+
+	
+
+
 	
 	}
 
@@ -38,8 +46,15 @@ public:
 	}
 
 	void update() {
+
+
 		sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
 		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI));
+
+	}
+
+	void destroy() {
+		
 	}
 
 	void launch() {
@@ -51,6 +66,8 @@ public:
 
 		// Apply impulse (X-axis, Y-axis) Negative Y is UP in Box2D because gravity is positive.
 		b2_body->ApplyLinearImpulse(b2Vec2(5.0f, -5.0f), b2_body->GetWorldCenter(), true);
+
+
 
 		std::cout << "Firing!!!!" << std::endl;
 	}
