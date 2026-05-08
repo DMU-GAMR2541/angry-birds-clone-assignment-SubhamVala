@@ -97,7 +97,7 @@ TEST(Enemy, Second_Enemy_test) {
 //Slingshot Test.
 //First test, not fixture. Not setup is called.
 TEST(Slingshot, First_Slingshot_Test) {
-    Slingshot t(99, "Red");
+    Slingshot t(99, "");
     EXPECT_LT(t.getTension(), 100);
     
 }

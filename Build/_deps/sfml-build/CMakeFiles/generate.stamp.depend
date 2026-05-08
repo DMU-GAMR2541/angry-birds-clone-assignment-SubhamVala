@@ -1,12 +1,12 @@
 # CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
-C:/Program Files/CMake/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake
-C:/Program Files/CMake/share/cmake-3.30/Modules/CPack.cmake
-C:/Program Files/CMake/share/cmake-3.30/Modules/CPackComponent.cmake
-C:/Program Files/CMake/share/cmake-3.30/Modules/GNUInstallDirs.cmake
-C:/Program Files/CMake/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake
-C:/Program Files/CMake/share/cmake-3.30/Templates/CPackConfig.cmake.in
-H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt
-H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/Config.cmake
-H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/SFMLConfig.cmake.in
-H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/SFMLConfigDependencies.cmake.in
+D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt
+D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/Config.cmake
+D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/SFMLConfig.cmake.in
+D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/SFMLConfigDependencies.cmake.in
+D:/Uni Work/share/cmake-4.3/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+D:/Uni Work/share/cmake-4.3/Modules/CMakePackageConfigHelpers.cmake
+D:/Uni Work/share/cmake-4.3/Modules/CPack.cmake
+D:/Uni Work/share/cmake-4.3/Modules/CPackComponent.cmake
+D:/Uni Work/share/cmake-4.3/Modules/GNUInstallDirs.cmake
+D:/Uni Work/share/cmake-4.3/Modules/WriteBasicConfigVersionFile.cmake
+D:/Uni Work/share/cmake-4.3/Templates/CPackConfig.cmake.in

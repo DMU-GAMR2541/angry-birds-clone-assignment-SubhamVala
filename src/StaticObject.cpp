@@ -8,9 +8,9 @@ StaticObject::~StaticObject()
 {
 }
 
-StaticObject::StaticObject(b2World& b2_WorldPos, b2Vec2 b2_GroundPos, b2Vec2 b2_WallPos, b2Vec2 b2_GroundScale, b2Vec2 WallScale, std::string str_sprite)
+StaticObject::StaticObject(b2World& b2_WorldPos, b2Vec2 b2_GroundPos, b2Vec2 b2_WallPos, b2Vec2 b2_GroundScale, b2Vec2 WallScale)
 {
-
+	// creates its position in world and adds the body and fixture using the parameters.
 	b2_groundBodyDef.position.Set(b2_GroundPos.x / SCALE, b2_GroundPos.y / SCALE);
 	b2_wallDef.position.Set(b2_WallPos.x / SCALE, b2_WallPos.y / SCALE);
 

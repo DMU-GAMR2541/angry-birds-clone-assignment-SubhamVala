@@ -13,6 +13,7 @@ DynamicObject::~DynamicObject()
 
 DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string str_sprite)
 {
+	// creates all dynamic objects into the world using parameters
 	b2_bodyDef.position.Set(b2_Pos.x / SCALE, b2_Pos.y / SCALE);
 
 	b2_bodyDef.type = b2_dynamicBody;
@@ -20,11 +21,12 @@ DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string st
 
 	b2_body = b2_WorldPos.CreateBody(&b2_bodyDef);
 
+
 	b2_ballFixture.shape = &b2_circleShape;
 	b2_PigFixture.shape = &b2_circleShape;
 
 
-
+	// creates textures for each dynamicObject and giving its position to their body.
 	if (!te_Texture.loadFromFile(str_sprite)) {
 		return;
 	}
@@ -45,7 +47,6 @@ void DynamicObject::Render(sf::RenderWindow* sf_window)
 
 void DynamicObject::Update(float gravity, b2Vec2 b2_impule, bool b_make)
 {
-	//All of the visuals needs to be synced with the physics.
 	
 
 }

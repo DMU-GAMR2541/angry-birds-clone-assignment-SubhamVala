@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-subbuild/box2d-populate-prefix/tmp/box2d-populate-gitclone.cmake
-source_dir=H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-src
-work_dir=H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps
+command=D:/Uni Work/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-subbuild/box2d-populate-prefix/tmp/box2d-populate-gitclone.cmake
+source_dir=D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-src
+work_dir=D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps
 repository=https://github.com/erincatto/box2d.git
 remote=origin
 init_submodules=TRUE

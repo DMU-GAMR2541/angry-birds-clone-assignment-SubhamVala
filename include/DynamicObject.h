@@ -12,20 +12,25 @@ public:
 	DynamicObject() = default;
 	~DynamicObject();
 
+	// creates parameters that will take in values from inherited classes.
 	DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string str_sprite);
 
+	// creates the SCALE for Converting Pixel -> Meter / Meter -> Pixel
+	// creates PI for radius calculations.
 	const float SCALE = 30.0f;
 	const float PI = 3.1415927;
 
+	// creates variables for all dynamic objects.
 	b2Vec2 b2_pos;
 	b2BodyDef b2_bodyDef;
 
-	b2PolygonShape b2_plankBox;
+	b2PolygonShape b2_polygonShape;
 	b2CircleShape b2_circleShape;
 
 	b2FixtureDef b2_ballFixture;
 	b2FixtureDef b2_PigFixture;
 	b2FixtureDef b2_plankFixture;
+	b2FixtureDef b2_CatapultFixture;
 
 	sf::Sprite sp_sprites;
 	sf::Texture te_Texture;
@@ -38,6 +43,7 @@ public:
 
 	void Update(float gravity, b2Vec2 b2_impule, bool b_make);
 
+	// getters for the shape and body.
 	sf::CircleShape& sf_ballVisual() { return circle; }
 
 	sf::RectangleShape& sf_plankVisual() { return rectangle; }
@@ -46,6 +52,7 @@ public:
 
 protected:
 
+	// body and fixture variables.
 	b2FixtureDef b2_fixtureDef;
 	b2Body* b2_body;
 	sf::CircleShape circle;

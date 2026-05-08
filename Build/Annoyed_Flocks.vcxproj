@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BE4CCD31-F42D-35C5-9127-7C4A1B813806}</ProjectGuid>
+    <ProjectGuid>{0BD82349-74A1-3A27-A6F0-B9EFE6E96C29}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\bin\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\bin\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Annoyed_Flocks.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Annoyed_Flocks</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\bin\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\bin\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Annoyed_Flocks.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Annoyed_Flocks</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\bin\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\bin\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Annoyed_Flocks.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Annoyed_Flocks</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\bin\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\bin\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Annoyed_Flocks.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Annoyed_Flocks</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,18 +86,32 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>
+      </BufferSecurityCheck>
+      <CallingConvention>
+      </CallingConvention>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>
+      </FloatingPointModel>
+      <ForceConformanceInForLoopScope>
+      </ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>
+      </RemoveUnreferencedCodeData>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;SFML_STATIC;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -105,10 +119,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;SFML_STATIC;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -116,13 +130,21 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\box2d-build\bin\Debug\box2d.lib;_deps\sfml-build\lib\Debug\sfml-graphics-s-d.lib;_deps\sfml-build\lib\Debug\sfml-window-s-d.lib;_deps\sfml-build\lib\Debug\sfml-system-s-d.lib;_deps\sfml-build\lib\Debug\sfml-audio-s-d.lib;_deps\sfml-build\lib\Debug\sfml-network-s-d.lib;opengl32.lib;gdi32.lib;legacy_stdio_definitions.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\freetype.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\openal32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisenc.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisfile.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbis.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\ogg.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\flac.lib;_deps\sfml-build\lib\Debug\sfml-system-s-d.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\box2d-build\bin\Debug\box2d.lib;_deps\sfml-build\lib\Debug\sfml-graphics-s-d.lib;_deps\sfml-build\lib\Debug\sfml-window-s-d.lib;_deps\sfml-build\lib\Debug\sfml-system-s-d.lib;_deps\sfml-build\lib\Debug\sfml-audio-s-d.lib;_deps\sfml-build\lib\Debug\sfml-network-s-d.lib;opengl32.lib;gdi32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\freetype.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\openal32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisenc.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisfile.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbis.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\ogg.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\flac.lib;_deps\sfml-build\lib\Debug\sfml-system-s-d.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/Debug/Annoyed_Flocks.lib</ImportLibrary>
-      <ProgramDataBaseFile>H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/bin/Debug/Annoyed_Flocks.pdb</ProgramDataBaseFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/Debug/Annoyed_Flocks.lib</ImportLibrary>
+      <LinkErrorReporting>
+      </LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/bin/Debug/Annoyed_Flocks.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -131,17 +153,31 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>
+      </BufferSecurityCheck>
+      <CallingConvention>
+      </CallingConvention>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>
+      </FloatingPointModel>
+      <ForceConformanceInForLoopScope>
+      </ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>
+      </RemoveUnreferencedCodeData>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -151,10 +187,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -162,13 +198,21 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\box2d-build\bin\Release\box2d.lib;_deps\sfml-build\lib\Release\sfml-graphics-s.lib;_deps\sfml-build\lib\Release\sfml-window-s.lib;_deps\sfml-build\lib\Release\sfml-system-s.lib;_deps\sfml-build\lib\Release\sfml-audio-s.lib;_deps\sfml-build\lib\Release\sfml-network-s.lib;opengl32.lib;gdi32.lib;legacy_stdio_definitions.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\freetype.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\openal32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisenc.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisfile.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbis.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\ogg.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\flac.lib;_deps\sfml-build\lib\Release\sfml-system-s.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\box2d-build\bin\Release\box2d.lib;_deps\sfml-build\lib\Release\sfml-graphics-s.lib;_deps\sfml-build\lib\Release\sfml-window-s.lib;_deps\sfml-build\lib\Release\sfml-system-s.lib;_deps\sfml-build\lib\Release\sfml-audio-s.lib;_deps\sfml-build\lib\Release\sfml-network-s.lib;opengl32.lib;gdi32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\freetype.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\openal32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisenc.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisfile.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbis.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\ogg.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\flac.lib;_deps\sfml-build\lib\Release\sfml-system-s.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/Release/Annoyed_Flocks.lib</ImportLibrary>
-      <ProgramDataBaseFile>H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/bin/Release/Annoyed_Flocks.pdb</ProgramDataBaseFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/Release/Annoyed_Flocks.lib</ImportLibrary>
+      <LinkErrorReporting>
+      </LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/bin/Release/Annoyed_Flocks.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -177,17 +221,31 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>
+      </BufferSecurityCheck>
+      <CallingConvention>
+      </CallingConvention>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>
+      </FloatingPointModel>
+      <ForceConformanceInForLoopScope>
+      </ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>
+      </RemoveUnreferencedCodeData>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -197,10 +255,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -208,13 +266,21 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\box2d-build\bin\MinSizeRel\box2d.lib;_deps\sfml-build\lib\MinSizeRel\sfml-graphics-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-window-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-system-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-audio-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-network-s.lib;opengl32.lib;gdi32.lib;legacy_stdio_definitions.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\freetype.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\openal32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisenc.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisfile.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbis.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\ogg.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\flac.lib;_deps\sfml-build\lib\MinSizeRel\sfml-system-s.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\box2d-build\bin\MinSizeRel\box2d.lib;_deps\sfml-build\lib\MinSizeRel\sfml-graphics-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-window-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-system-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-audio-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-network-s.lib;opengl32.lib;gdi32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\freetype.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\openal32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisenc.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisfile.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbis.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\ogg.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\flac.lib;_deps\sfml-build\lib\MinSizeRel\sfml-system-s.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/MinSizeRel/Annoyed_Flocks.lib</ImportLibrary>
-      <ProgramDataBaseFile>H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/bin/MinSizeRel/Annoyed_Flocks.pdb</ProgramDataBaseFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/MinSizeRel/Annoyed_Flocks.lib</ImportLibrary>
+      <LinkErrorReporting>
+      </LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/bin/MinSizeRel/Annoyed_Flocks.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -223,18 +289,32 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>
+      </BufferSecurityCheck>
+      <CallingConvention>
+      </CallingConvention>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>
+      </FloatingPointModel>
+      <ForceConformanceInForLoopScope>
+      </ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>
+      </RemoveUnreferencedCodeData>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -242,10 +322,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\src\..\include;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -253,13 +333,21 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\box2d-build\bin\RelWithDebInfo\box2d.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-graphics-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-window-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-system-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-audio-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-network-s.lib;opengl32.lib;gdi32.lib;legacy_stdio_definitions.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\freetype.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\openal32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisenc.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisfile.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbis.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\ogg.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\flac.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-system-s.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\box2d-build\bin\RelWithDebInfo\box2d.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-graphics-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-window-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-system-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-audio-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-network-s.lib;opengl32.lib;gdi32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\freetype.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\openal32.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisenc.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbisfile.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\vorbis.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\ogg.lib;_deps\sfml-src\extlibs\libs-msvc-universal\x64\flac.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-system-s.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/RelWithDebInfo/Annoyed_Flocks.lib</ImportLibrary>
-      <ProgramDataBaseFile>H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/bin/RelWithDebInfo/Annoyed_Flocks.pdb</ProgramDataBaseFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/RelWithDebInfo/Annoyed_Flocks.lib</ImportLibrary>
+      <LinkErrorReporting>
+      </LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/bin/RelWithDebInfo/Annoyed_Flocks.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -267,11 +355,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\CMakeLists.txt">
+    <CustomBuild Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SH:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BH:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/generate.stamp"
+"D:\Uni Work\bin\cmake.exe" "-SD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -279,12 +367,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeCCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeCXXCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeRCCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeCCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeCXXCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeRCCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeSystem.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCXXInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeGenericSystem.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeRCInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\ExternalProject\shared_internal_commands.cmake;D:\Uni Work\share\cmake-4.3\Modules\FetchContent.cmake;D:\Uni Work\share\cmake-4.3\Modules\FetchContent\CMakeLists.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\FindGit.cmake;D:\Uni Work\share\cmake-4.3\Modules\FindPackageHandleStandardArgs.cmake;D:\Uni Work\share\cmake-4.3\Modules\FindPackageMessage.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SH:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BH:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/generate.stamp"
+"D:\Uni Work\bin\cmake.exe" "-SD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -292,12 +380,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeCCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeCXXCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeRCCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeCCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeCXXCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeRCCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeSystem.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCXXInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeGenericSystem.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeRCInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\ExternalProject\shared_internal_commands.cmake;D:\Uni Work\share\cmake-4.3\Modules\FetchContent.cmake;D:\Uni Work\share\cmake-4.3\Modules\FetchContent\CMakeLists.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\FindGit.cmake;D:\Uni Work\share\cmake-4.3\Modules\FindPackageHandleStandardArgs.cmake;D:\Uni Work\share\cmake-4.3\Modules\FindPackageMessage.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SH:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BH:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/generate.stamp"
+"D:\Uni Work\bin\cmake.exe" "-SD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -305,12 +393,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeCCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeCXXCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeRCCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeCCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeCXXCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeRCCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeSystem.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCXXInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeGenericSystem.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeRCInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\ExternalProject\shared_internal_commands.cmake;D:\Uni Work\share\cmake-4.3\Modules\FetchContent.cmake;D:\Uni Work\share\cmake-4.3\Modules\FetchContent\CMakeLists.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\FindGit.cmake;D:\Uni Work\share\cmake-4.3\Modules\FindPackageHandleStandardArgs.cmake;D:\Uni Work\share\cmake-4.3\Modules\FindPackageMessage.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SH:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BH:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "H:/Second_year/Angry Birds/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/generate.stamp"
+"D:\Uni Work\bin\cmake.exe" "-SD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -318,56 +406,58 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeCCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeCXXCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeRCCompiler.cmake;H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\3.30.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeCCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeCXXCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeRCCompiler.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\4.3.2\CMakeSystem.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCXXInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeGenericSystem.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeRCInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Compiler\MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\ExternalProject\shared_internal_commands.cmake;D:\Uni Work\share\cmake-4.3\Modules\FetchContent.cmake;D:\Uni Work\share\cmake-4.3\Modules\FetchContent\CMakeLists.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\FindGit.cmake;D:\Uni Work\share\cmake-4.3\Modules\FindPackageHandleStandardArgs.cmake;D:\Uni Work\share\cmake-4.3\Modules\FindPackageMessage.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Linker\MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC-C.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\Windows.cmake;D:\Uni Work\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\Bird.cpp" />
-    <ClCompile Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\DynamicObject.cpp" />
-    <ClCompile Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\Enemy.cpp" />
-    <ClCompile Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\StaticObject.cpp" />
-    <ClCompile Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\main.cpp" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Bird.h" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\DynamicObject.h" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Enemy.h" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\GameObject.h" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Non-Interactable.h" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Pig.h" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Plank.h" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Slingshot.h" />
-    <ClInclude Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\StaticObject.h" />
+    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\Bird.cpp" />
+    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\DynamicObject.cpp" />
+    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\Enemy.cpp" />
+    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\StaticObject.cpp" />
+    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\src\main.cpp" />
+    <ClInclude Include="..\include\Catapult.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Bird.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\DynamicObject.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Enemy.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\GameObject.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Non-Interactable.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Pig.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Plank.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Slingshot.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\StaticObject.h" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\ZERO_CHECK.vcxproj">
-      <Project>{21A2B0D8-5834-3893-8F8B-323CBD680CF6}</Project>
+    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\ZERO_CHECK.vcxproj">
+      <Project>{E5A8B54F-E1DC-33EA-8CD1-D8E071E482A8}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-build\src\box2d.vcxproj">
-      <Project>{7D6C96EC-8EEA-3A4F-BE47-EE9A4F2E843C}</Project>
+    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-build\src\box2d.vcxproj">
+      <Project>{D3FBD46E-BD9A-3E0A-B26C-5092D8022BC0}</Project>
       <Name>box2d</Name>
     </ProjectReference>
-    <ProjectReference Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Audio\sfml-audio.vcxproj">
-      <Project>{5DB4B802-6FCC-3E2C-B42B-5DF22464497B}</Project>
+    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Audio\sfml-audio.vcxproj">
+      <Project>{669B1D7B-8965-37BE-8B2D-5BC4BF68A6E2}</Project>
       <Name>sfml-audio</Name>
     </ProjectReference>
-    <ProjectReference Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Graphics\sfml-graphics.vcxproj">
-      <Project>{D1E2A093-008B-3A53-9C0F-76C1528E55D0}</Project>
+    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Graphics\sfml-graphics.vcxproj">
+      <Project>{64C06E01-F79A-3D2D-9207-A2651EEF9485}</Project>
       <Name>sfml-graphics</Name>
     </ProjectReference>
-    <ProjectReference Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Network\sfml-network.vcxproj">
-      <Project>{E1D61C71-429C-3FBD-9934-71076FB3EF32}</Project>
+    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Network\sfml-network.vcxproj">
+      <Project>{4034673C-9D24-3E52-99EE-81B31E512813}</Project>
       <Name>sfml-network</Name>
     </ProjectReference>
-    <ProjectReference Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\System\sfml-system.vcxproj">
-      <Project>{2977D9E8-FC99-31FE-AEFE-18C103137B94}</Project>
+    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\System\sfml-system.vcxproj">
+      <Project>{EFDC9991-2A74-300C-994E-51FD00A9DCC1}</Project>
       <Name>sfml-system</Name>
     </ProjectReference>
-    <ProjectReference Include="H:\Second_year\Angry Birds\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Window\sfml-window.vcxproj">
-      <Project>{0DD5E9D9-DCD9-3F81-BBD6-3D53F42CE8EA}</Project>
+    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Window\sfml-window.vcxproj">
+      <Project>{3F28D182-6D74-3482-A1B3-16C7ADAEE401}</Project>
       <Name>sfml-window</Name>
     </ProjectReference>
   </ItemGroup>
