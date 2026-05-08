@@ -373,6 +373,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Bird.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Catapult.h" />
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\ContactListener.h" />
     <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\DynamicObject.h" />
     <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Enemy.h" />
     <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\GameObject.h" />

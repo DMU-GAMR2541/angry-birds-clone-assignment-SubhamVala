@@ -13,6 +13,7 @@
 #include "Pig.h"
 #include "Non-Interactable.h"
 #include "Catapult.h"
+#include "ContactListener.h"
 
 
 
@@ -36,6 +37,9 @@ int main() {
     b2Vec2 b2_gravity(0.0f, 9.8f); // Earth-like gravity
     b2World world(b2_gravity);
     
+    ContactListener contactlister;
+    world.SetContactListener(&contactlister);
+
     // Inherited classes, setting parameter values.
     Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Catapult_1.png");
     Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");
@@ -63,7 +67,7 @@ int main() {
     for (int i = 0; i < 4; i++) {
 
         // gives the birds, different positions, bounciness, speed and textures.
-        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, (1.0f + (i * 0.05)), (0.5f + (i * -0.05)), 10.0f, birdTextures[i]));
+        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, (1.0f + (i * 0.05)), (0.5f + (i * -0.05)), 5.0f, birdTextures[i]));
     }
 
 
@@ -92,7 +96,7 @@ int main() {
                 // once LMB is released, shoots bird depending on how much it was dragged.
                 if (event.mouseButton.button == sf::Mouse::Left) {
 
-                    birdPtr.front()->launch();
+                    birdPtr.front()->launch(catapult.getShotPos());
                 }
             }
 

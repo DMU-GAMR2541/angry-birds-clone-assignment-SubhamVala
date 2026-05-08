@@ -1,11 +1,11 @@
-
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
 #include <iostream>
 #include "DynamicObject.h"
-#pragma once
+#include "ContactListener.h"
 
-class Bird : public DynamicObject {
+class Bird : public DynamicObject, public ContactListener {
 private:
 	float xPos = 100.0f;
 	float yPos = 500.0f;
@@ -88,7 +88,7 @@ public:
 
 	// calculates launch velocity using the targets position and start position. 
 	// Resetting gravity once launched.
-	void launch() {
+	void launch(sf::Vector2f shotPos) {
 
 		isDragging = false;
 
@@ -96,7 +96,7 @@ public:
 
 		sf::Vector2f targetPos{b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE };
 
-		sf::Vector2f launchVector = (targetPos - startPos) / SCALE;
+		sf::Vector2f launchVector = (targetPos - shotPos) / SCALE;
 
 		b2Vec2 impulseMagnitude(-launchVector.x * shotPower, -launchVector.y * shotPower);
 
