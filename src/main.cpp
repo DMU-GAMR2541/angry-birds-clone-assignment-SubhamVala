@@ -46,16 +46,31 @@ int main() {
     Wall wall(world, 750.0f, 500.0f, 10.0f, 80.0f);
     Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
 
+    // stores the different bird types into a vector to iterate through.
+    std::vector<std::string> birdTextures = { "../assets/Ang_Birds/BlueBird.png", "../assets/Ang_Birds/MainBird.png",  "../assets/Ang_Birds/YellowBird.png", "../assets/Ang_Birds/BlackBird.png" };
+
     // creates the STL sequence containers.
     std::vector<std::shared_ptr<Pig>> pigPtr;
+    std::vector<std::shared_ptr<Wall>> WallPtr;
+    std::vector<std::shared_ptr<Ground>> GroundPtr;
     std::list<std::shared_ptr<Bird>> birdPtr;
 
+    WallPtr.push_back(std::make_shared<Wall>(world, 750.0f, 500.0f, 10.0f, 80.0f));
+    GroundPtr.push_back(std::make_shared<Ground>(world, 400.0f, 590.0f, 400.0f, 10.0f));
 
-    // stores the different bird types into a vector
-    std::vector<std::string> birdTextures = { "../assets/Ang_Birds/BlueBird.png", "../assets/Ang_Birds/MainBird.png",  "../assets/Ang_Birds/YellowBird.png", "../assets/Ang_Birds/BlackBird.png" };
+    // adds the birds into the shared_pointer vector using a for loop.
+    for (int i = 0; i < 4; i++) {
+        DynamicObject::DynamicObjectType birdtype;
+
+        if (i == 0) { birdtype = DynamicObject::DynamicObjectType::redbird; }
+        else if (i == 2) { birdtype = DynamicObject::DynamicObjectType::yellowbird; }
+        else if (i == 3) { birdtype = DynamicObject::DynamicObjectType::bluebird; }
+        else { birdtype = DynamicObject::DynamicObjectType::blackbird; }
+
+        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, 5.0f, birdTextures[i]));
+    }
+
     
-   
-
     // adds the pigs into the shared_pointer vector using a for loop.
     for (int i = 0; i < 3; i++) {
 
@@ -63,13 +78,7 @@ int main() {
         pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 40.0f)), 400.0f, 15.0f, 5.0f, "../assets/Ang_Birds/Pig.png"));
     }
 
-    // adds the birds into the shared_pointer vector using a for loop.
-    for (int i = 0; i < 4; i++) {
-
-        // gives the birds, different positions, bounciness, speed and textures.
-        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, (1.0f + (i * 0.05)), (0.5f + (i * -0.05)), 5.0f, birdTextures[i]));
-    }
-
+    
 
     // --- 7. MAIN LOOP ---
     while (window.isOpen()) {
@@ -166,16 +175,15 @@ int main() {
 
         // goes through all pigs in the pointer and updates its physics using an iterator.
         for (auto it = pigPtr.begin(); it != pigPtr.end(); ++it) {
-            auto& pig = *it;
-            pig->update();
+            (*it)->update();
 
         }
 
         // goes through all birds in the pointer and updates its physics using an iterator.
         for (auto it = birdPtr.begin(); it != birdPtr.end(); ++it) {
-            auto& bird = *it;
-            bird->update();
+            (*it)->update();
         }
+
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
@@ -185,24 +193,24 @@ int main() {
  
         // goes through all pigs using an iterator and draws them to the window.
         for (auto it = pigPtr.begin(); it != pigPtr.end(); ++it) {
-            auto& pig = *it;
-            pig->draw(window);
+            (*it)->draw(window);
         }
 
         // goes through all birds using an iterator and draws them to the window.
         for (auto it = birdPtr.begin(); it != birdPtr.end(); ++it) {
-            auto& bird = *it;
-            bird->draw(window);
+            (*it)->draw(window);
         }
 
+        for (auto it = GroundPtr.begin(); it != GroundPtr.end(); ++it) {
+            (*it)->draw(window);
+        }
+
+        for (auto it = WallPtr.begin(); it != WallPtr.end(); ++it) {
+            (*it)->draw(window);
+        }
 
         catapult.draw(window);
         plank.draw(window);
-        ground.draw(window);
-        wall.draw(window);
-   
-
-
         window.display();
     }
 

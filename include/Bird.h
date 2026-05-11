@@ -20,7 +20,8 @@ public:
 	Bird() = default;
 
 	// passing bird parameters into DynamicObject.h / DynamicObject.cpp for the creation of the bird.
-	Bird(b2World& world, float xPos, float yPos, float radius, float density, float restitution, float shotPower, std::string birdTexture) : DynamicObject(world, b2Vec2(xPos, yPos), birdTexture) {
+	Bird(b2World& world, float xPos, float yPos, float radius, float shotPower, std::string birdTexture, DynamicObjectType birdtype) 
+		: DynamicObject(world, b2Vec2(xPos, yPos), birdTexture) {
 
 
 		// gives default values to parameters
@@ -34,9 +35,29 @@ public:
 
 		//Creates a dynamic ball.
 
+		switch(birdtype) {
+			case DynamicObjectType::redbird:
+				b2_ballFixture.density = 1.0f;
+				b2_ballFixture.restitution= 0.5f;
+				break;
+			case DynamicObjectType::blackbird:
+				b2_ballFixture.density = 1.4f;
+				b2_ballFixture.restitution = 0.3f;
+				break;
+			case DynamicObjectType::yellowbird:
+				b2_ballFixture.density = 0.8f;
+				b2_ballFixture.restitution = 0.6f;
+				break;
+			case DynamicObjectType::bluebird:
+				b2_ballFixture.density = 0.7f;
+				b2_ballFixture.restitution = 0.7f;
+				break;
+
+		}
+
 		b2_circleShape.m_radius = radius / SCALE;
-		b2_ballFixture.density = density;
-		b2_ballFixture.restitution = restitution; // Bounciness
+		b2_ballFixture.density = 1.0f;
+		b2_ballFixture.restitution = 0.5f; // Bounciness
 
 		b2_body->CreateFixture(&b2_ballFixture);
 		sp_sprites.setScale(0.045, 0.045);

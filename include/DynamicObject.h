@@ -9,6 +9,17 @@ class DynamicObject : public GameObject {
 
 public:
 
+	enum class DynamicObjectType {
+		redbird,
+		bluebird,
+		blackbird,
+		yellowbird,
+		pig,
+		plank
+
+	};
+
+
 	DynamicObject() = default;
 	~DynamicObject();
 
