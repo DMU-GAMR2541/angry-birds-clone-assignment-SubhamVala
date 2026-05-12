@@ -2,6 +2,6 @@
 # The patch step will be re-executed if anything in this file changes.
 # No other meaning or use of this file is supported.
 
-command (connected)=C:/Program Files/CMake/bin/cmake.exe;-Dcan_fetch=YES;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-subbuild/box2d-populate-prefix/tmp/box2d-populate-gitupdate.cmake
-command (disconnected)=C:/Program Files/CMake/bin/cmake.exe;-Dcan_fetch=NO;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-subbuild/box2d-populate-prefix/tmp/box2d-populate-gitupdate.cmake
-work_dir=H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-src
+command (connected)=D:/Uni Work/bin/cmake.exe;-Dcan_fetch=YES;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-subbuild/box2d-populate-prefix/tmp/box2d-populate-gitupdate.cmake
+command (disconnected)=D:/Uni Work/bin/cmake.exe;-Dcan_fetch=NO;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-subbuild/box2d-populate-prefix/tmp/box2d-populate-gitupdate.cmake
+work_dir=D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/box2d-src

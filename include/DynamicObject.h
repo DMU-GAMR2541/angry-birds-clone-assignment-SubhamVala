@@ -15,6 +15,9 @@ public:
 		blackbird,
 		yellowbird,
 		pig,
+		helmpig,
+		bigpig,
+		kingpig,
 		plank
 
 	};
@@ -45,10 +48,6 @@ public:
 
 	sf::Sprite sp_sprites;
 	sf::Texture te_Texture;
-
-
-	bool isCollided = false;
-	bool isDamaged = false;
 
 	void Render(sf::RenderWindow* sf_window);
 

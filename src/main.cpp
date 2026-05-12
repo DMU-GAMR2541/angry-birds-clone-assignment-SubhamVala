@@ -65,15 +65,20 @@ int main() {
         else if (i == 3) { birdtype = DynamicObject::DynamicObjectType::bluebird; }
         else { birdtype = DynamicObject::DynamicObjectType::blackbird; }
 
-        birdPtr.emplace_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, 5.0f, birdTextures[i], birdtype));
+        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, 5.0f, birdTextures[i], birdtype));
     }
 
     
     // adds the pigs into the shared_pointer vector using a for loop.
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
+        DynamicObject::DynamicObjectType pigtype;
 
+        if (i == 0) { pigtype = DynamicObject::DynamicObjectType::pig; }
+        else if (i == 1) { pigtype = DynamicObject::DynamicObjectType::helmpig; }
+        else if (i == 2) { pigtype = DynamicObject::DynamicObjectType::bigpig; }
+        else { pigtype = DynamicObject::DynamicObjectType::kingpig; }
         // gives each pig a different position
-        auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 40.0f)), 400.0f, 15.0f, 3, "../assets/Ang_Birds/Pig.png"));
+        auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 45.0f)), 400.0f, (15.0f + (i * 3)), (10 + (i * 2)), "../assets/Ang_Birds/Pigs.png", pigtype));
         pig->getBody()->GetUserData().pointer = 3 + i;
     }
 
@@ -116,6 +121,12 @@ int main() {
                     auto& currentBird = birdPtr.front();
                     world.DestroyBody(birdPtr.front()->getBody());
                     birdPtr.pop_front();
+                    
+                    for (auto& pig : pigPtr) {
+                        pig->resetDeletionMark();
+                    }
+
+                    contactlister.s_ptr.clear();
                 }
 
             }
@@ -170,7 +181,7 @@ int main() {
         world.Step(1.0f / 60.0f, 8, 3);
 
         std::set<uintptr_t> s_p = contactlister.getPointer(); //Set of pointers to the pig ID's
-        for (auto pigIt = pigPtr.begin(); pigIt != pigPtr.end(); ) {
+        for (auto pigIt = pigPtr.begin(); pigIt != pigPtr.end() && !(*pigIt)->isMarkedForDeletion(); ) {
 
 
             uintptr_t currentPigID = (*pigIt)->getBody()->GetUserData().pointer;
@@ -181,15 +192,14 @@ int main() {
                 std::cout << currentPigID << " Destroyed" << std::endl;
 
                 
-                Enemy health;
-
-                std::cout << "Pig has: " << health.getHealth() << "  Health" << std::endl;
-
-                health.takeDamage(1);
-
                 
 
-                if (health.checkIfPopped()) {
+                std::cout << "Pig has: " << (*pigIt)->getHealth() << "  Health" << std::endl;
+
+                (*pigIt)->takeDamage(10);
+                (*pigIt)->markForDeletion();
+
+                if ((*pigIt)->checkIfPopped()) {
                     // Remove from Box2D world first
                     world.DestroyBody((*pigIt)->getBody()); //Remove the pig body from the world.
 
