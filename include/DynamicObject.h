@@ -5,7 +5,7 @@
 #include <iostream>
 #include <ctime>
 
-class DynamicObject : public GameObject {
+class DynamicObject : virtual public GameObject {
 
 public:
 

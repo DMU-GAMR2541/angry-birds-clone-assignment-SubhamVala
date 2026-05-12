@@ -42,9 +42,7 @@ int main() {
 
     // Inherited classes, setting parameter values.
     Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Catapult_1.png");
-    Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");
-    Wall wall(world, 750.0f, 500.0f, 10.0f, 80.0f);
-    Ground ground(world, 400.0f, 590.0f, 400.0f, 10.0f);
+    Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");;
 
     // stores the different bird types into a vector to iterate through.
     std::vector<std::string> birdTextures = { "../assets/Ang_Birds/BlueBird.png", "../assets/Ang_Birds/MainBird.png",  "../assets/Ang_Birds/YellowBird.png", "../assets/Ang_Birds/BlackBird.png" };
@@ -67,7 +65,7 @@ int main() {
         else if (i == 3) { birdtype = DynamicObject::DynamicObjectType::bluebird; }
         else { birdtype = DynamicObject::DynamicObjectType::blackbird; }
 
-        birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, 5.0f, birdTextures[i]));
+        birdPtr.emplace_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, 5.0f, birdTextures[i], birdtype));
     }
 
     
@@ -75,7 +73,8 @@ int main() {
     for (int i = 0; i < 3; i++) {
 
         // gives each pig a different position
-        pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 40.0f)), 400.0f, 15.0f, 5.0f, "../assets/Ang_Birds/Pig.png"));
+        auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 40.0f)), 400.0f, 15.0f, 3, "../assets/Ang_Birds/Pig.png"));
+        pig->getBody()->GetUserData().pointer = 3 + i;
     }
 
     
@@ -163,14 +162,49 @@ int main() {
         }
 
         
-
+        for (auto& bird : birdPtr) {
+            bird->getBody()->GetUserData().pointer = 100;
+        }
 
         // Update Physics
         world.Step(1.0f / 60.0f, 8, 3);
 
+        std::set<uintptr_t> s_p = contactlister.getPointer(); //Set of pointers to the pig ID's
+        for (auto pigIt = pigPtr.begin(); pigIt != pigPtr.end(); ) {
+
+
+            uintptr_t currentPigID = (*pigIt)->getBody()->GetUserData().pointer;
+
+            // Check if this pig's ID exists in the hit list
+            if (s_p.find(currentPigID) != s_p.end()) { //Check through all of the container for specific Id's
+
+                std::cout << currentPigID << " Destroyed" << std::endl;
+
+                
+                Enemy health;
+
+                std::cout << "Pig has: " << health.getHealth() << "  Health" << std::endl;
+
+                health.takeDamage(1);
+
+                
+
+                if (health.checkIfPopped()) {
+                    // Remove from Box2D world first
+                    world.DestroyBody((*pigIt)->getBody()); //Remove the pig body from the world.
+
+                    // Update the iterator by catching the return value of erase()
+                    pigIt = pigPtr.erase(pigIt); //Erase the pig from the set.
+                }
+
+            }
+            else {
+                // Only increment if we didn't erase anything
+                ++pigIt;
+            }
+        }
+
         catapult.update();
-        ground.start();
-        wall.start();
         plank.update();
 
         // goes through all pigs in the pointer and updates its physics using an iterator.
@@ -182,6 +216,14 @@ int main() {
         // goes through all birds in the pointer and updates its physics using an iterator.
         for (auto it = birdPtr.begin(); it != birdPtr.end(); ++it) {
             (*it)->update();
+        }
+
+        for (auto it = WallPtr.begin(); it != WallPtr.end(); ++it) {
+            (*it)->start();
+        }
+
+        for (auto it = GroundPtr.begin(); it != GroundPtr.end(); ++it) {
+            (*it)->start();
         }
 
 
