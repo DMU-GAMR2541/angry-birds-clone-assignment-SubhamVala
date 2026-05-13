@@ -37,25 +37,54 @@ int main() {
     b2Vec2 b2_gravity(0.0f, 9.8f); // Earth-like gravity
     b2World world(b2_gravity);
     
-    ContactListener contactlister;
-    world.SetContactListener(&contactlister);
+    // creates the Listener instnance.
+    ContactListener contactlistener;
+    // Registers it with the world.
+    world.SetContactListener(&contactlistener);
 
     // Inherited classes, setting parameter values.
     Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Slingshot.png");
-    Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");;
+   // Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");
 
     // stores the different bird types into a vector to iterate through.
     std::vector<std::string> birdTextures = { "../assets/Ang_Birds/BlueBird.png", "../assets/Ang_Birds/MainBird.png",  "../assets/Ang_Birds/YellowBird.png", "../assets/Ang_Birds/BlackBird.png" };
 
+    // stores the different pig positions into a vector to iterate through.
+    std::vector<sf::Vector2f> pigPositions = {
+        {522.0f, 590.0f},
+        {520.0f, 400.0f},
+        {665.0f, 400.0f},
+        {575.0f, 200.0f}
+    };
+
+    // stores the different plank positions into a vector to iterate through.
+    std::vector<sf::Vector2f> plankPositions = {
+        {500.0f, 530.0f},
+        {570.0f, 530.0f},
+        {630.0f, 530.0f},
+        {680.0f, 530.0f},
+        {550.0f, 380.0f},
+        {630.0f, 380.0f},
+        {560.0f, 200.0f},
+        {630.0f, 200.0f},
+        {530.0f, 430.0f},
+        {650.0f, 430.0f},
+        {590.0f, 320.0f},
+
+    };
+
     // creates the STL sequence containers.
     std::vector<std::shared_ptr<Pig>> pigPtr;
+    std::vector<std::shared_ptr<Plank>> plankPtr;
     std::vector<std::shared_ptr<NonInteractable>> Noninteractable;
     std::list<std::shared_ptr<Bird>> birdPtr;
 
+    // creates an instance of DynamicObjectType for birdsType.
     DynamicObject::DynamicObjectType birdtype;
 
-    Noninteractable.push_back(std::make_shared<NonInteractable>(world, 750.0f, 500.0f, 10.0f, 80.0f, sf::Color::Red));
-    Noninteractable.push_back(std::make_shared<NonInteractable>(world, 400.0f, 590.0f, 400.0f, 10.0f, sf::Color(34, 139, 34)));
+    // adds the Non-interactables into the shared_pointer.
+    Noninteractable.push_back(std::make_shared<NonInteractable>(world, 750.0f, 500.0f, 10.0f, 600.0f, sf::Color::Red)); // Wall
+    Noninteractable.push_back(std::make_shared<NonInteractable>(world, 400.0f, 590.0f, 400.0f, 10.0f, sf::Color(34, 139, 34))); // Ground
 
     // adds the birds into the shared_pointer vector using a for loop.
     for (int i = 0; i < 4; i++) {
@@ -67,7 +96,15 @@ int main() {
         birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, 5.0f, birdTextures[i], birdtype));
     }
 
-    
+    // adds the planks into the shared_pointer vector using a for loop, and giving them a type of either vertical or horizontal.
+    for (int i = 0; i < plankPositions.size(); i++) {
+        DynamicObject::DynamicObjectType plankType;
+        if (i < 8) { plankType = DynamicObject::DynamicObjectType::VerticalPlank; }
+        else { plankType = DynamicObject::DynamicObjectType::HorizontalPlank; }
+
+        plankPtr.push_back(std::make_shared<Plank>(world, plankPositions[i].x, plankPositions[i].y, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png", plankType));
+    }
+
     // adds the pigs into the shared_pointer vector using a for loop.
     for (int i = 0; i < 4; i++) {
         DynamicObject::DynamicObjectType pigtype;
@@ -76,8 +113,8 @@ int main() {
         else if (i == 1) { pigtype = DynamicObject::DynamicObjectType::helmpig; }
         else if (i == 2) { pigtype = DynamicObject::DynamicObjectType::bigpig; }
         else { pigtype = DynamicObject::DynamicObjectType::kingpig; }
-        // gives each pig a different position
-        auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 45.0f)), 400.0f, (15.0f + (i * 3)), (6 + (i * 2)), "../assets/Ang_Birds/Pigs.png", pigtype));
+        // gives each pig a different position, size and health.
+        auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, pigPositions[i].x, pigPositions[i].y, (15.0f + (i * 3)), (9 + (i * 2)), "../assets/Ang_Birds/Pigs.png", pigtype));
         pig->getBody()->GetUserData().pointer = 3 + i;
     }
 
@@ -98,7 +135,13 @@ int main() {
                 // once LMB is pressed, stops gravity and rotation
                 if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                    birdPtr.front()->dragging();
+                    // check if the bird has not been launched. preventing the same bird from being launched twice.
+                    if (!birdPtr.front()->hasLaunched()) {
+                        // calls dragging function from bird.h for the front bird.
+                        birdPtr.front()->dragging();
+
+                    }
+                    
                 }
 
             }
@@ -108,52 +151,45 @@ int main() {
                 // once LMB is released, shoots bird depending on how much it was dragged.
                 if (event.mouseButton.button == sf::Mouse::Left) {
 
-                    birdPtr.front()->launch(catapult.getShotPos());
+                    // check if the bird has not been launched. preventing the same bird from being launched twice.
+                    if (!birdPtr.front()->hasLaunched()) {
+                        // calls launch function from bird.h for the front bird.
+                        birdPtr.front()->launch(catapult.getShotPos());
+
+                    }
+                    
                 }
             }
 
             if (event.type == sf::Event::KeyPressed) {
                 auto& currentBird = birdPtr.front();
-                if (event.key.code == sf::Keyboard::L)
-                {
-                    // destroys the birds body and sprite in the vector so the next bird can get shot.
-                    world.DestroyBody(birdPtr.front()->getBody());
-
-                    birdPtr.pop_front();
-                    
-
-                    for (auto& pig : pigPtr) {
-                        pig->resetDeletionMark();
-                    }
-
-                    contactlister.s_ptr.clear();
-                    
-                }
-
-                    
-            
-
+                
                 if (event.key.code == sf::Keyboard::Space) {
                     
+                    // creates shared_pointers for blues ability and Bombs ability.
                     std::vector<std::shared_ptr<Bird>> newBirds;
                     std::vector<std::shared_ptr<Bird>> Bomb;
+
+                    // if the current bird is yellow and has not already used its ability, then uses ability if space is pressed.
                     if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::yellowbird && !currentBird->hasUsedAbility()) {
                         currentBird->yellowBirdAbility(b2Vec2(5, 0));
                     }
 
+                    // if the current bird is blue and has not already used its ability, then uses ability if space is pressed.
                     if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::bluebird) {
                         
+                        // adds the clone birds.
                         auto newBirds = currentBird->blueBirdAbility(world);
 
                         for (auto& bird : newBirds) {
                             birdPtr.push_back(bird);
                         }
-
-                        std::cout << "ability used" << std::endl;;
                     }
 
+                    // if the current bird is blackBird and has not already used its ability, then uses ability if space is pressed.
                     if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::blackbird && !currentBird->hasUsedAbility()) {
 
+                        // destroys the bird body and creates the bombEffect sprite/body.
                         auto Bomb = currentBird->blackBirdAbility(world, 1.5f);
 
                         world.DestroyBody(birdPtr.front()->getBody());
@@ -167,7 +203,8 @@ int main() {
                 
         }
 
-        if (birdPtr.front()->getDragging()) {
+        
+        if (birdPtr.front()->getDragging() && !birdPtr.front()->hasLaunched()) {
 
             // gets position of the mouse in sfml pixels.
             sf::Vector2i mousePxl = sf::Mouse::getPosition(window);
@@ -212,7 +249,19 @@ int main() {
         // Update Physics
         world.Step(1.0f / 60.0f, 8, 3);
 
-        //Destroys smoke png after bomb bird uses ability.
+        // gets the speed of the current bird and checks if its slower than 2.0f, if its been launched and if its not been marked for deletion.
+        for (auto& bird : birdPtr) {
+            b2Vec2 birdVelocity = bird->getBody()->GetLinearVelocity();
+
+            float speed = std::sqrt(birdVelocity.x * birdVelocity.x + birdVelocity.y * birdVelocity.y);
+
+            if (bird->hasLaunched() && speed < 4.0f && !bird->BirdDeletionStarted()) {
+                // deletes bird after 3s of collision.
+                bird->BirdMarkedforDeletion(3.0f);
+            }
+        }
+
+        //Destroys birds after the three seconds.
         for (auto it = birdPtr.begin(); it != birdPtr.end(); ) {
 
             if ((*it)->shouldDelete()) {
@@ -220,13 +269,22 @@ int main() {
                 world.DestroyBody((*it)->getBody());
 
                 it = birdPtr.erase(it);
+
+                for (auto& pig : pigPtr) {
+                    pig->resetDeletionMark();
+                }
+
+                contactlistener.s_ptr.clear();
             }
             else {
                 ++it;
             }
         }
 
-        std::set<uintptr_t> s_p = contactlister.getPointer(); //Set of pointers to the pig ID's
+        
+
+        std::set<uintptr_t> s_p = contactlistener.getPointer(); //Set of pointers to the pig ID's
+
         for (auto pigIt = pigPtr.begin(); pigIt != pigPtr.end() && !(*pigIt)->isMarkedForDeletion(); ) {
 
 
@@ -237,11 +295,9 @@ int main() {
 
                 std::cout << currentPigID << " Destroyed" << std::endl;
 
-                
-                
-
                 std::cout << "Pig has: " << (*pigIt)->getHealth() << "  Health" << std::endl;
 
+                // if collided with bird, takes 10 damage and marks it to prevent multiple damages.
                 (*pigIt)->takeDamage(10);
                 (*pigIt)->markForDeletion();
 
@@ -261,21 +317,28 @@ int main() {
         }
 
         catapult.update();
-        plank.update();
 
         // goes through all pigs in the pointer and updates its physics using an iterator.
-        for (auto it = pigPtr.begin(); it != pigPtr.end(); ++it) {
+        for (auto it = pigPtr.begin(); it != pigPtr.end(); it++) {
             (*it)->update();
 
         }
 
         // goes through all birds in the pointer and updates its physics using an iterator.
-        for (auto it = birdPtr.begin(); it != birdPtr.end(); ++it) {
+        for (auto it = birdPtr.begin(); it != birdPtr.end(); it++) {
             (*it)->update();
         }
 
-        for (auto it = Noninteractable.begin(); it != Noninteractable.end(); ++it) {
+        // goes through all NonInteractables in the pointer and updates it physics using an iterator.
+        for (auto it = Noninteractable.begin(); it != Noninteractable.end(); it++) {
             (*it)->start();
+        }
+
+        // goes through all planks in the pointer and updates its physics using an iterator.
+        for (auto it = plankPtr.begin(); it != plankPtr.end(); it++) {
+
+            (*it)->update();
+
         }
 
 
@@ -286,21 +349,26 @@ int main() {
                                 // draws the objects to the window.
  
         // goes through all pigs using an iterator and draws them to the window.
-        for (auto it = pigPtr.begin(); it != pigPtr.end(); ++it) {
+        for (auto it = pigPtr.begin(); it != pigPtr.end(); it++) {
             (*it)->draw(window);
         }
 
         // goes through all birds using an iterator and draws them to the window.
-        for (auto it = birdPtr.begin(); it != birdPtr.end(); ++it) {
+        for (auto it = birdPtr.begin(); it != birdPtr.end(); it++) {
             (*it)->draw(window);
         }
 
-        for (auto it = Noninteractable.begin(); it != Noninteractable.end(); ++it) {
+        // goes through all noninteractables using an iterator and draws them to the window.
+        for (auto it = Noninteractable.begin(); it != Noninteractable.end(); it++) {
+            (*it)->draw(window);
+        }
+
+        // goes through all planks using an iterator and draws them to the window.
+        for (auto it = plankPtr.begin(); it != plankPtr.end(); it++) {
             (*it)->draw(window);
         }
 
         catapult.draw(window);
-        plank.draw(window);
         window.display();
     }
 

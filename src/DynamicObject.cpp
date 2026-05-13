@@ -21,7 +21,7 @@ DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string st
 
 	b2_body = b2_WorldPos.CreateBody(&b2_bodyDef);
 
-
+	
 	b2_ballFixture.shape = &b2_circleShape;
 	b2_PigFixture.shape = &b2_circleShape;
 

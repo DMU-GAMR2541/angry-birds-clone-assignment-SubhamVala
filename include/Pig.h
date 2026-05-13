@@ -19,8 +19,10 @@ public:
 
 		this->health = health;
 
-		// creates the dynamic pig 
+		
 
+		// creates different pig stats, depending on their type.
+		// uses spritesheet to get sprite.
 		switch (pigtype) {
 			case DynamicObjectType::pig:
 				b2_PigFixture.density = 1.0f;
@@ -66,25 +68,26 @@ public:
 
 	}
 	
-
-	
-	
-
 	// updates its position and rotation since its a dynamic object.
 	void update() {
 		sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
 		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI));
 	}
 
+	// setter for markedForDeletion Booleon
+	// setter to prevent multiple collisions
 	void markForDeletion() {
 		markedForDeletion = true;
 	}
 
+	// getter for mark.
 	bool isMarkedForDeletion() const {
 		return markedForDeletion;
 
 	}
-
+	
+	// setter for markedForDeletion booleon.
+	// setter to allow collisions between birds once a new bird comes.
 	void resetDeletionMark() {
 		markedForDeletion = false;
 	}

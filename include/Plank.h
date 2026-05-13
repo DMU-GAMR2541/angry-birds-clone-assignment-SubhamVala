@@ -7,13 +7,16 @@ private:
 	float yPos = 450.0f;
 	float halfX = 10.0f;
 	float halfY = 60.0f;
+	bool horizontal = false;
+	float rotation = 0;
 
 
 public:
+
 	Plank() = default;
 
 	// passing Plank parameters into DynamicObject.h / DynamicObject.cpp for the creation of the Plank.
-	Plank(b2World& world, float xPos, float yPos, float halfX, float halfY, std::string plankTexture) : DynamicObject(world, b2Vec2(xPos, yPos), plankTexture) {
+	Plank(b2World& world, float xPos, float yPos, float halfX, float halfY, std::string plankTexture, DynamicObjectType plankRotation) : DynamicObject(world, b2Vec2(xPos, yPos), plankTexture) {
 
 		// gives default values to the parameters.
 		this->xPos = xPos;
@@ -22,7 +25,17 @@ public:
 		// Rather than having an immovable wall, we can use the dynamic body type to create one that can have velocity etc.
 		b2_bodyDef.position.Set(xPos / SCALE, yPos / SCALE);
 
-		b2_polygonShape.SetAsBox(halfX / SCALE, halfY / SCALE);
+		// checks plank rotation and creates its box depending on what rotation it is.
+		switch (plankRotation) {
+			case DynamicObjectType::HorizontalPlank:
+				b2_polygonShape.SetAsBox(halfY / SCALE, halfX / SCALE);
+				break;
+			case DynamicObjectType::VerticalPlank:
+				b2_polygonShape.SetAsBox(halfX / SCALE, halfY / SCALE);
+				rotation = 90.0f;
+				break;
+		}
+		
 
 		b2_plankFixture.shape = &b2_polygonShape;
 		b2_plankFixture.density = 1.5f;   // Light wood
@@ -42,7 +55,7 @@ public:
 	// updates its position and rotation.
 	void update() {
 		sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
-		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI) + 90.0f);
+		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI) + rotation);
 	}
 
 };

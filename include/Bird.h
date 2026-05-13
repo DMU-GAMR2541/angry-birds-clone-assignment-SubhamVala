@@ -13,10 +13,12 @@ private:
 	float shotPower = 5.0f;
 	bool isDragging = false;
 	bool abilityUsed = false;
+	bool collided = false;
+	bool launched = false;
 	sf::Vector2f startPos;
 	DynamicObjectType birdType;
-	sf::Clock bombTimer;
-	float BombDeletionTime = -1.0f;
+	sf::Clock cTimer;
+	float fTime = -1.0f;
 	
 	
 
@@ -39,7 +41,8 @@ public:
 		this->birdType = birdtype;
 
 
-		//Creates a dynamic ball.
+		
+		// creates different density and bounciness depending on which bird it is.
 
 		switch(birdtype) {
 			case DynamicObjectType::redbird:
@@ -54,15 +57,16 @@ public:
 				break;
 			case DynamicObjectType::yellowbird:
 				b2_ballFixture.density = 0.85f;
-				b2_ballFixture.restitution = 0.6f; // Bounciness
+				b2_ballFixture.restitution = 0.5f; // Bounciness
 				sp_sprites.setScale(0.045, 0.045);
 				break;
 			case DynamicObjectType::bluebird:
-				b2_ballFixture.density = 0.8f;
-				b2_ballFixture.restitution = 0.7f; // Bounciness
+				b2_ballFixture.density = 0.9f;
+				b2_ballFixture.restitution = 0.5f; // Bounciness
 				sp_sprites.setScale(0.025, 0.025);
 				break;
 			case DynamicObjectType::bombeffect:
+				// scales the bombEffect.
 				sp_sprites.setScale(1.3f, 1.3f);
 
 		}
@@ -70,9 +74,6 @@ public:
 		b2_circleShape.m_radius = radius / SCALE;
 
 		b2_body->CreateFixture(&b2_ballFixture);
-	
-
-
 	
 	}
 
@@ -87,23 +88,59 @@ public:
 	// getter for start position
 	sf::Vector2f getStartPos() { return startPos; }
 
+	// getter for birdType
 	DynamicObjectType getBirdType() { return birdType; }
 
+	//Getter for collision
+	bool BirdDeletionStarted() const { return collided; }
+
+	//Getter for if the bird is launched
+	bool hasLaunched() { return launched; }
+
+	//setter for if an ability is used.
 	void setUsedAbility(bool abilityused) {
 		abilityUsed = abilityused;
 	}
-
-	bool hasUsedAbility() const { return abilityUsed; }
 	
-	void DestuctionTime(float seconds) {
-		BombDeletionTime = seconds;
-		bombTimer.restart();
+	// getter for if an ability is used
+	bool hasUsedAbility() const { return abilityUsed; }
+
+	// setter for marking a bird for deletion.
+	void BirdMarkedforDeletion(float seconds) {
+
+		if (!collided) {
+			collided = true;
+			fTime = seconds;
+			cTimer.restart();
+		}
 	}
 
+	// setter for how long till deletion
+	void DestructionTime(float seconds) {
+		fTime = seconds;
+		cTimer.restart();
+	}
+
+	// setter for if timer is ready for deletion.
 	bool shouldDelete() {
-		if (BombDeletionTime < 0) return false;
+		if (fTime < 0) return false;
 		
-		return bombTimer.getElapsedTime().asSeconds() >= BombDeletionTime;
+		return cTimer.getElapsedTime().asSeconds() >= fTime;
+	}
+
+	
+	// function for the yellow birds ability.
+	void yellowBirdAbility(b2Vec2 impulse) {
+		b2_body->ApplyLinearImpulseToCenter(b2Vec2(impulse.x, impulse.y), true);
+		abilityUsed = true;
+	}
+
+
+
+	// updates its position and rotation since its a dynamic object.
+	void update() {
+		sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
+		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI));
 	}
 
 	// draw function from virtual class gameObject
@@ -112,32 +149,45 @@ public:
 
 	}
 
-	void yellowBirdAbility(b2Vec2 impulse) {
-		b2_body->ApplyLinearImpulseToCenter(b2Vec2(impulse.x, impulse.y), true);
-		abilityUsed = true;
+	// stops bird from falling and rotating once dragging.
+	void dragging() {
+
+		isDragging = true;
+
+		b2_body->SetGravityScale(0);
+
+		b2_body->SetLinearVelocity(b2Vec2(0, 0));
+		b2_body->SetAngularVelocity(0);
+
 	}
 
-	std::vector<std::shared_ptr<Bird>> blackBirdAbility(b2World& world, float DestuctionTime) {
-		std::vector<std::shared_ptr<Bird>> Bomb;
+	// calculates launch velocity using the targets position and start position. 
+	// Resetting gravity once launched.
+	void launch(sf::Vector2f shotPos) {
 
-		if (abilityUsed) return Bomb;
-		abilityUsed = true;
+		abilityUsed = false;
+		isDragging = false;
+		launched = true;
 
-		float bx = b2_body->GetPosition().x * SCALE;
-		float by = b2_body->GetPosition().y * SCALE;
-		auto BombEffect = std::make_shared<Bird>(world, bx, by, 50, shotPower, "../assets/Ang_Birds/BombEffect.png", DynamicObjectType::bombeffect);
-		BombEffect->DestuctionTime(DestuctionTime);
-		BombEffect->getBody()->GetUserData().pointer = 100;
-		abilityUsed = true;
-		Bomb.push_back(BombEffect);
+		b2_body->SetGravityScale(1.0f);
 
-		return Bomb;
+		sf::Vector2f targetPos{b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE };
+
+		sf::Vector2f launchVector = (targetPos - shotPos) / SCALE;
+
+		b2Vec2 impulseMagnitude(-launchVector.x * shotPower, -launchVector.y * shotPower);
+
+		b2_body->ApplyLinearImpulseToCenter(impulseMagnitude, true);
 		
+		std::cout << "Firing!!!!" << std::endl;
 	}
+		
 
-	std::vector<std::shared_ptr<Bird>> blueBirdAbility(b2World& world) { 
+	// function for the blues ability.
+	// creates two clones with the same velocity above and below the original.
+	std::vector<std::shared_ptr<Bird>> blueBirdAbility(b2World& world) {
 		std::vector<std::shared_ptr<Bird>> newBirds;
-		
+
 		if (abilityUsed) return newBirds;
 		abilityUsed = true;
 
@@ -155,6 +205,7 @@ public:
 				auto otherBirds = std::make_shared<Bird>(world, bx, by, radius, shotPower, "../assets/Ang_Birds/BlueBird.png", DynamicObjectType::bluebird);
 				otherBirds->getBody()->GetUserData().pointer = 100;
 				otherBirds->abilityUsed = true;
+				otherBirds->launched = true;
 
 				otherBirds->getBody()->SetLinearVelocity(b2Vec2(vel.x, vel.y + offset));
 
@@ -164,49 +215,26 @@ public:
 
 		return newBirds;
 	}
-		
-	
-
-	// updates its position and rotation since its a dynamic object.
-	void update() {
-		sp_sprites.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
-		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI));
-	}
 
 
-	// stops bird from falling and rotating once dragging.
-	void dragging() {
+	// function for the bomb birds ability
+	// gets the Bombeffect sprite body so when called removes bird and creates bomb effect.
+	std::vector<std::shared_ptr<Bird>> blackBirdAbility(b2World& world, float DestuctionTime) {
+		std::vector<std::shared_ptr<Bird>> Bomb;
 
-		isDragging = true;
+		if (abilityUsed) return Bomb;
+		abilityUsed = true;
 
-		b2_body->SetGravityScale(0);
+		float bx = b2_body->GetPosition().x * SCALE;
+		float by = b2_body->GetPosition().y * SCALE;
+		auto BombEffect = std::make_shared<Bird>(world, bx, by, 50, shotPower, "../assets/Ang_Birds/BombEffect.png", DynamicObjectType::bombeffect);
+		BombEffect->DestructionTime(DestuctionTime);
+		BombEffect->getBody()->GetUserData().pointer = 100;
+		abilityUsed = true;
+		Bomb.push_back(BombEffect);
 
-
-		b2_body->SetLinearVelocity(b2Vec2(0, 0));
-		b2_body->SetAngularVelocity(0);
-
-
+		return Bomb;
 
 	}
 
-	// calculates launch velocity using the targets position and start position. 
-	// Resetting gravity once launched.
-	void launch(sf::Vector2f shotPos) {
-
-		abilityUsed = false;
-		isDragging = false;
-
-		b2_body->SetGravityScale(1.0f);
-
-		sf::Vector2f targetPos{b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE };
-
-		sf::Vector2f launchVector = (targetPos - shotPos) / SCALE;
-
-		b2Vec2 impulseMagnitude(-launchVector.x * shotPower, -launchVector.y * shotPower);
-
-		b2_body->ApplyLinearImpulseToCenter(impulseMagnitude, true);
-		
-		std::cout << "Firing!!!!" << std::endl;
-	}
-		
 };

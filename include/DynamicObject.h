@@ -18,7 +18,8 @@ public:
 		bigpig,
 		kingpig,
 		bombeffect,
-		plank
+		HorizontalPlank,
+		VerticalPlank
 
 	};
 
