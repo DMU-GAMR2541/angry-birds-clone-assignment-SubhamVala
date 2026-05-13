@@ -1,4 +1,4 @@
-# Install script for directory: D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/src/SFML/Audio
+# Install script for directory: H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/src/SFML/Audio
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,19 +34,13 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/lib/Debug/sfml-audio-s-d.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/lib/Debug/sfml-audio-s-d.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/lib/Release/sfml-audio-s.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/lib/Release/sfml-audio-s.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/lib/MinSizeRel/sfml-audio-s.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/lib/MinSizeRel/sfml-audio-s.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/lib/RelWithDebInfo/sfml-audio-s.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/lib/RelWithDebInfo/sfml-audio-s.lib")
   endif()
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/src/SFML/Audio/install_local_manifest.txt"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
-endif()

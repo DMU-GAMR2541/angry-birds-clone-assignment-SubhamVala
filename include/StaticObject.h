@@ -14,7 +14,7 @@ public:
 	~StaticObject();
 
 	// creates parameters that will take in values from inherited classes.
-	StaticObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, b2Vec2 WallScale);
+	StaticObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, b2Vec2 b2_scale);
 
 	// creates variables for the ground and wall.
 

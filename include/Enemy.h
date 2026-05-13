@@ -1,5 +1,6 @@
 #pragma once
-class Enemy {
+#include "Bird.h"
+class Enemy{
 /// <summary>
 /// Varaibles that define an enemy.
 /// </summary>
@@ -10,7 +11,7 @@ private:
 public:
     //Default constructor for an enemy. 
     Enemy() = default;
-    Enemy(int i_initialHealth) : i_health(i_initialHealth), b_isDestroyed(false) {}
+    Enemy(int i_initialHealth) : i_health(i_initialHealth), b_isDestroyed(false){}
 
     
     //Class functions to be tested.

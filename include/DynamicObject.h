@@ -3,7 +3,6 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
 #include <iostream>
-#include <ctime>
 
 class DynamicObject : virtual public GameObject {
 
@@ -18,6 +17,7 @@ public:
 		helmpig,
 		bigpig,
 		kingpig,
+		bombeffect,
 		plank
 
 	};

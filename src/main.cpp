@@ -41,7 +41,7 @@ int main() {
     world.SetContactListener(&contactlister);
 
     // Inherited classes, setting parameter values.
-    Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Catapult_1.png");
+    Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Slingshot.png");
     Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");;
 
     // stores the different bird types into a vector to iterate through.
@@ -49,20 +49,19 @@ int main() {
 
     // creates the STL sequence containers.
     std::vector<std::shared_ptr<Pig>> pigPtr;
-    //std::vector<std::shared_ptr<Wall>> WallPtr;
     std::vector<std::shared_ptr<NonInteractable>> Noninteractable;
     std::list<std::shared_ptr<Bird>> birdPtr;
+
+    DynamicObject::DynamicObjectType birdtype;
 
     Noninteractable.push_back(std::make_shared<NonInteractable>(world, 750.0f, 500.0f, 10.0f, 80.0f, sf::Color::Red));
     Noninteractable.push_back(std::make_shared<NonInteractable>(world, 400.0f, 590.0f, 400.0f, 10.0f, sf::Color(34, 139, 34)));
 
     // adds the birds into the shared_pointer vector using a for loop.
     for (int i = 0; i < 4; i++) {
-        DynamicObject::DynamicObjectType birdtype;
-
-        if (i == 0) { birdtype = DynamicObject::DynamicObjectType::redbird; }
+        if (i == 0) { birdtype = DynamicObject::DynamicObjectType::bluebird; }
+        else if (i == 1) { birdtype = DynamicObject::DynamicObjectType::redbird; }
         else if (i == 2) { birdtype = DynamicObject::DynamicObjectType::yellowbird; }
-        else if (i == 3) { birdtype = DynamicObject::DynamicObjectType::bluebird; }
         else { birdtype = DynamicObject::DynamicObjectType::blackbird; }
 
         birdPtr.push_back(std::make_shared<Bird>(world, 100.0f + (i * -20.0f), 500.0f, 15.0f, 5.0f, birdTextures[i], birdtype));
@@ -78,7 +77,7 @@ int main() {
         else if (i == 2) { pigtype = DynamicObject::DynamicObjectType::bigpig; }
         else { pigtype = DynamicObject::DynamicObjectType::kingpig; }
         // gives each pig a different position
-        auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 45.0f)), 400.0f, (15.0f + (i * 3)), (10 + (i * 2)), "../assets/Ang_Birds/Pigs.png", pigtype));
+        auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, (500.0f + (i * 45.0f)), 400.0f, (15.0f + (i * 3)), (6 + (i * 2)), "../assets/Ang_Birds/Pigs.png", pigtype));
         pig->getBody()->GetUserData().pointer = 3 + i;
     }
 
@@ -114,26 +113,61 @@ int main() {
             }
 
             if (event.type == sf::Event::KeyPressed) {
-
+                auto& currentBird = birdPtr.front();
                 if (event.key.code == sf::Keyboard::L)
                 {
                     // destroys the birds body and sprite in the vector so the next bird can get shot.
-                    auto& currentBird = birdPtr.front();
                     world.DestroyBody(birdPtr.front()->getBody());
+
                     birdPtr.pop_front();
                     
+
                     for (auto& pig : pigPtr) {
                         pig->resetDeletionMark();
                     }
 
                     contactlister.s_ptr.clear();
+                    
                 }
 
+                    
+            
+
+                if (event.key.code == sf::Keyboard::Space) {
+                    
+                    std::vector<std::shared_ptr<Bird>> newBirds;
+                    std::vector<std::shared_ptr<Bird>> Bomb;
+                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::yellowbird && !currentBird->hasUsedAbility()) {
+                        currentBird->yellowBirdAbility(b2Vec2(5, 0));
+                    }
+
+                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::bluebird) {
+                        
+                        auto newBirds = currentBird->blueBirdAbility(world);
+
+                        for (auto& bird : newBirds) {
+                            birdPtr.push_back(bird);
+                        }
+
+                        std::cout << "ability used" << std::endl;;
+                    }
+
+                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::blackbird && !currentBird->hasUsedAbility()) {
+
+                        auto Bomb = currentBird->blackBirdAbility(world);
+
+                        currentBird->blackBirdAbility(world);
+
+                        world.DestroyBody(birdPtr.front()->getBody());
+                        
+                        for (auto& bird : Bomb) {
+                            birdPtr.push_back(bird);
+                        }
+                    }
+                }
             }
                 
         }
-
-        
 
         if (birdPtr.front()->getDragging()) {
 

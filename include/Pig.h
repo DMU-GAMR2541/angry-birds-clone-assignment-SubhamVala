@@ -15,7 +15,7 @@ public:
 	Pig() = default;
 
 	// passing Pig parameters into DynamicObject.h / DynamicObject.cpp for the creation of the pig.
-	Pig(b2World& world, float xPos, float yPos, float radius, int health, std::string birdTexture, DynamicObjectType pigtype) : DynamicObject(world, b2Vec2(xPos, yPos), birdTexture), Enemy(health) {
+	Pig(b2World& world, float xPos, float yPos, float radius, int health, std::string pigTexture, DynamicObjectType pigtype) : DynamicObject(world, b2Vec2(xPos, yPos), pigTexture), Enemy(health) {
 
 		this->health = health;
 
