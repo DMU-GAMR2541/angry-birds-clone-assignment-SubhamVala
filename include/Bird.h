@@ -15,6 +15,8 @@ private:
 	bool abilityUsed = false;
 	sf::Vector2f startPos;
 	DynamicObjectType birdType;
+	sf::Clock bombTimer;
+	float BombDeletionTime = -1.0f;
 	
 	
 
@@ -60,6 +62,8 @@ public:
 				b2_ballFixture.restitution = 0.7f; // Bounciness
 				sp_sprites.setScale(0.025, 0.025);
 				break;
+			case DynamicObjectType::bombeffect:
+				sp_sprites.setScale(1.3f, 1.3f);
 
 		}
 
@@ -91,6 +95,16 @@ public:
 
 	bool hasUsedAbility() const { return abilityUsed; }
 	
+	void DestuctionTime(float seconds) {
+		BombDeletionTime = seconds;
+		bombTimer.restart();
+	}
+
+	bool shouldDelete() {
+		if (BombDeletionTime < 0) return false;
+		
+		return bombTimer.getElapsedTime().asSeconds() >= BombDeletionTime;
+	}
 
 	// draw function from virtual class gameObject
 	void draw(sf::RenderWindow& window) override {
@@ -103,7 +117,7 @@ public:
 		abilityUsed = true;
 	}
 
-	std::vector<std::shared_ptr<Bird>> blackBirdAbility(b2World& world) {
+	std::vector<std::shared_ptr<Bird>> blackBirdAbility(b2World& world, float DestuctionTime) {
 		std::vector<std::shared_ptr<Bird>> Bomb;
 
 		if (abilityUsed) return Bomb;
@@ -112,10 +126,12 @@ public:
 		float bx = b2_body->GetPosition().x * SCALE;
 		float by = b2_body->GetPosition().y * SCALE;
 		auto BombEffect = std::make_shared<Bird>(world, bx, by, 50, shotPower, "../assets/Ang_Birds/BombEffect.png", DynamicObjectType::bombeffect);
-		sp_sprites.setScale(2.0f, 2.0f);
+		BombEffect->DestuctionTime(DestuctionTime);
 		BombEffect->getBody()->GetUserData().pointer = 100;
 		abilityUsed = true;
 		Bomb.push_back(BombEffect);
+
+		return Bomb;
 		
 	}
 

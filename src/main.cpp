@@ -154,9 +154,7 @@ int main() {
 
                     if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::blackbird && !currentBird->hasUsedAbility()) {
 
-                        auto Bomb = currentBird->blackBirdAbility(world);
-
-                        currentBird->blackBirdAbility(world);
+                        auto Bomb = currentBird->blackBirdAbility(world, 1.5f);
 
                         world.DestroyBody(birdPtr.front()->getBody());
                         
@@ -213,6 +211,20 @@ int main() {
 
         // Update Physics
         world.Step(1.0f / 60.0f, 8, 3);
+
+        //Destroys smoke png after bomb bird uses ability.
+        for (auto it = birdPtr.begin(); it != birdPtr.end(); ) {
+
+            if ((*it)->shouldDelete()) {
+
+                world.DestroyBody((*it)->getBody());
+
+                it = birdPtr.erase(it);
+            }
+            else {
+                ++it;
+            }
+        }
 
         std::set<uintptr_t> s_p = contactlister.getPointer(); //Set of pointers to the pig ID's
         for (auto pigIt = pigPtr.begin(); pigIt != pigPtr.end() && !(*pigIt)->isMarkedForDeletion(); ) {
