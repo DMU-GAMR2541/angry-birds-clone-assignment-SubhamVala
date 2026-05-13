@@ -24,24 +24,16 @@ public:
 
 		//No fixture to stop birds from colliding with it.
 
-		// Catapult wont move so bird does not collide with it.
-		b2_bodyDef.type = b2_staticBody;
-
-		
 		// sets its position in meters for box2d
 		b2_bodyDef.position.Set(xPos / SCALE, yPos / SCALE);
-
-		// creates it into the world.
-		b2_body = world.CreateBody(&b2_bodyDef);
 
 		// sets its width and heigh in meters for Box2d
 		b2_polygonShape.SetAsBox(HalfX / SCALE, HalfY / SCALE);
 
-
 	}
 	
 	// getter for birds shooting position.
-	sf::Vector2f getShotPos() { return shotPos; }
+	sf::Vector2f getShotPos() const { return shotPos; }
 
 	// draw function from virtual class gameObject
 	void draw(sf::RenderWindow& window) {

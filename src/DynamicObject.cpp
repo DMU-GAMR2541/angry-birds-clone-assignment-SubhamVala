@@ -34,9 +34,6 @@ DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string st
 	sp_sprites.setTexture(te_Texture);
 	sp_sprites.setOrigin(te_Texture.getSize().x / 2.0f, te_Texture.getSize().y / 2.0f);
 	sp_sprites.setPosition(b2_bodyDef.position.x * SCALE, b2_bodyDef.position.y * SCALE);
-	sp_sprites.setScale(0.65, 0.65);
-			
-
 }
 
 void DynamicObject::Render(sf::RenderWindow* sf_window)

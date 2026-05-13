@@ -83,19 +83,19 @@ public:
 	}
 
 	// getter for dragging
-	bool getDragging() { return isDragging; }
+	bool getDragging() const { return isDragging; }
 
 	// getter for start position
-	sf::Vector2f getStartPos() { return startPos; }
+	sf::Vector2f getStartPos() const { return startPos; }
 
 	// getter for birdType
-	DynamicObjectType getBirdType() { return birdType; }
+	DynamicObjectType getBirdType() const { return birdType; }
 
 	//Getter for collision
 	bool BirdDeletionStarted() const { return collided; }
 
 	//Getter for if the bird is launched
-	bool hasLaunched() { return launched; }
+	bool hasLaunched() const { return launched; }
 
 	//setter for if an ability is used.
 	void setUsedAbility(bool abilityused) {

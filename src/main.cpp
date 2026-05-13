@@ -14,6 +14,7 @@
 #include "Non-Interactable.h"
 #include "Catapult.h"
 #include "ContactListener.h"
+#include "UI.h"
 
 
 
@@ -44,7 +45,7 @@ int main() {
 
     // Inherited classes, setting parameter values.
     Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Slingshot.png");
-   // Plank plank(world, 500.0f, 550.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png");
+    UI ui(world, "", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg");
 
     // stores the different bird types into a vector to iterate through.
     std::vector<std::string> birdTextures = { "../assets/Ang_Birds/BlueBird.png", "../assets/Ang_Birds/MainBird.png",  "../assets/Ang_Birds/YellowBird.png", "../assets/Ang_Birds/BlackBird.png" };
@@ -72,6 +73,8 @@ int main() {
         {590.0f, 320.0f},
 
     };
+
+    
 
     // creates the STL sequence containers.
     std::vector<std::shared_ptr<Pig>> pigPtr;
@@ -115,7 +118,7 @@ int main() {
         else { pigtype = DynamicObject::DynamicObjectType::kingpig; }
         // gives each pig a different position, size and health.
         auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, pigPositions[i].x, pigPositions[i].y, (15.0f + (i * 3)), (9 + (i * 2)), "../assets/Ang_Birds/Pigs.png", pigtype));
-        pig->getBody()->GetUserData().pointer = 3 + i;
+        pig->getBody()->GetUserData().pointer = 3 + static_cast<uintptr_t>(i);
     }
 
     
@@ -164,6 +167,10 @@ int main() {
             if (event.type == sf::Event::KeyPressed) {
                 auto& currentBird = birdPtr.front();
                 
+                if (event.key.code == sf::Keyboard::Enter) {
+                    ui.setGameStarted(true);
+                }
+
                 if (event.key.code == sf::Keyboard::Space) {
                     
                     // creates shared_pointers for blues ability and Bombs ability.
@@ -192,7 +199,8 @@ int main() {
                         // destroys the bird body and creates the bombEffect sprite/body.
                         auto Bomb = currentBird->blackBirdAbility(world, 1.5f);
 
-                        world.DestroyBody(birdPtr.front()->getBody());
+                        //world.DestroyBody(birdPtr.front()->getBody());
+                        birdPtr.front()->BirdMarkedforDeletion(0.1f);
                         
                         for (auto& bird : Bomb) {
                             birdPtr.push_back(bird);
@@ -255,7 +263,7 @@ int main() {
 
             float speed = std::sqrt(birdVelocity.x * birdVelocity.x + birdVelocity.y * birdVelocity.y);
 
-            if (bird->hasLaunched() && speed < 4.0f && !bird->BirdDeletionStarted()) {
+            if (bird->hasLaunched() && speed < 10.0f && !bird->BirdDeletionStarted()) {
                 // deletes bird after 3s of collision.
                 bird->BirdMarkedforDeletion(3.0f);
             }
@@ -270,6 +278,8 @@ int main() {
 
                 it = birdPtr.erase(it);
 
+                std::cout << "Bird Removed" << std::endl;
+
                 for (auto& pig : pigPtr) {
                     pig->resetDeletionMark();
                 }
@@ -281,6 +291,9 @@ int main() {
             }
         }
 
+        if (birdPtr.empty()) {
+            return NULL;
+        }
         
 
         std::set<uintptr_t> s_p = contactlistener.getPointer(); //Set of pointers to the pig ID's
