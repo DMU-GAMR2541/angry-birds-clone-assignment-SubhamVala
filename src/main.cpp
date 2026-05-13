@@ -49,12 +49,12 @@ int main() {
 
     // creates the STL sequence containers.
     std::vector<std::shared_ptr<Pig>> pigPtr;
-    std::vector<std::shared_ptr<Wall>> WallPtr;
-    std::vector<std::shared_ptr<Ground>> GroundPtr;
+    //std::vector<std::shared_ptr<Wall>> WallPtr;
+    std::vector<std::shared_ptr<NonInteractable>> Noninteractable;
     std::list<std::shared_ptr<Bird>> birdPtr;
 
-    WallPtr.push_back(std::make_shared<Wall>(world, 750.0f, 500.0f, 10.0f, 80.0f));
-    GroundPtr.push_back(std::make_shared<Ground>(world, 400.0f, 590.0f, 400.0f, 10.0f));
+    Noninteractable.push_back(std::make_shared<NonInteractable>(world, 750.0f, 500.0f, 10.0f, 80.0f, sf::Color::Red));
+    Noninteractable.push_back(std::make_shared<NonInteractable>(world, 400.0f, 590.0f, 400.0f, 10.0f, sf::Color(34, 139, 34)));
 
     // adds the birds into the shared_pointer vector using a for loop.
     for (int i = 0; i < 4; i++) {
@@ -228,11 +228,7 @@ int main() {
             (*it)->update();
         }
 
-        for (auto it = WallPtr.begin(); it != WallPtr.end(); ++it) {
-            (*it)->start();
-        }
-
-        for (auto it = GroundPtr.begin(); it != GroundPtr.end(); ++it) {
+        for (auto it = Noninteractable.begin(); it != Noninteractable.end(); ++it) {
             (*it)->start();
         }
 
@@ -253,11 +249,7 @@ int main() {
             (*it)->draw(window);
         }
 
-        for (auto it = GroundPtr.begin(); it != GroundPtr.end(); ++it) {
-            (*it)->draw(window);
-        }
-
-        for (auto it = WallPtr.begin(); it != WallPtr.end(); ++it) {
+        for (auto it = Noninteractable.begin(); it != Noninteractable.end(); ++it) {
             (*it)->draw(window);
         }
 

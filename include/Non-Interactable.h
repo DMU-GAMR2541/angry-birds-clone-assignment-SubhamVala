@@ -1,86 +1,33 @@
 #pragma once
 #include "StaticObject.h"
 
-class Ground : public StaticObject {
+class NonInteractable : public StaticObject {
 private:
 
-	float GroundXPos = 400.0f;
-	float GroundYPos = 590.0f;
-	float GroundWidth = 400.0f;
-	float GroundHeight = 10.0f;
 
 
 public:
-	Ground() = default;
+	NonInteractable() = default;
 
-	// passing Ground parameters into StaticObject.h / StaticObject.cpp for the creation of the Ground.
-	Ground(b2World& world,float GroundXPos, float GroundYPos,float GroundWidth, float GroundHeight) :
-		StaticObject(world, b2Vec2(GroundXPos, GroundYPos), b2Vec2(), b2Vec2(GroundWidth, GroundHeight), b2Vec2()) {
+	// passing Ground parameters into StaticObject.h / StaticObject.cpp for the creation of the NonInteractables.
+	NonInteractable(b2World& world,float xPos, float yPos,float Width, float Height, sf::Color color) :
+		StaticObject(world, b2Vec2(xPos, yPos), b2Vec2(Width, Height)) {
 
-		// gives default values to the parameters
-		this->GroundXPos = GroundXPos;
-		this->GroundYPos = GroundYPos;
-		this->GroundWidth = GroundWidth;
-		this->GroundHeight = GroundHeight;
 
 		// creates the ground
-		GroundRectangle.setSize(sf::Vector2(800.0f, 20.0f));
-		GroundRectangle.setOrigin(GroundWidth, GroundHeight);
-		GroundRectangle.setFillColor(sf::Color(34, 139, 34));
+		Rectangle.setSize(sf::Vector2(Width * 2, Height * 2));
+		Rectangle.setOrigin(Width, Height);
+		Rectangle.setFillColor(sf::Color(color));
 
 	}
 
 	// draw function from pure virtual class GameObject.h
 	void draw(sf::RenderWindow& window) override {
-		window.draw(GroundRectangle);
+		window.draw(Rectangle);
 	}
 
 	// gives it the start position.
 	void start() {
-		GroundRectangle.setPosition(b2_groundBody->GetPosition().x * SCALE, b2_groundBody->GetPosition().y * SCALE);
-	}
-};
-
-
-class Wall : public StaticObject {
-private:
-
-	// default values.
-	float WallXPos = 750.0f;
-	float WallYPos = 500.0f;
-	float WallWidth = 10.0f;
-	float WallHeight = 80.0f;
-
-public:
-	Wall() = default;
-
-	// passing Wall parameters into StaticObject.h / StaticObject.cpp for the creation of the Wall.
-	Wall(b2World& world, float WallXPos, float WallYPos, float WallWidth, float WallHeight) : 
-		StaticObject(world, b2Vec2(), b2Vec2(WallXPos, WallYPos), b2Vec2(), b2Vec2(WallWidth, WallHeight)) {
-
-		//gives default values to the parameters
-		this->WallXPos = WallXPos;
-		this->WallYPos = WallYPos;
-		this->WallWidth = WallWidth;
-		this->WallHeight = WallHeight;
-
-		// creates the Wall.
-		WallRectangle.setSize(sf::Vector2(20.0f, 160.0f));
-		WallRectangle.setOrigin(WallWidth, WallHeight);
-		WallRectangle.setFillColor(sf::Color::Red);
-
-
-
-	}
-
-	// draw function from the pure virtual class GameObject.
-	void draw(sf::RenderWindow& window) override {
-		window.draw(WallRectangle);
-
-	}
-
-	// gives the wall a start position.
-	void start() {
-		WallRectangle.setPosition(b2_wallBody->GetPosition().x * SCALE, b2_wallBody->GetPosition().y * SCALE);
+		Rectangle.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
 	}
 };
