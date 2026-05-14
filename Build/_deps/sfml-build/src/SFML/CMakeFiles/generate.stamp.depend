@@ -1,5 +1,5 @@
 # CMake generation dependency list for this directory.
-D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/CompilerWarnings.cmake
-D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/Macros.cmake
-D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/src/SFML/CMakeLists.txt
-D:/Uni Work/share/cmake-4.3/Modules/CMakeParseArguments.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeParseArguments.cmake
+H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/CompilerWarnings.cmake
+H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/cmake/Macros.cmake
+H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/src/SFML/CMakeLists.txt

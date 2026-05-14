@@ -1,5 +1,4 @@
 #pragma once
-#include "Bird.h"
 class Enemy{
 /// <summary>
 /// Varaibles that define an enemy.

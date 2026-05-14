@@ -1,14 +1,17 @@
 #pragma once
 #include "DynamicObject.h"
+#include "Enemy.h"
 
-class Plank : public DynamicObject {
+class Plank : public DynamicObject, public Enemy {
 private:
 	float xPos = 550.0f;
 	float yPos = 450.0f;
 	float halfX = 10.0f;
 	float halfY = 60.0f;
 	bool horizontal = false;
+	bool markedForDeletion = false;
 	float rotation = 0;
+	int health = 1;
 
 
 public:
@@ -16,11 +19,13 @@ public:
 	Plank() = default;
 
 	// passing Plank parameters into DynamicObject.h / DynamicObject.cpp for the creation of the Plank.
-	Plank(b2World& world, float xPos, float yPos, float halfX, float halfY, std::string plankTexture, DynamicObjectType plankRotation) : DynamicObject(world, b2Vec2(xPos, yPos), plankTexture) {
+	Plank(b2World& world, float xPos, float yPos, float halfX, float halfY, std::string plankTexture, int health, DynamicObjectType plankRotation) 
+		: DynamicObject(world, b2Vec2(xPos, yPos), plankTexture), Enemy(health) {
 
 		// gives default values to the parameters.
 		this->xPos = xPos;
 		this->yPos = yPos;
+		this->health = health;
 
 		// Rather than having an immovable wall, we can use the dynamic body type to create one that can have velocity etc.
 		b2_bodyDef.position.Set(xPos / SCALE, yPos / SCALE);
@@ -58,4 +63,19 @@ public:
 		sp_sprites.setRotation(b2_body->GetAngle() * (180.0f / PI) + rotation);
 	}
 
+	void markForDeletion() {
+		markedForDeletion = true;
+	}
+
+	// getter for mark.
+	bool isMarkedForDeletion() const {
+		return markedForDeletion;
+
+	}
+
+	// setter for markedForDeletion booleon.
+	// setter to allow collisions between birds once a new bird comes.
+	void resetDeletionMark() {
+		markedForDeletion = false;
+	}
 };

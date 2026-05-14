@@ -25,7 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C220D0E6-FB15-3A39-A643-9661B6E1EE9B}</ProjectGuid>
+    <ProjectGuid>{F4247F1D-91BE-3C73-AE6A-9D55CED89A6D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -71,11 +71,11 @@
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-cd "D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build"
+cd "H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build"
 if %errorlevel% neq 0 goto :cmEnd
-D:
+H:
 if %errorlevel% neq 0 goto :cmEnd
-"D:\Uni Work\bin\cpack.exe" -C $(Configuration) --config ./CPackConfig.cmake
+"C:\Program Files\CMake\bin\cpack.exe" -C $(Configuration) --config ./CPackConfig.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -89,11 +89,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-cd "D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build"
+cd "H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build"
 if %errorlevel% neq 0 goto :cmEnd
-D:
+H:
 if %errorlevel% neq 0 goto :cmEnd
-"D:\Uni Work\bin\cpack.exe" -C $(Configuration) --config ./CPackConfig.cmake
+"C:\Program Files\CMake\bin\cpack.exe" -C $(Configuration) --config ./CPackConfig.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -107,11 +107,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-cd "D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build"
+cd "H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build"
 if %errorlevel% neq 0 goto :cmEnd
-D:
+H:
 if %errorlevel% neq 0 goto :cmEnd
-"D:\Uni Work\bin\cpack.exe" -C $(Configuration) --config ./CPackConfig.cmake
+"C:\Program Files\CMake\bin\cpack.exe" -C $(Configuration) --config ./CPackConfig.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -125,11 +125,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-cd "D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build"
+cd "H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build"
 if %errorlevel% neq 0 goto :cmEnd
-D:
+H:
 if %errorlevel% neq 0 goto :cmEnd
-"D:\Uni Work\bin\cpack.exe" -C $(Configuration) --config ./CPackConfig.cmake
+"C:\Program Files\CMake\bin\cpack.exe" -C $(Configuration) --config ./CPackConfig.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -140,7 +140,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\dbb5af78dd884904124124301ec963a9\PACKAGE_force.rule">
+    <CustomBuild Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\CMakeFiles\9e2a7f1b8566e09008d614b39a78e83d\PACKAGE_force.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
@@ -153,7 +153,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\CMakeFiles\PACKAGE_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\CMakeFiles\PACKAGE_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
@@ -168,7 +168,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\CMakeFiles\PACKAGE_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\CMakeFiles\PACKAGE_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</BuildInParallel>
@@ -183,7 +183,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\CMakeFiles\PACKAGE_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\CMakeFiles\PACKAGE_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</BuildInParallel>
@@ -198,21 +198,20 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\CMakeFiles\PACKAGE_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\CMakeFiles\PACKAGE_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\ZERO_CHECK.vcxproj">
-      <Project>{E5A8B54F-E1DC-33EA-8CD1-D8E071E482A8}</Project>
+    <ProjectReference Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\ZERO_CHECK.vcxproj">
+      <Project>{7D9308F9-33BD-3B58-B1D5-8A2AA3D678DC}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\ALL_BUILD.vcxproj">
-      <Project>{190A4239-7BB4-37C1-82E2-9F2DCD89AF50}</Project>
+    <ProjectReference Include="H:\Second_year\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\googletest-build\googlemock\ALL_BUILD.vcxproj">
+      <Project>{06E432B1-D252-351C-B745-241FA8988F00}</Project>
       <Name>ALL_BUILD</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

@@ -8,7 +8,7 @@
 
 class Pig : public DynamicObject, public Enemy, public ContactListener {
 private:
-	int health = 50;
+	int health;
 	bool markedForDeletion = false;
 
 public:

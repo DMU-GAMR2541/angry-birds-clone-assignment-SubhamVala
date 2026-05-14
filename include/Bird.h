@@ -4,8 +4,10 @@
 #include <iostream>
 #include "DynamicObject.h"
 #include "ContactListener.h"
+#include "Pig.h"
+#include "Enemy.h"
 
-class Bird : public DynamicObject, public ContactListener {
+class Bird : public DynamicObject, public ContactListener, public Enemy {
 private:
 	float xPos = 100.0f;
 	float yPos = 500.0f;
@@ -202,6 +204,7 @@ public:
 				float bx = b2_body->GetPosition().x * SCALE;
 				float by = b2_body->GetPosition().y * SCALE;
 
+
 				auto otherBirds = std::make_shared<Bird>(world, bx, by, radius, shotPower, "../assets/Ang_Birds/BlueBird.png", DynamicObjectType::bluebird);
 				otherBirds->getBody()->GetUserData().pointer = 100;
 				otherBirds->abilityUsed = true;
@@ -219,7 +222,7 @@ public:
 
 	// function for the bomb birds ability
 	// gets the Bombeffect sprite body so when called removes bird and creates bomb effect.
-	std::vector<std::shared_ptr<Bird>> blackBirdAbility(b2World& world, float DestuctionTime) {
+	std::vector<std::shared_ptr<Bird>> blackBirdAbility(b2World& world, float DestuctionTime, float radius, std::vector<std::shared_ptr<Pig>> &PigPtr) {
 		std::vector<std::shared_ptr<Bird>> Bomb;
 
 		if (abilityUsed) return Bomb;
@@ -227,7 +230,21 @@ public:
 
 		float bx = b2_body->GetPosition().x * SCALE;
 		float by = b2_body->GetPosition().y * SCALE;
-		auto BombEffect = std::make_shared<Bird>(world, bx, by, 50, shotPower, "../assets/Ang_Birds/BombEffect.png", DynamicObjectType::bombeffect);
+
+		float explosionRadius = radius;
+		float explosionForce = 150.0f;
+
+		for (auto& pig : PigPtr) {
+			float dx = pig->getBody()->GetPosition().x * SCALE - bx;
+			float dy = pig->getBody()->GetPosition().x * SCALE - by;
+			float distance = std::sqrt(dx * dx + dy + dy);
+
+			if (distance < explosionRadius) {
+				pig->takeDamage(100);
+			}
+		}
+
+		auto BombEffect = std::make_shared<Bird>(world, bx, by, radius, shotPower, "../assets/Ang_Birds/BombEffect.png", DynamicObjectType::bombeffect);
 		BombEffect->DestructionTime(DestuctionTime);
 		BombEffect->getBody()->GetUserData().pointer = 100;
 		abilityUsed = true;

@@ -45,7 +45,9 @@ int main() {
 
     // Inherited classes, setting parameter values.
     Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Slingshot.png");
-    UI ui(world, "", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg");
+    UI ui(world, "../assets/fonts/angry-birds.ttf", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg", 50, b2Vec2(625, 25));
+    UI CompleteLevel(world, "../assets/fonts/angry-birds.ttf", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg", 50, b2Vec2(300, 300));
+    UI StartLevel(world, "../assets/fonts/angry-birds.ttf", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg", 50, b2Vec2(140, 480));
 
     // stores the different bird types into a vector to iterate through.
     std::vector<std::string> birdTextures = { "../assets/Ang_Birds/BlueBird.png", "../assets/Ang_Birds/MainBird.png",  "../assets/Ang_Birds/YellowBird.png", "../assets/Ang_Birds/BlackBird.png" };
@@ -105,7 +107,9 @@ int main() {
         if (i < 8) { plankType = DynamicObject::DynamicObjectType::VerticalPlank; }
         else { plankType = DynamicObject::DynamicObjectType::HorizontalPlank; }
 
-        plankPtr.push_back(std::make_shared<Plank>(world, plankPositions[i].x, plankPositions[i].y, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png", plankType));
+        auto& plank = plankPtr.emplace_back(std::make_shared<Plank>(world, plankPositions[i].x, plankPositions[i].y, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png", 1, plankType));
+        plank->getBody()->GetUserData().pointer = 10 + static_cast<uintptr_t>(i);
+
     }
 
     // adds the pigs into the shared_pointer vector using a for loop.
@@ -155,7 +159,7 @@ int main() {
                 if (event.mouseButton.button == sf::Mouse::Left && ui.getGameStarted()) {
 
                     // check if the bird has not been launched. preventing the same bird from being launched twice.
-                    if (!birdPtr.front()->hasLaunched()) {
+                    if (!birdPtr.front()->hasLaunched() && !birdPtr.empty()) {
                         // calls launch function from bird.h for the front bird.
                         birdPtr.front()->launch(catapult.getShotPos());
 
@@ -197,7 +201,9 @@ int main() {
                     if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::blackbird && !currentBird->hasUsedAbility() && ui.getGameStarted() && currentBird->hasLaunched()) {
 
                         // destroys the bird body and creates the bombEffect sprite/body.
-                        auto Bomb = currentBird->blackBirdAbility(world, 1.5f);
+                        auto Bomb = currentBird->blackBirdAbility(world, 1.5f, 50, pigPtr);
+
+                        
 
                         //world.DestroyBody(birdPtr.front()->getBody());
                         birdPtr.front()->BirdMarkedforDeletion(0.1f);
@@ -212,7 +218,7 @@ int main() {
         }
 
         
-        if (birdPtr.front()->getDragging() && !birdPtr.front()->hasLaunched() && ui.getGameStarted()) {
+        if (birdPtr.front()->getDragging() && !birdPtr.front()->hasLaunched() && ui.getGameStarted() && !birdPtr.empty()) {
 
             // gets position of the mouse in sfml pixels.
             sf::Vector2i mousePxl = sf::Mouse::getPosition(window);
@@ -260,6 +266,8 @@ int main() {
             if (bird->hasLaunched() && speed < 10.0f && !bird->BirdDeletionStarted()) {
                 // deletes bird after 3s of collision.
                 bird->BirdMarkedforDeletion(3.0f);
+
+
             }
         }
 
@@ -287,14 +295,42 @@ int main() {
 
         if (birdPtr.empty()) {
             ui.setGameEnded(true);
-            return NULL;
         }
             
+        for (auto plankIt = plankPtr.begin(); plankIt != plankPtr.end() && !(*plankIt)->isMarkedForDeletion(); ) {
+            std::set<uintptr_t> h_h = contactlistener.getPointer(); //Set of pointers to the plank ID's
 
-        std::set<uintptr_t> s_p = contactlistener.getPointer(); //Set of pointers to the pig ID's
+            uintptr_t currentPlankID = (*plankIt)->getBody()->GetUserData().pointer;
+
+            // Check if this plank's ID exists in the hit list
+            if (h_h.find(currentPlankID) != h_h.end()) { //Check through all of the container for specific Id's
+
+                std::cout << currentPlankID << " Destroyed" << std::endl;
+
+                std::cout << "Plank has: " << (*plankIt)->getHealth() << "  Health" << std::endl;
+
+                // if collided with bird, takes 10 damage and marks it to prevent multiple damages.
+                (*plankIt)->takeDamage(10);
+                (*plankIt)->markForDeletion();
+
+                if ((*plankIt)->checkIfPopped()) {
+                    // Remove from Box2D world first
+                    world.DestroyBody((*plankIt)->getBody()); //Remove the plank body from the world.
+
+                    // Update the iterator by catching the return value of erase()
+                    plankIt = plankPtr.erase(plankIt); //Erase the plank from the set.
+                }
+
+            }
+            else {
+                // Only increment if we didn't erase anything
+                ++plankIt;
+            }
+        }
+        
 
         for (auto pigIt = pigPtr.begin(); pigIt != pigPtr.end() && !(*pigIt)->isMarkedForDeletion(); ) {
-
+            std::set<uintptr_t> s_p = contactlistener.getPointer(); //Set of pointers to the pig ID's
 
             uintptr_t currentPigID = (*pigIt)->getBody()->GetUserData().pointer;
 
@@ -315,6 +351,7 @@ int main() {
 
                     // Update the iterator by catching the return value of erase()
                     pigIt = pigPtr.erase(pigIt); //Erase the pig from the set.
+                    ui.getText(pigPtr.size());
                 }
 
             }
@@ -323,6 +360,8 @@ int main() {
                 ++pigIt;
             }
         }
+
+        
 
         
 
@@ -361,10 +400,15 @@ int main() {
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
 
+        ui.getText(pigPtr.size());
+
+
         if (!ui.getGameStarted()) {
             ui.draw(window);
 
         }
+
+        
 
         if (ui.getGameStarted()) {
 
@@ -390,11 +434,28 @@ int main() {
             }
 
             catapult.draw(window);
+            ui.render(window);
         }
-                                
- 
         
-        
+        // once no pigs are on screen game won.
+        if (pigPtr.empty()) {
+
+            CompleteLevel.endText("Pigs Defeated!!!");
+            CompleteLevel.render(window);
+        }
+
+        // when game starts tells user to press enter
+        else if (!ui.getGameStarted()) {
+            StartLevel.endText("Press Enter to start game");
+            StartLevel.render(window);
+        }
+
+        // once no birds are ready to launch then game lost.
+        else if (birdPtr.empty() && !pigPtr.empty()) {
+            CompleteLevel.endText("You Lost!!!");
+            CompleteLevel.render(window);
+        }
+
         window.display();
     }
 
