@@ -136,7 +136,7 @@ int main() {
 
             if (event.type == sf::Event::MouseButtonPressed) {
                 // once LMB is pressed, stops gravity and rotation
-                if (event.mouseButton.button == sf::Mouse::Left)
+                if (event.mouseButton.button == sf::Mouse::Left && ui.getGameStarted())
                 {
                     // check if the bird has not been launched. preventing the same bird from being launched twice.
                     if (!birdPtr.front()->hasLaunched()) {
@@ -152,7 +152,7 @@ int main() {
             if (event.type == sf::Event::MouseButtonReleased) {
 
                 // once LMB is released, shoots bird depending on how much it was dragged.
-                if (event.mouseButton.button == sf::Mouse::Left) {
+                if (event.mouseButton.button == sf::Mouse::Left && ui.getGameStarted()) {
 
                     // check if the bird has not been launched. preventing the same bird from being launched twice.
                     if (!birdPtr.front()->hasLaunched()) {
@@ -171,19 +171,19 @@ int main() {
                     ui.setGameStarted(true);
                 }
 
-                if (event.key.code == sf::Keyboard::Space) {
+                if (event.key.code == sf::Keyboard::Space && ui.getGameStarted()) {
                     
                     // creates shared_pointers for blues ability and Bombs ability.
                     std::vector<std::shared_ptr<Bird>> newBirds;
                     std::vector<std::shared_ptr<Bird>> Bomb;
 
                     // if the current bird is yellow and has not already used its ability, then uses ability if space is pressed.
-                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::yellowbird && !currentBird->hasUsedAbility()) {
+                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::yellowbird && !currentBird->hasUsedAbility() && ui.getGameStarted() && currentBird->hasLaunched()) {
                         currentBird->yellowBirdAbility(b2Vec2(5, 0));
                     }
 
                     // if the current bird is blue and has not already used its ability, then uses ability if space is pressed.
-                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::bluebird) {
+                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::bluebird && currentBird->hasLaunched() && ui.getGameStarted()) {
                         
                         // adds the clone birds.
                         auto newBirds = currentBird->blueBirdAbility(world);
@@ -194,7 +194,7 @@ int main() {
                     }
 
                     // if the current bird is blackBird and has not already used its ability, then uses ability if space is pressed.
-                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::blackbird && !currentBird->hasUsedAbility()) {
+                    if (currentBird->getBirdType() == DynamicObject::DynamicObjectType::blackbird && !currentBird->hasUsedAbility() && ui.getGameStarted() && currentBird->hasLaunched()) {
 
                         // destroys the bird body and creates the bombEffect sprite/body.
                         auto Bomb = currentBird->blackBirdAbility(world, 1.5f);
@@ -212,7 +212,7 @@ int main() {
         }
 
         
-        if (birdPtr.front()->getDragging() && !birdPtr.front()->hasLaunched()) {
+        if (birdPtr.front()->getDragging() && !birdPtr.front()->hasLaunched() && ui.getGameStarted()) {
 
             // gets position of the mouse in sfml pixels.
             sf::Vector2i mousePxl = sf::Mouse::getPosition(window);
@@ -226,12 +226,6 @@ int main() {
             if (dragVec.x > 0) {
                 dragVec.x = 0;
             }
-
-            // stops player dragging upwards
-            if (dragVec.y < 0) {
-                dragVec.y = 0;
-            }
-
 
             // makes a distance for how much you can drag, preventing player from dragging out of the screen.
             float length = std::sqrt(dragVec.x * dragVec.x + dragVec.y * dragVec.y);
@@ -292,9 +286,10 @@ int main() {
         }
 
         if (birdPtr.empty()) {
+            ui.setGameEnded(true);
             return NULL;
         }
-        
+            
 
         std::set<uintptr_t> s_p = contactlistener.getPointer(); //Set of pointers to the pig ID's
 
@@ -329,59 +324,77 @@ int main() {
             }
         }
 
+        
+
+
         catapult.update();
 
-        // goes through all pigs in the pointer and updates its physics using an iterator.
-        for (auto it = pigPtr.begin(); it != pigPtr.end(); it++) {
-            (*it)->update();
 
-        }
+        if (ui.getGameStarted()) {
 
-        // goes through all birds in the pointer and updates its physics using an iterator.
-        for (auto it = birdPtr.begin(); it != birdPtr.end(); it++) {
-            (*it)->update();
-        }
+            // goes through all pigs in the pointer and updates its physics using an iterator.
+            for (auto it = pigPtr.begin(); it != pigPtr.end(); it++) {
+                (*it)->update();
 
-        // goes through all NonInteractables in the pointer and updates it physics using an iterator.
-        for (auto it = Noninteractable.begin(); it != Noninteractable.end(); it++) {
-            (*it)->start();
-        }
+            }
 
-        // goes through all planks in the pointer and updates its physics using an iterator.
-        for (auto it = plankPtr.begin(); it != plankPtr.end(); it++) {
+            // goes through all birds in the pointer and updates its physics using an iterator.
+            for (auto it = birdPtr.begin(); it != birdPtr.end(); it++) {
+                (*it)->update();
+            }
 
-            (*it)->update();
+            // goes through all NonInteractables in the pointer and updates it physics using an iterator.
+            for (auto it = Noninteractable.begin(); it != Noninteractable.end(); it++) {
+                (*it)->start();
+            }
 
+            // goes through all planks in the pointer and updates its physics using an iterator.
+            for (auto it = plankPtr.begin(); it != plankPtr.end(); it++) {
+
+                (*it)->update();
+
+            }
+        
         }
 
 
         //Render all of the content at each frame. Remember you need to clear the screen each iteration or artefacts remain.
         window.clear(sf::Color(135, 206, 235)); // Sky Blue
 
+        if (!ui.getGameStarted()) {
+            ui.draw(window);
 
-                                // draws the objects to the window.
+        }
+
+        if (ui.getGameStarted()) {
+
+            // draws the objects to the window.
+            // goes through all pigs using an iterator and draws them to the window.
+            for (auto it = pigPtr.begin(); it != pigPtr.end(); it++) {
+                (*it)->draw(window);
+            }
+
+            // goes through all birds using an iterator and draws them to the window.
+            for (auto it = birdPtr.begin(); it != birdPtr.end(); it++) {
+                (*it)->draw(window);
+            }
+
+            // goes through all noninteractables using an iterator and draws them to the window.
+            for (auto it = Noninteractable.begin(); it != Noninteractable.end(); it++) {
+                (*it)->draw(window);
+            }
+
+            // goes through all planks using an iterator and draws them to the window.
+            for (auto it = plankPtr.begin(); it != plankPtr.end(); it++) {
+                (*it)->draw(window);
+            }
+
+            catapult.draw(window);
+        }
+                                
  
-        // goes through all pigs using an iterator and draws them to the window.
-        for (auto it = pigPtr.begin(); it != pigPtr.end(); it++) {
-            (*it)->draw(window);
-        }
-
-        // goes through all birds using an iterator and draws them to the window.
-        for (auto it = birdPtr.begin(); it != birdPtr.end(); it++) {
-            (*it)->draw(window);
-        }
-
-        // goes through all noninteractables using an iterator and draws them to the window.
-        for (auto it = Noninteractable.begin(); it != Noninteractable.end(); it++) {
-            (*it)->draw(window);
-        }
-
-        // goes through all planks using an iterator and draws them to the window.
-        for (auto it = plankPtr.begin(); it != plankPtr.end(); it++) {
-            (*it)->draw(window);
-        }
-
-        catapult.draw(window);
+        
+        
         window.display();
     }
 

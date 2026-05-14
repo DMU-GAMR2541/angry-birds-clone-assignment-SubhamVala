@@ -183,7 +183,7 @@ public:
 	}
 		
 
-	// function for the blues ability.
+	// function for blues ability.
 	// creates two clones with the same velocity above and below the original.
 	std::vector<std::shared_ptr<Bird>> blueBirdAbility(b2World& world) {
 		std::vector<std::shared_ptr<Bird>> newBirds;
