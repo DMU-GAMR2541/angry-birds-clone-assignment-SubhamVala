@@ -1,12 +1,24 @@
 #include <gtest/gtest.h>
 #include "Enemy.h"
 #include "Slingshot.h"
+#include "Pig.h"
+#include <SFML/Graphics.hpp>
+#include <box2d/box2d.h>
+#include <iostream>
+#include "DynamicObject.h"
+#include "StaticObject.h"
+#include "Bird.h"
+#include "Plank.h""
+#include "Non-Interactable.h"
+#include "Catapult.h"
+#include "ContactListener.h"
+#include "UI.h"
 
 /// <summary>
 ///Taken from the GoogleTest primer. 
 /// </summary>
 
-// The fixture for testing class Foo.
+// The fixture for testing class For.
 class EnemyTest : public testing::Test {
 public:
     std::unique_ptr<Enemy> enemy;
@@ -15,7 +27,7 @@ protected:
     // be empty.
 
     EnemyTest() {
-        // You can do set-up work for each test here.
+        // You can do set-up work for each test here .
                     
     }
 
@@ -29,7 +41,7 @@ protected:
     void SetUp() override {
         // Code here will be called immediately after the constructor (right
         // before each test).
-        enemy = std::make_unique<Enemy>(50); // All enemnies in this test suite start with 50 HP.
+        enemy = std::make_unique<Enemy>(50); // All enemys in this test suite start with 50 HP.
                     
     }
 
@@ -44,6 +56,7 @@ protected:
 class SlingshotTest : public testing::Test {
 public:
     std::unique_ptr<Slingshot> slingshot;
+    
 
 protected:
 
@@ -68,6 +81,45 @@ protected:
     }
 };
 
+class PigTest : public testing::Test {
+public:
+    std::unique_ptr<Pig> pig;
+    Pig pigSprite;
+
+protected:
+    PigTest() {
+        //constructor
+    }
+
+    ~PigTest() override {
+        //deconstructor
+    }
+
+    void SetUp() override {
+        b2Vec2 b2_gravity(0.0f, 9.8f); // Earth-like gravity
+        b2World world(b2_gravity);
+        pig = std::make_unique<Pig>(world, 0, 0, 0, 50, "../assets/Ang_Birds/Pigs.png", DynamicObject::DynamicObjectType::pig);
+        pigSprite.sp_sprites.setTextureRect(sf::IntRect(53, 70, 47, 44));
+    }
+   
+    void TearDown() override {
+
+    }
+};
+
+
+//Pig Tests.
+TEST(Pig, First_Pig_Test) {
+    b2Vec2 b2_gravity(0.0f, 9.8f); // Earth-like gravity
+    b2World world(b2_gravity);
+    Pig p(world, 0, 0, 0, 50, "../assets/Ang_Birds/Pigs.png", DynamicObject::DynamicObjectType::pig);
+    EXPECT_EQ(p.getPigType(), DynamicObject::DynamicObjectType::pig);
+}
+
+TEST_F(PigTest, SpriteCheckPig1) {
+    sf::IntRect Texture = sf::IntRect(53, 70, 47, 44);
+    ASSERT_EQ(pigSprite.sp_sprites.getTextureRect(), Texture);
+}
 
 //Enemy Test.
 //A single test, not a fixture. No setup is called.

@@ -10,16 +10,18 @@ class Pig : public DynamicObject, public Enemy, public ContactListener {
 private:
 	int health;
 	bool markedForDeletion = false;
+	DynamicObjectType pigType;
 
 public:
 	Pig() = default;
+	~Pig() = default;
 
 	// passing Pig parameters into DynamicObject.h / DynamicObject.cpp for the creation of the pig.
 	Pig(b2World& world, float xPos, float yPos, float radius, int health, std::string pigTexture, DynamicObjectType pigtype) : DynamicObject(world, b2Vec2(xPos, yPos), pigTexture), Enemy(health) {
 
 		this->health = health;
-
-		
+		this->pigType = pigtype;
+	
 
 		// creates different pig stats, depending on their type.
 		// uses spritesheet to get sprite.
@@ -91,5 +93,7 @@ public:
 	void resetDeletionMark() {
 		markedForDeletion = false;
 	}
+
+	DynamicObjectType getPigType() const { return pigType; }
 	
 };

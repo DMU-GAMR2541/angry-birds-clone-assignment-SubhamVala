@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.40+3e7442088 for .NET Framework
-      Build started 14/05/2026 09:55:38.
+      Build started 20/05/2026 09:16:51.
       
       Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\3.30.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:01.44
+      Time Elapsed 00:00:00.84
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -79,7 +79,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.40+3e7442088 for .NET Framework
-      Build started 14/05/2026 09:55:39.
+      Build started 20/05/2026 09:16:52.
       
       Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\3.30.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -108,7 +108,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.83
+      Time Elapsed 00:00:00.82
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -127,8 +127,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-ux6r88"
-      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-ux6r88"
+      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nnten8"
+      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nnten8"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -137,40 +137,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-ux6r88'
+        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nnten8'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_64e88.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_cd164.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 14/05/2026 09:55:41.
+        Build started 20/05/2026 09:16:54.
         
-        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-ux6r88\\cmTC_64e88.vcxproj" on node 1 (default targets).
+        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nnten8\\cmTC_cd164.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_64e88.dir\\Debug\\".
+          Creating directory "cmTC_cd164.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-ux6r88\\Debug\\".
-          Creating directory "cmTC_64e88.dir\\Debug\\cmTC_64e88.tlog\\".
+          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nnten8\\Debug\\".
+          Creating directory "cmTC_cd164.dir\\Debug\\cmTC_cd164.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_64e88.dir\\Debug\\cmTC_64e88.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_64e88.dir\\Debug\\cmTC_64e88.tlog\\unsuccessfulbuild".
+          Creating "cmTC_cd164.dir\\Debug\\cmTC_cd164.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_cd164.dir\\Debug\\cmTC_cd164.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_64e88.dir\\Debug\\\\" /Fd"cmTC_64e88.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cd164.dir\\Debug\\\\" /Fd"cmTC_cd164.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33145 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_64e88.dir\\Debug\\\\" /Fd"cmTC_64e88.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cd164.dir\\Debug\\\\" /Fd"cmTC_cd164.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-ux6r88\\Debug\\cmTC_64e88.exe" /INCREMENTAL /ILK:"cmTC_64e88.dir\\Debug\\cmTC_64e88.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-ux6r88/Debug/cmTC_64e88.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-ux6r88/Debug/cmTC_64e88.lib" /MACHINE:X64  /machine:x64 cmTC_64e88.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_64e88.vcxproj -> H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-ux6r88\\Debug\\cmTC_64e88.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nnten8\\Debug\\cmTC_cd164.exe" /INCREMENTAL /ILK:"cmTC_cd164.dir\\Debug\\cmTC_cd164.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nnten8/Debug/cmTC_cd164.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nnten8/Debug/cmTC_cd164.lib" /MACHINE:X64  /machine:x64 cmTC_cd164.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_cd164.vcxproj -> H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nnten8\\Debug\\cmTC_cd164.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_64e88.dir\\Debug\\cmTC_64e88.tlog\\unsuccessfulbuild".
-          Touching "cmTC_64e88.dir\\Debug\\cmTC_64e88.tlog\\cmTC_64e88.lastbuildstate".
-        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-ux6r88\\cmTC_64e88.vcxproj" (default targets).
+          Deleting file "cmTC_cd164.dir\\Debug\\cmTC_cd164.tlog\\unsuccessfulbuild".
+          Touching "cmTC_cd164.dir\\Debug\\cmTC_cd164.tlog\\cmTC_cd164.lastbuildstate".
+        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nnten8\\cmTC_cd164.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.87
+        Time Elapsed 00:00:00.91
         
       exitCode: 0
   -
@@ -210,8 +210,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-795xl5"
-      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-795xl5"
+      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-yw89fn"
+      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-yw89fn"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -221,40 +221,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-795xl5'
+        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-yw89fn'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b369e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_30136.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 14/05/2026 09:55:42.
+        Build started 20/05/2026 09:16:55.
         
-        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-795xl5\\cmTC_b369e.vcxproj" on node 1 (default targets).
+        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-yw89fn\\cmTC_30136.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_b369e.dir\\Debug\\".
+          Creating directory "cmTC_30136.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-795xl5\\Debug\\".
-          Creating directory "cmTC_b369e.dir\\Debug\\cmTC_b369e.tlog\\".
+          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-yw89fn\\Debug\\".
+          Creating directory "cmTC_30136.dir\\Debug\\cmTC_30136.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_b369e.dir\\Debug\\cmTC_b369e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_b369e.dir\\Debug\\cmTC_b369e.tlog\\unsuccessfulbuild".
+          Creating "cmTC_30136.dir\\Debug\\cmTC_30136.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_30136.dir\\Debug\\cmTC_30136.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b369e.dir\\Debug\\\\" /Fd"cmTC_b369e.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_30136.dir\\Debug\\\\" /Fd"cmTC_30136.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33145 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b369e.dir\\Debug\\\\" /Fd"cmTC_b369e.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_30136.dir\\Debug\\\\" /Fd"cmTC_30136.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-795xl5\\Debug\\cmTC_b369e.exe" /INCREMENTAL /ILK:"cmTC_b369e.dir\\Debug\\cmTC_b369e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-795xl5/Debug/cmTC_b369e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-795xl5/Debug/cmTC_b369e.lib" /MACHINE:X64  /machine:x64 cmTC_b369e.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_b369e.vcxproj -> H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-795xl5\\Debug\\cmTC_b369e.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-yw89fn\\Debug\\cmTC_30136.exe" /INCREMENTAL /ILK:"cmTC_30136.dir\\Debug\\cmTC_30136.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-yw89fn/Debug/cmTC_30136.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-yw89fn/Debug/cmTC_30136.lib" /MACHINE:X64  /machine:x64 cmTC_30136.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_30136.vcxproj -> H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-yw89fn\\Debug\\cmTC_30136.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_b369e.dir\\Debug\\cmTC_b369e.tlog\\unsuccessfulbuild".
-          Touching "cmTC_b369e.dir\\Debug\\cmTC_b369e.tlog\\cmTC_b369e.lastbuildstate".
-        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-795xl5\\cmTC_b369e.vcxproj" (default targets).
+          Deleting file "cmTC_30136.dir\\Debug\\cmTC_30136.tlog\\unsuccessfulbuild".
+          Touching "cmTC_30136.dir\\Debug\\cmTC_30136.tlog\\cmTC_30136.lastbuildstate".
+        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-yw89fn\\cmTC_30136.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.83
+        Time Elapsed 00:00:00.90
         
       exitCode: 0
   -
@@ -297,8 +297,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-jdukbx"
-      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-jdukbx"
+      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-jf398z"
+      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-jf398z"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -306,40 +306,40 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-jdukbx'
+        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-jf398z'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b48c1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0de79.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 14/05/2026 09:55:51.
+        Build started 20/05/2026 09:17:05.
         
-        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\cmTC_b48c1.vcxproj" on node 1 (default targets).
+        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\cmTC_0de79.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_b48c1.dir\\Debug\\".
+          Creating directory "cmTC_0de79.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\Debug\\".
-          Creating directory "cmTC_b48c1.dir\\Debug\\cmTC_b48c1.tlog\\".
+          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\Debug\\".
+          Creating directory "cmTC_0de79.dir\\Debug\\cmTC_0de79.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_b48c1.dir\\Debug\\cmTC_b48c1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_b48c1.dir\\Debug\\cmTC_b48c1.tlog\\unsuccessfulbuild".
+          Creating "cmTC_0de79.dir\\Debug\\cmTC_0de79.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_0de79.dir\\Debug\\cmTC_0de79.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b48c1.dir\\Debug\\\\" /Fd"cmTC_b48c1.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0de79.dir\\Debug\\\\" /Fd"cmTC_0de79.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\src.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33145 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b48c1.dir\\Debug\\\\" /Fd"cmTC_b48c1.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\src.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0de79.dir\\Debug\\\\" /Fd"cmTC_0de79.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\src.c"
           src.c
-        H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\cmTC_b48c1.vcxproj]
-        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\cmTC_b48c1.vcxproj" (default targets) -- FAILED.
+        H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\cmTC_0de79.vcxproj]
+        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\cmTC_0de79.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\cmTC_b48c1.vcxproj" (default target) (1) ->
+        "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\cmTC_0de79.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jdukbx\\cmTC_b48c1.vcxproj]
+          H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-jf398z\\cmTC_0de79.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.47
+        Time Elapsed 00:00:00.45
         
       exitCode: 1
   -
@@ -353,8 +353,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-1xx8b0"
-      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-1xx8b0"
+      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-3i2q3d"
+      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-3i2q3d"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -362,42 +362,42 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-1xx8b0'
+        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-3i2q3d'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_36db4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e0124.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 14/05/2026 09:55:52.
+        Build started 20/05/2026 09:17:06.
         
-        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\cmTC_36db4.vcxproj" on node 1 (default targets).
+        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\cmTC_e0124.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_36db4.dir\\Debug\\".
+          Creating directory "cmTC_e0124.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\Debug\\".
-          Creating directory "cmTC_36db4.dir\\Debug\\cmTC_36db4.tlog\\".
+          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\Debug\\".
+          Creating directory "cmTC_e0124.dir\\Debug\\cmTC_e0124.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_36db4.dir\\Debug\\cmTC_36db4.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_36db4.dir\\Debug\\cmTC_36db4.tlog\\unsuccessfulbuild".
+          Creating "cmTC_e0124.dir\\Debug\\cmTC_e0124.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_e0124.dir\\Debug\\cmTC_e0124.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_36db4.dir\\Debug\\\\" /Fd"cmTC_36db4.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e0124.dir\\Debug\\\\" /Fd"cmTC_e0124.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33145 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_36db4.dir\\Debug\\\\" /Fd"cmTC_36db4.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e0124.dir\\Debug\\\\" /Fd"cmTC_e0124.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\Debug\\cmTC_36db4.exe" /INCREMENTAL /ILK:"cmTC_36db4.dir\\Debug\\cmTC_36db4.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-1xx8b0/Debug/cmTC_36db4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-1xx8b0/Debug/cmTC_36db4.lib" /MACHINE:X64  /machine:x64 cmTC_36db4.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\cmTC_36db4.vcxproj]
-        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\cmTC_36db4.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\Debug\\cmTC_e0124.exe" /INCREMENTAL /ILK:"cmTC_e0124.dir\\Debug\\cmTC_e0124.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-3i2q3d/Debug/cmTC_e0124.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-3i2q3d/Debug/cmTC_e0124.lib" /MACHINE:X64  /machine:x64 cmTC_e0124.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\cmTC_e0124.vcxproj]
+        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\cmTC_e0124.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\cmTC_36db4.vcxproj" (default target) (1) ->
+        "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\cmTC_e0124.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-1xx8b0\\cmTC_36db4.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-3i2q3d\\cmTC_e0124.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.56
+        Time Elapsed 00:00:00.58
         
       exitCode: 1
   -
@@ -411,8 +411,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nvww87"
-      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nvww87"
+      source: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-sqf8fz"
+      binary: "H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-sqf8fz"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -420,37 +420,37 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nvww87'
+        Change Dir: 'H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-sqf8fz'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a36ac.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_21c46.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 14/05/2026 09:55:53.
+        Build started 20/05/2026 09:17:07.
         
-        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\cmTC_a36ac.vcxproj" on node 1 (default targets).
+        Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\cmTC_21c46.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_a36ac.dir\\Debug\\".
+          Creating directory "cmTC_21c46.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\Debug\\".
-          Creating directory "cmTC_a36ac.dir\\Debug\\cmTC_a36ac.tlog\\".
+          Creating directory "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\Debug\\".
+          Creating directory "cmTC_21c46.dir\\Debug\\cmTC_21c46.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_a36ac.dir\\Debug\\cmTC_a36ac.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_a36ac.dir\\Debug\\cmTC_a36ac.tlog\\unsuccessfulbuild".
+          Creating "cmTC_21c46.dir\\Debug\\cmTC_21c46.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_21c46.dir\\Debug\\cmTC_21c46.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a36ac.dir\\Debug\\\\" /Fd"cmTC_a36ac.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_21c46.dir\\Debug\\\\" /Fd"cmTC_21c46.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33145 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a36ac.dir\\Debug\\\\" /Fd"cmTC_a36ac.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_21c46.dir\\Debug\\\\" /Fd"cmTC_21c46.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\Debug\\cmTC_a36ac.exe" /INCREMENTAL /ILK:"cmTC_a36ac.dir\\Debug\\cmTC_a36ac.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nvww87/Debug/cmTC_a36ac.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-nvww87/Debug/cmTC_a36ac.lib" /MACHINE:X64  /machine:x64 cmTC_a36ac.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\cmTC_a36ac.vcxproj]
-        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\cmTC_a36ac.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\Debug\\cmTC_21c46.exe" /INCREMENTAL /ILK:"cmTC_21c46.dir\\Debug\\cmTC_21c46.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-sqf8fz/Debug/cmTC_21c46.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:/Second_year/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/CMakeFiles/CMakeScratch/TryCompile-sqf8fz/Debug/cmTC_21c46.lib" /MACHINE:X64  /machine:x64 cmTC_21c46.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\cmTC_21c46.vcxproj]
+        Done Building Project "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\cmTC_21c46.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\cmTC_a36ac.vcxproj" (default target) (1) ->
+        "H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\cmTC_21c46.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-nvww87\\cmTC_a36ac.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [H:\\Second_year\\Angry Birds\\angry-birds-clone-assignment-SubhamVala\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-sqf8fz\\cmTC_21c46.vcxproj]
         
             0 Warning(s)
             1 Error(s)

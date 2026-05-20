@@ -28,7 +28,11 @@ DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string st
 
 	// creates textures for each dynamicObject and giving its position to their body.
 	if (!te_Texture.loadFromFile(str_sprite)) {
+		std::cout << "Failed to load file: " << std::endl;
 		return;
+	}
+	else {
+
 	}
 
 	sp_sprites.setTexture(te_Texture);
