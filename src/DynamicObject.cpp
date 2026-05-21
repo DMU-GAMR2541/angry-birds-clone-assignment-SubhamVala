@@ -40,11 +40,8 @@ DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string st
 	sp_sprites.setPosition(b2_bodyDef.position.x * SCALE, b2_bodyDef.position.y * SCALE);
 }
 
-void DynamicObject::Render(sf::RenderWindow* sf_window)
-{
-}
-
-
+//void DynamicObject::draw(sf::RenderWindow* sf_window) override {
+//}
 
 void DynamicObject::Update(float gravity, b2Vec2 b2_impule, bool b_make)
 {

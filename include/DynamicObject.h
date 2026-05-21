@@ -50,7 +50,7 @@ public:
 	sf::Sprite sp_sprites;
 	sf::Texture te_Texture;
 
-	void Render(sf::RenderWindow* sf_window);
+	void draw(sf::RenderWindow& window) override { }
 
 	void Update(float gravity, b2Vec2 b2_impule, bool b_make);
 

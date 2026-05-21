@@ -30,4 +30,7 @@ public:
 	void start() {
 		Rectangle.setPosition(b2_body->GetPosition().x * SCALE, b2_body->GetPosition().y * SCALE);
 	}
+
+	// getter for testing ground position.
+	b2Body* getGroundBody() { return b2_body; }
 };

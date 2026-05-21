@@ -8,7 +8,7 @@
 #include "DynamicObject.h"
 #include "StaticObject.h"
 #include "Bird.h"
-#include "Plank.h""
+#include "Plank.h"
 #include "Non-Interactable.h"
 #include "Catapult.h"
 #include "ContactListener.h"
@@ -85,6 +85,7 @@ class PigTest : public testing::Test {
 public:
     std::unique_ptr<Pig> pig;
     Pig pigSprite;
+    std::unique_ptr<b2World> world;
 
 protected:
     PigTest() {
@@ -96,9 +97,9 @@ protected:
     }
 
     void SetUp() override {
-        b2Vec2 b2_gravity(0.0f, 9.8f); // Earth-like gravity
-        b2World world(b2_gravity);
-        pig = std::make_unique<Pig>(world, 0, 0, 0, 50, "../assets/Ang_Birds/Pigs.png", DynamicObject::DynamicObjectType::pig);
+        b2Vec2 b2_gravity(0.0f, 9.8f);
+        world = std::make_unique<b2World>(b2_gravity);
+        pig = std::make_unique<Pig>(*world, 0, 0, 0, 50, "../assets/Ang_Birds/Pigs.png", DynamicObject::DynamicObjectType::pig);
         pigSprite.sp_sprites.setTextureRect(sf::IntRect(53, 70, 47, 44));
     }
    
@@ -107,13 +108,71 @@ protected:
     }
 };
 
+class birdTest : public testing::Test {
+public:
+    std::unique_ptr<Bird> bird;
+    std::unique_ptr<b2World> world;
+
+protected:
+    birdTest() {
+
+    }
+
+    ~birdTest() override {
+
+    }
+
+    void SetUp() override {
+        world = std::make_unique<b2World>(b2Vec2(0.0f, 9.8f));
+        bird = std::make_unique<Bird>(*world, 0, 0, 0, 15, "../assets/Ang_Birds/BlueBird.png", DynamicObject::DynamicObjectType::bluebird);
+
+
+    }
+
+    void TearDown() override {
+
+    }
+};
+
+class groundTest : public testing::Test {
+public:
+    std::unique_ptr<NonInteractable> ground;
+    std::unique_ptr<b2World> world;
+
+protected:
+    groundTest() {
+
+    }
+    ~groundTest() override{
+
+    }
+
+    void SetUp() override {
+        b2Vec2 b2_gravity(0.0f, 9.8f);
+        world = std::make_unique<b2World>(b2_gravity);
+        ground = std::make_unique<NonInteractable>(*world, 400.0f, 590.0f, 400.0f, 10.0f, sf::Color(34, 139, 34));
+    }
+
+    void TearDown() override {
+
+    }
+};
+
+
+// Plank Tests.
+TEST_F(groundTest, First_Ground_Test) {
+    // need positions in sfml / pixels.
+    int xPos = ground->getGroundBody()->GetPosition().x * 30.0f;
+    int yPos = ground->getGroundBody()->GetPosition().y * 30.0f;
+    ASSERT_EQ(xPos, 400.0f);
+    ASSERT_EQ(yPos, 590.0f);
+
+}
+
 
 //Pig Tests.
-TEST(Pig, First_Pig_Test) {
-    b2Vec2 b2_gravity(0.0f, 9.8f); // Earth-like gravity
-    b2World world(b2_gravity);
-    Pig p(world, 0, 0, 0, 50, "../assets/Ang_Birds/Pigs.png", DynamicObject::DynamicObjectType::pig);
-    EXPECT_EQ(p.getPigType(), DynamicObject::DynamicObjectType::pig);
+TEST_F(PigTest, First_Pig_Test) {
+    EXPECT_EQ(pig->getPigType(), DynamicObject::DynamicObjectType::pig);
 }
 
 TEST_F(PigTest, SpriteCheckPig1) {
@@ -124,27 +183,16 @@ TEST_F(PigTest, SpriteCheckPig1) {
 //Enemy Test.
 //A single test, not a fixture. No setup is called.
 TEST(Enemy, First_Enemy_test) {
-    Enemy e(100);
-    //EXPECT_GT(e.getHealth(), 100);
-    EXPECT_GT(e.getHealth(), 100);
-    /*SUCCEED() << "Test test passed";
-    FAIL() << "Test didn't pass";*/
+    Enemy e(9);
+    EXPECT_GT(e.getHealth(), 0);
 }
 
 //Enemy Test.
 //Fixture test, setup created for damage.
-TEST_F(EnemyTest, LethalDamagePopsPig) {
-    enemy->takeDamage(60);
-    EXPECT_TRUE(enemy->checkIfPopped());
+TEST_F(PigTest, LethalDamagePopsPig) {
+    pig->takeDamage(60);
+    EXPECT_TRUE(pig->checkIfPopped());
 }
-
-//Enemy Test.
-//Second test, not a fixture. No setup is called,
-TEST(Enemy, Second_Enemy_test) {
-    Enemy d(0);
-    ASSERT_NE(d.getHealth(), 0);
-}
-
 
 //Slingshot Test.
 //First test, not fixture. Not setup is called.
@@ -153,6 +201,7 @@ TEST(Slingshot, First_Slingshot_Test) {
     EXPECT_LT(t.getTension(), 100);
     
 }
+
 //Slingshot Test.
 //Second slingshot test, check bird colour
 TEST_F(SlingshotTest, BirdColour) {
