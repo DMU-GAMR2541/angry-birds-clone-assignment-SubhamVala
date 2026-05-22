@@ -170,7 +170,7 @@ int main() {
 
             if (event.type == sf::Event::KeyPressed) {
                 auto& currentBird = birdPtr.front();
-                
+
                 if (event.key.code == sf::Keyboard::Enter) {
                     ui.setGameStarted(true);
                 }

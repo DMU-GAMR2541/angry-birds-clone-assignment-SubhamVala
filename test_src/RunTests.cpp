@@ -110,7 +110,7 @@ protected:
 
 class birdTest : public testing::Test {
 public:
-    std::unique_ptr<Bird> bird;
+    std::unique_ptr<Bird> blueBird;
     std::unique_ptr<b2World> world;
 
 protected:
@@ -123,8 +123,9 @@ protected:
     }
 
     void SetUp() override {
-        world = std::make_unique<b2World>(b2Vec2(0.0f, 9.8f));
-        bird = std::make_unique<Bird>(*world, 0, 0, 0, 15, "../assets/Ang_Birds/BlueBird.png", DynamicObject::DynamicObjectType::bluebird);
+        b2Vec2 b2_gravity(0.0f, 9.8f);
+        world = std::make_unique<b2World>(b2_gravity);
+        blueBird = std::make_unique<Bird>(*world, 100.0f, 500.0f, 15.0f, 5.0f, "../assets/Ang_Birds/BlueBird.png", DynamicObject::DynamicObjectType::bluebird);
 
 
     }
@@ -169,13 +170,43 @@ TEST_F(groundTest, First_Ground_Test) {
 
 }
 
+// Bird Tests
+//Fixture test, setup created for bird initial position.
+TEST_F(birdTest, First_Bird_Test) {
 
-//Pig Tests.
-TEST_F(PigTest, First_Pig_Test) {
-    EXPECT_EQ(pig->getPigType(), DynamicObject::DynamicObjectType::pig);
+    Catapult catapult(*world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Slingshot.png");
+    blueBird->launch(catapult.getShotPos());
+
+    world->Step(1.0f / 60.0f, 8, 3);
+
+    // need positions in SFML / Pixels.
+    int xPos = blueBird->getBody()->GetPosition().x * 30.0f;
+    int yPos = blueBird->getBody()->GetPosition().y * 30.0f;
+    
+    ASSERT_GT(xPos, 100.0f);
+    ASSERT_LT(yPos, 590.0f);
+
 }
 
-TEST_F(PigTest, SpriteCheckPig1) {
+
+// Test to check if sprites and textures can be loaded.
+TEST(Bird, SpriteLoads) {
+    sf::Texture texture;
+    sf::String sprite = "../assets/Ang_Birds/BlueBird.png";
+    bool isSpriteLoaded = texture.loadFromFile(sprite);
+    ASSERT_TRUE(isSpriteLoaded);
+
+}
+
+//Pig Tests.
+//Checks to see if the pig is the correct pigType.
+TEST_F(PigTest, First_Pig_Test) {
+    EXPECT_EQ(pig->getPigType(), DynamicObject::DynamicObjectType::pig);
+
+}
+
+//Checks to see if the correct sprite is taken from the spritesheet.
+TEST_F(PigTest, CheckSpriteSheetSprite) {
     sf::IntRect Texture = sf::IntRect(53, 70, 47, 44);
     ASSERT_EQ(pigSprite.sp_sprites.getTextureRect(), Texture);
 }
