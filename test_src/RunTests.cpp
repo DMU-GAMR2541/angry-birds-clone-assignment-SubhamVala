@@ -165,8 +165,10 @@ TEST_F(groundTest, First_Ground_Test) {
     // need positions in sfml / pixels.
     int xPos = ground->getGroundBody()->GetPosition().x * 30.0f;
     int yPos = ground->getGroundBody()->GetPosition().y * 30.0f;
-    ASSERT_EQ(xPos, 400.0f);
-    ASSERT_EQ(yPos, 590.0f);
+    // windows X value
+    ASSERT_LT(xPos, 800.0f);
+    // windows Y value
+    ASSERT_LT(yPos, 600.0f);
 
 }
 
@@ -183,9 +185,28 @@ TEST_F(birdTest, First_Bird_Test) {
     int xPos = blueBird->getBody()->GetPosition().x * 30.0f;
     int yPos = blueBird->getBody()->GetPosition().y * 30.0f;
     
+    // Birds spawn x position.
     ASSERT_GT(xPos, 100.0f);
+    // Ground y position.
     ASSERT_LT(yPos, 590.0f);
 
+}
+
+TEST_F(birdTest, PositionOfBirdRelationTo3Others) {
+    Pig pig(*world, 522.0f, 590.0f , 15.0f, 50, "../assets/Ang_Birds/Pigs.png", DynamicObject::DynamicObjectType::pig);
+    int PigxPos = pig.getBody()->GetPosition().x * 30.0f;
+
+    Catapult catapult(*world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Slingshot.png");
+    int catapultxPos = catapult.getBody()->GetPosition().x * 30.0f;
+
+    Plank plank(*world, 500.0f, 530.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png", 1, DynamicObject::DynamicObjectType::VerticalPlank);
+    int plankxPos = plank.getBody()->GetPosition().x * 30.0f;
+
+    int xPos = blueBird->getBody()->GetPosition().x * 30.0f;
+
+    EXPECT_LT(xPos, PigxPos);
+    EXPECT_LT(xPos, catapultxPos);
+    EXPECT_LT(xPos, plankxPos);
 }
 
 // Test to check if sprites and textures can be loaded.

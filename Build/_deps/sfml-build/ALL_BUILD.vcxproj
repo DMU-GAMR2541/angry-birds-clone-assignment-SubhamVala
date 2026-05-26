@@ -25,7 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{190A4239-7BB4-37C1-82E2-9F2DCD89AF50}</ProjectGuid>
+    <ProjectGuid>{A3A5085B-A627-3AF1-A878-0AB4E7E4CECB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -108,11 +108,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\CMakeLists.txt">
+    <CustomBuild Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule H:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"D:\Uni Work\bin\cmake.exe" "-SD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SH:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala -BH:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build --check-stamp-file H:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -120,12 +120,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\Config.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfig.cmake.in;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfigDependencies.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\CMakePackageConfigHelpers.cmake;D:\Uni Work\share\cmake-4.3\Modules\CPack.cmake;D:\Uni Work\share\cmake-4.3\Modules\CPackComponent.cmake;D:\Uni Work\share\cmake-4.3\Modules\GNUInstallDirs.cmake;D:\Uni Work\share\cmake-4.3\Modules\WriteBasicConfigVersionFile.cmake;D:\Uni Work\share\cmake-4.3\Templates\CPackConfig.cmake.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Templates\CPackConfig.cmake.in;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\Config.cmake;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfig.cmake.in;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfigDependencies.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule H:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"D:\Uni Work\bin\cmake.exe" "-SD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SH:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala -BH:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build --check-stamp-file H:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,12 +133,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\Config.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfig.cmake.in;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfigDependencies.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\CMakePackageConfigHelpers.cmake;D:\Uni Work\share\cmake-4.3\Modules\CPack.cmake;D:\Uni Work\share\cmake-4.3\Modules\CPackComponent.cmake;D:\Uni Work\share\cmake-4.3\Modules\GNUInstallDirs.cmake;D:\Uni Work\share\cmake-4.3\Modules\WriteBasicConfigVersionFile.cmake;D:\Uni Work\share\cmake-4.3\Templates\CPackConfig.cmake.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Templates\CPackConfig.cmake.in;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\Config.cmake;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfig.cmake.in;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfigDependencies.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule H:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"D:\Uni Work\bin\cmake.exe" "-SD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SH:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala -BH:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build --check-stamp-file H:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -146,12 +146,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\Config.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfig.cmake.in;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfigDependencies.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\CMakePackageConfigHelpers.cmake;D:\Uni Work\share\cmake-4.3\Modules\CPack.cmake;D:\Uni Work\share\cmake-4.3\Modules\CPackComponent.cmake;D:\Uni Work\share\cmake-4.3\Modules\GNUInstallDirs.cmake;D:\Uni Work\share\cmake-4.3\Modules\WriteBasicConfigVersionFile.cmake;D:\Uni Work\share\cmake-4.3\Templates\CPackConfig.cmake.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Templates\CPackConfig.cmake.in;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\Config.cmake;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfig.cmake.in;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfigDependencies.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule H:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"D:\Uni Work\bin\cmake.exe" "-SD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala" "-BD:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build" --check-stamp-file "D:/Uni Work/Angry Birds/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SH:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala -BH:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build --check-stamp-file H:/Second_year/AngyBirds_Testing/angry-birds-clone-assignment-SubhamVala/Build/_deps/sfml-build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,43 +159,42 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\Config.cmake;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfig.cmake.in;D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfigDependencies.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\Uni Work\share\cmake-4.3\Modules\CMakePackageConfigHelpers.cmake;D:\Uni Work\share\cmake-4.3\Modules\CPack.cmake;D:\Uni Work\share\cmake-4.3\Modules\CPackComponent.cmake;D:\Uni Work\share\cmake-4.3\Modules\GNUInstallDirs.cmake;D:\Uni Work\share\cmake-4.3\Modules\WriteBasicConfigVersionFile.cmake;D:\Uni Work\share\cmake-4.3\Templates\CPackConfig.cmake.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Templates\CPackConfig.cmake.in;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\Config.cmake;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfig.cmake.in;H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-src\cmake\SFMLConfigDependencies.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\ZERO_CHECK.vcxproj">
-      <Project>{E5A8B54F-E1DC-33EA-8CD1-D8E071E482A8}</Project>
+    <ProjectReference Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\ZERO_CHECK.vcxproj">
+      <Project>{05525B7B-7D8E-3255-9311-A982F12CDBAB}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Audio\sfml-audio.vcxproj">
-      <Project>{669B1D7B-8965-37BE-8B2D-5BC4BF68A6E2}</Project>
+    <ProjectReference Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Audio\sfml-audio.vcxproj">
+      <Project>{106547CB-47E4-3024-9DDB-EE03E8AD65E2}</Project>
       <Name>sfml-audio</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Graphics\sfml-graphics.vcxproj">
-      <Project>{64C06E01-F79A-3D2D-9207-A2651EEF9485}</Project>
+    <ProjectReference Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Graphics\sfml-graphics.vcxproj">
+      <Project>{1286904B-606C-3C64-AA53-9C8A735F0AB1}</Project>
       <Name>sfml-graphics</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Main\sfml-main.vcxproj">
-      <Project>{EE4B4287-F78B-3DAC-BFFB-AB4944B70394}</Project>
+    <ProjectReference Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Main\sfml-main.vcxproj">
+      <Project>{9B45995D-E766-322B-A126-5817D6F7CEAA}</Project>
       <Name>sfml-main</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Network\sfml-network.vcxproj">
-      <Project>{4034673C-9D24-3E52-99EE-81B31E512813}</Project>
+    <ProjectReference Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Network\sfml-network.vcxproj">
+      <Project>{52B54F83-9BE3-3304-8C5C-444A77392E3E}</Project>
       <Name>sfml-network</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\System\sfml-system.vcxproj">
-      <Project>{EFDC9991-2A74-300C-994E-51FD00A9DCC1}</Project>
+    <ProjectReference Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\System\sfml-system.vcxproj">
+      <Project>{446AD61F-58EC-3C39-9497-A5AD90100E25}</Project>
       <Name>sfml-system</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Window\sfml-window.vcxproj">
-      <Project>{3F28D182-6D74-3482-A1B3-16C7ADAEE401}</Project>
+    <ProjectReference Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\sfml-build\src\SFML\Window\sfml-window.vcxproj">
+      <Project>{B275FC2F-5596-3782-A7F2-65266DE3FF93}</Project>
       <Name>sfml-window</Name>
     </ProjectReference>
   </ItemGroup>
