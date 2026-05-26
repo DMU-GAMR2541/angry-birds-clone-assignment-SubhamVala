@@ -188,7 +188,6 @@ TEST_F(birdTest, First_Bird_Test) {
 
 }
 
-
 // Test to check if sprites and textures can be loaded.
 TEST(Bird, SpriteLoads) {
     sf::Texture texture;
@@ -198,11 +197,27 @@ TEST(Bird, SpriteLoads) {
 
 }
 
+TEST_F(birdTest, birdtype) {
+    EXPECT_EQ(blueBird->getBirdType(), DynamicObject::DynamicObjectType::bluebird);
+}
+
+TEST(Bird, BirdAbilityUsed) {
+    Bird bird;
+    EXPECT_FALSE(bird.hasUsedAbility());
+}
+
 //Pig Tests.
 //Checks to see if the pig is the correct pigType.
 TEST_F(PigTest, First_Pig_Test) {
     EXPECT_EQ(pig->getPigType(), DynamicObject::DynamicObjectType::pig);
 
+}
+
+// checks if pig is marked for deletion on game start
+// Fatal test, since if is marked for deletion bird cannot damage on start.
+TEST(Pig, IsMarkedForDeletion) {
+    Pig pig;
+    ASSERT_FALSE(pig.isMarkedForDeletion());
 }
 
 //Checks to see if the correct sprite is taken from the spritesheet.
