@@ -236,6 +236,7 @@ TEST_F(PigTest, First_Pig_Test) {
 TEST_F(PigTest, SequenceOfDestructorCalls) {
     pig->takeDamage(100);
     ASSERT_TRUE(pig->checkIfPopped());
+    // Deconstructor order sequence in console. Pig -> DynamicObject -> GameObject.
 
 }
 
