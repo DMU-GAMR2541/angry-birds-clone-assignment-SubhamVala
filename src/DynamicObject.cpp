@@ -6,11 +6,6 @@
 #include "Bird.h"
 #include "StaticObject.h"
 
-
-DynamicObject::~DynamicObject()
-{
-}
-
 DynamicObject::DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string str_sprite)
 {
 	// creates all dynamic objects into the world using parameters

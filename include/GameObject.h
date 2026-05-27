@@ -9,7 +9,9 @@ class GameObject {
 public:
 
 	GameObject() = default;
-	~GameObject() = default;
+	virtual ~GameObject() {
+		std::cout << "GameObject.h, deconstructor called." << std::endl;
+	}
 
 	virtual void draw(sf::RenderWindow& window) = 0;
 };

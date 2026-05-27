@@ -25,7 +25,10 @@ public:
 
 
 	DynamicObject() = default;
-	~DynamicObject();
+
+	~DynamicObject() {
+		std::cout << "DynamicObject.h, deconstructor called." << std::endl;
+	}
 
 	// creates parameters that will take in values from inherited classes.
 	DynamicObject(b2World& b2_WorldPos, b2Vec2 b2_Pos, std::string str_sprite);

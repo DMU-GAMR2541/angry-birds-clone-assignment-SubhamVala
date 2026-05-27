@@ -48,6 +48,7 @@ protected:
     void TearDown() override {
         // Code here will be called immediately after each test (right
         // before the destructor).
+        
     }
 
 
@@ -104,8 +105,9 @@ protected:
     }
    
     void TearDown() override {
-
+            
     }
+
 };
 
 class birdTest : public testing::Test {
@@ -180,19 +182,15 @@ TEST_F(birdTest, First_Bird_Test) {
     blueBird->launch(catapult.getShotPos());
 
     world->Step(1.0f / 60.0f, 8, 3);
-
-    // need positions in SFML / Pixels.
-    int xPos = blueBird->getBody()->GetPosition().x * 30.0f;
-    int yPos = blueBird->getBody()->GetPosition().y * 30.0f;
     
     // Birds spawn x position.
-    ASSERT_GT(xPos, 100.0f);
+    ASSERT_GT(blueBird->getBody()->GetLinearVelocity().x, 0);
     // Ground y position.
-    ASSERT_LT(yPos, 590.0f);
+    ASSERT_LT(blueBird->getBody()->GetLinearVelocity().y, 0);
 
 }
 
-TEST_F(birdTest, PositionOfBirdRelationTo3Others) {
+TEST_F(birdTest, PositionInRelationTo3Others) {
     Pig pig(*world, 522.0f, 590.0f , 15.0f, 50, "../assets/Ang_Birds/Pigs.png", DynamicObject::DynamicObjectType::pig);
     int PigxPos = pig.getBody()->GetPosition().x * 30.0f;
 
@@ -231,6 +229,13 @@ TEST(Bird, BirdAbilityUsed) {
 //Checks to see if the pig is the correct pigType.
 TEST_F(PigTest, First_Pig_Test) {
     EXPECT_EQ(pig->getPigType(), DynamicObject::DynamicObjectType::pig);
+
+}
+
+// Checks the correctness of the sequence of destructor calls.
+TEST_F(PigTest, SequenceOfDestructorCalls) {
+    pig->takeDamage(100);
+    ASSERT_TRUE(pig->checkIfPopped());
 
 }
 

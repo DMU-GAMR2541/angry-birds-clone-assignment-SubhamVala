@@ -14,7 +14,10 @@ private:
 
 public:
 	Pig() = default;
-	~Pig() = default;
+
+	~Pig() {
+		std::cout << "Pig.h, deconstructor called." << std::endl;
+	}
 
 	// passing Pig parameters into DynamicObject.h / DynamicObject.cpp for the creation of the pig.
 	Pig(b2World& world, float xPos, float yPos, float radius, int health, std::string pigTexture, DynamicObjectType pigtype) : DynamicObject(world, b2Vec2(xPos, yPos), pigTexture), Enemy(health) {
