@@ -4,6 +4,9 @@
 #include "SFML/System.hpp"
 
 #include <iostream>
+#include <thread>
+#include <future>
+#include <cstdlib>
 
 class Loading : public DynamicObject {
 private:
@@ -11,13 +14,12 @@ private:
 	sf::Text text;
 	int WorkingTime;
 
-
 public:
 
 	Loading() = default;
 	~Loading() = default;
 
-	Loading(b2World& world, sf::String Textfont, int size, b2Vec2 b2_pos, int LoadingTime) : DynamicObject(world, b2Vec2(), NULL) {
+	Loading(b2World& world, sf::String Textfont, int size, b2Vec2 b2_pos, int LoadingTime) : DynamicObject(world, b2Vec2(b2_pos.x, b2_pos.y), std::string()){
 
 		this->WorkingTime = LoadingTime;
 
@@ -29,10 +31,26 @@ public:
 		text.setOutlineColor(sf::Color::Black);
 		text.setOutlineThickness(2.0f);
 		text.setString("Loading... ");
+
+		std::thread m_assetThread(&Loading::setupPhysics, this, LoadingTime);
+
+		if (m_assetThread.joinable()) {
+			m_assetThread.join();
+		}
 	}
 
 
 	void draw(sf::RenderWindow& window) override {
 		window.draw(text);
+	}
+
+	void setupPhysics(int Time) {
+		for (int i = 0; i < Time; i++) {
+			std::cout << "Loading!!!:  " << i << std::endl;
+			
+		}
+
+		//text.setString("Loading Complete!!!");
+		sf::sleep(sf::milliseconds(Time));
 	}
 };

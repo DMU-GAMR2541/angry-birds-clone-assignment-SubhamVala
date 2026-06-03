@@ -15,7 +15,7 @@
 #include "Catapult.h"
 #include "ContactListener.h"
 #include "UI.h"
-
+#include "Loading.h"
 
 
 
@@ -44,6 +44,7 @@ int main() {
     world.SetContactListener(&contactlistener);
 
     // Inherited classes, setting parameter values.
+    Loading load(world, "../assets/fonts/angry-birds.ttf", 50, b2Vec2(140, 325), 101);
     Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Slingshot.png");
     UI ui(world, "../assets/fonts/angry-birds.ttf", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg", 50, b2Vec2(625, 25));
     UI CompleteLevel(world, "../assets/fonts/angry-birds.ttf", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg", 50, b2Vec2(300, 300));
@@ -405,6 +406,7 @@ int main() {
 
         if (!ui.getGameStarted()) {
             ui.draw(window);
+            load.draw(window);
 
         }
 

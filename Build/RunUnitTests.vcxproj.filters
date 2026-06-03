@@ -36,6 +36,9 @@
     <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Loading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\include\Non-Interactable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
