@@ -44,7 +44,7 @@ int main() {
     world.SetContactListener(&contactlistener);
 
     // Inherited classes, setting parameter values.
-    Loading load(world, "../assets/fonts/angry-birds.ttf", 50, b2Vec2(140, 325), 101);
+    Loading load(world, "../assets/fonts/angry-birds.ttf", 50, b2Vec2(280, 480), 101);
     Catapult catapult(world, 150.0f, 520.0f, 10.0f, 60.0f, "../assets/Ang_Birds/Slingshot.png");
     UI ui(world, "../assets/fonts/angry-birds.ttf", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg", 50, b2Vec2(625, 25));
     UI CompleteLevel(world, "../assets/fonts/angry-birds.ttf", "../assets/Ang_Birds/AngryBirds_StartScreen.jpg", 50, b2Vec2(300, 300));
@@ -172,7 +172,8 @@ int main() {
             if (event.type == sf::Event::KeyPressed) {
                 auto& currentBird = birdPtr.front();
 
-                if (event.key.code == sf::Keyboard::Enter) {
+
+                if (event.key.code == sf::Keyboard::Enter && !load.isGameLoading()) {
                     ui.setGameStarted(true);
                 }
 
@@ -394,7 +395,6 @@ int main() {
                 (*it)->update();
 
             }
-        
         }
 
 
@@ -446,12 +446,17 @@ int main() {
             CompleteLevel.render(window);
         }
 
-        // when game starts tells user to press enter
-        else if (!ui.getGameStarted()) {
-            StartLevel.endText("Press Enter to start game");
-            StartLevel.render(window);
+        else if (!ui.getGameStarted() && load.isGameLoading()) {
+            StartLevel.endText(" ");
         }
 
+        // when game starts tells user to press enter
+        else if (!ui.getGameStarted() && !load.isGameLoading()) {
+            StartLevel.endText("Press Enter to start game");
+            StartLevel.render(window);
+            load.draw(window);
+        }
+        
         // once no birds are ready to launch then game lost.
         else if (birdPtr.empty() && !pigPtr.empty()) {
             CompleteLevel.endText("You Lost!!!");

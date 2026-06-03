@@ -7,17 +7,30 @@
 #include <thread>
 #include <future>
 #include <cstdlib>
+#include <chrono>
+#include <mutex>
 
 class Loading : public DynamicObject {
 private:
 	sf::Font Font;
 	sf::Text text;
-	int WorkingTime;
+	int WorkingTime = 0;
+	bool isPhysicsLoading = true;
+	bool isAssetsLoading = true;
+	int loadingPercent = 0;
+	std::thread m_assetThread;
+	std::future<void> m_physicsFuture;
+	std::mutex mtx;
 
 public:
 
 	Loading() = default;
-	~Loading() = default;
+
+	~Loading() {
+		if (m_assetThread.joinable()) { m_assetThread.join(); }
+	}
+
+
 
 	Loading(b2World& world, sf::String Textfont, int size, b2Vec2 b2_pos, int LoadingTime) : DynamicObject(world, b2Vec2(b2_pos.x, b2_pos.y), std::string()){
 
@@ -30,27 +43,58 @@ public:
 		text.setPosition(b2_pos.x, b2_pos.y);
 		text.setOutlineColor(sf::Color::Black);
 		text.setOutlineThickness(2.0f);
-		text.setString("Loading... ");
-
-		std::thread m_assetThread(&Loading::setupPhysics, this, LoadingTime);
-
-		if (m_assetThread.joinable()) {
-			m_assetThread.join();
-		}
+		
+		m_physicsFuture = std::async(std::launch::async, &Loading::setupAssets, this);
+		m_assetThread = std::thread(&Loading::setupPhysics, this);	
 	}
 
-
 	void draw(sf::RenderWindow& window) override {
+		mtx.lock();
+		text.setString("Loading... " + std::to_string(loadingPercent) + "%");
+		if (!isPhysicsLoading && !isAssetsLoading) {
+			text.setString(" ");
+		}
+
+		mtx.unlock();
 		window.draw(text);
 	}
 
-	void setupPhysics(int Time) {
-		for (int i = 0; i < Time; i++) {
-			std::cout << "Loading!!!:  " << i << std::endl;
-			
+	void setupPhysics() {
+
+		if (isPhysicsLoading) {
+			for (int i = 0; i < WorkingTime; i++) {
+				std::cout << "Loading Physics... :  " << i << std::endl;
+				std::this_thread::sleep_for(std::chrono::milliseconds(50));
+				mtx.lock();
+				loadingPercent = i;
+				mtx.unlock();
+			}
 		}
 
-		//text.setString("Loading Complete!!!");
-		sf::sleep(sf::milliseconds(Time));
+		isPhysicsLoading = false;
 	}
+
+	void setupAssets() {
+		if (isAssetsLoading) {
+			for (int i = 0; i < WorkingTime; i++) {
+				std::cout << "Loading Assets... " << i << std::endl;
+				std::this_thread::sleep_for(std::chrono::milliseconds(65));
+				mtx.lock();
+				loadingPercent = i;
+				mtx.unlock();
+			}
+		}
+		
+		isAssetsLoading = false;
+	}
+
+	bool isGameLoading() {
+		if (isPhysicsLoading && isAssetsLoading) {
+			return true;
+		}
+		else if (!isPhysicsLoading && !isAssetsLoading) {
+			return false;
+		}	
+	}
+
 };
