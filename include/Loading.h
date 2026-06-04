@@ -18,8 +18,8 @@ private:
 	bool isPhysicsLoading = true;
 	bool isAssetsLoading = true;
 	int loadingPercent = 0;
-	std::thread m_assetThread;
-	std::future<void> m_physicsFuture;
+	std::thread m_physicsThread;
+	std::future<void> m_assetsFuture;
 	std::mutex mtx;
 
 public:
@@ -27,7 +27,14 @@ public:
 	Loading() = default;
 
 	~Loading() {
-		if (m_assetThread.joinable()) { m_assetThread.join(); }
+		if (m_physicsThread.joinable()) {
+			m_physicsThread.join();
+			
+		}
+
+		if (m_assetsFuture.valid()) {
+			m_assetsFuture.get();
+		}
 	}
 
 
@@ -44,8 +51,8 @@ public:
 		text.setOutlineColor(sf::Color::Black);
 		text.setOutlineThickness(2.0f);
 		
-		m_physicsFuture = std::async(std::launch::async, &Loading::setupAssets, this);
-		m_assetThread = std::thread(&Loading::setupPhysics, this);	
+		m_assetsFuture = std::async(std::launch::async, &Loading::setupAssets, this);
+		m_physicsThread = std::thread(&Loading::setupPhysics, this);	
 	}
 
 	void draw(sf::RenderWindow& window) override {

@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\extern\glad\src\gl.c">
+    <ClCompile Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\extern\glad\src\gl.c">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\extern\glad\include\glad\gl.h">
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\extern\glad\include\glad\gl.h">
       <Filter>include\glad</Filter>
     </ClInclude>
-    <ClInclude Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\extern\glad\include\KHR\khrplatform.h">
+    <ClInclude Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\extern\glad\include\KHR\khrplatform.h">
       <Filter>include\KHR</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="H:\Second_year\AngyBirds_Testing\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\extern\glad\CMakeLists.txt" />
+    <CustomBuild Include="D:\Uni Work\Angry Birds\angry-birds-clone-assignment-SubhamVala\Build\_deps\box2d-src\extern\glad\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
-      <UniqueIdentifier>{587B74E1-EC57-3E1B-91E3-C0A8AB83BE60}</UniqueIdentifier>
+      <UniqueIdentifier>{A68EC5B1-1661-3512-A17B-175AF3674EB3}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\KHR">
-      <UniqueIdentifier>{56FDB50B-EAA7-3798-92D6-4875953892AA}</UniqueIdentifier>
+      <UniqueIdentifier>{7CB47B91-40FD-3DF8-A8BA-8AD37A253915}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\glad">
-      <UniqueIdentifier>{E178DEFB-99AC-396E-AC0C-85138BD3C2DF}</UniqueIdentifier>
+      <UniqueIdentifier>{0F882AD5-C92E-34A7-B29F-B14E95C5A0A9}</UniqueIdentifier>
     </Filter>
     <Filter Include="src">
-      <UniqueIdentifier>{A07FCEB6-40C1-30D0-AC2D-D35FF8CC877D}</UniqueIdentifier>
+      <UniqueIdentifier>{0B0371EB-E0A9-36F6-8065-593FA3164392}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
