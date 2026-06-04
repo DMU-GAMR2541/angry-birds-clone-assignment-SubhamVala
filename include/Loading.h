@@ -110,12 +110,11 @@ public:
 
 	// used to add "press enter to start" once loading is finished
 	bool isGameLoading() {
-		if (isPhysicsLoading && isAssetsLoading) {
+		if (isPhysicsLoading || isAssetsLoading) {
 			return true;
 		}
-		else if (!isPhysicsLoading && !isAssetsLoading) {
+		else
 			return false;
-		}	
 	}
 
 };

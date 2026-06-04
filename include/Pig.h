@@ -10,6 +10,7 @@ class Pig : public DynamicObject, public Enemy, public ContactListener {
 private:
 	int health;
 	bool markedForDeletion = false;
+	bool isActive = true;
 	DynamicObjectType pigType;
 
 public:
@@ -89,6 +90,12 @@ public:
 	bool isMarkedForDeletion() const {
 		return markedForDeletion;
 
+	}
+
+	bool Active() const { return isActive; }
+
+	void setActive(bool pigState) {
+		isActive = pigState;
 	}
 	
 	// setter for markedForDeletion booleon.

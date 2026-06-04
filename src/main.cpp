@@ -5,7 +5,6 @@
 #include <list>
 #include <set>
 #include <iostream>
-#include <map>
 
 #include "DynamicObject.h"
 #include "StaticObject.h"
@@ -85,7 +84,7 @@ int main() {
     std::vector<std::shared_ptr<Plank>> plankPtr;
     std::vector<std::shared_ptr<NonInteractable>> Noninteractable;
     std::list<std::shared_ptr<Bird>> birdPtr;
-    std::map<int, Pig> pigMap;
+    std::map<int, std::shared_ptr<Pig>> pigMap;
     
 
     // creates an instance of DynamicObjectType for birdsType.
@@ -128,8 +127,9 @@ int main() {
         // gives each pig a different position, size and health.
         auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, pigPositions[i].x, pigPositions[i].y, (15.0f + (i * 3)), (9 + (i * 2)), "../assets/Ang_Birds/Pigs.png", pigtype));
 
+
         // gives the Pigs an ID to the pigMap, and disables them once destroyed for object pooling.
-        pigMap[pig->getBody()->GetUserData().pointer = 3 + static_cast<uintptr_t>(i)];
+        pigMap[pig->getBody()->GetUserData().pointer = 3 + static_cast<uintptr_t>(i)] = pig;
     }
 
     
@@ -150,7 +150,7 @@ int main() {
                 if (event.mouseButton.button == sf::Mouse::Left && ui.getGameStarted())
                 {
                     // check if the bird has not been launched. preventing the same bird from being launched twice.
-                    if (!birdPtr.front()->hasLaunched()) {
+                    if (!birdPtr.empty() && !birdPtr.front()->hasLaunched()) {
                         // calls dragging function from bird.h for the front bird.
                         birdPtr.front()->dragging();
                     }        
@@ -163,7 +163,7 @@ int main() {
                 if (event.mouseButton.button == sf::Mouse::Left && ui.getGameStarted()) {
 
                     // check if the bird has not been launched. preventing the same bird from being launched twice.
-                    if (!birdPtr.front()->hasLaunched() && !birdPtr.empty()) {
+                    if (!birdPtr.empty() && !birdPtr.front()->hasLaunched() ) {
                         // calls launch function from bird.h for the front bird.
                         birdPtr.front()->launch(catapult.getShotPos());
 
@@ -353,9 +353,10 @@ int main() {
                 if ((*pigIt)->checkIfPopped()) {
                     // disables the body for the pig using the map, so it can be recycled if needed. Object Pooling,
                     (*pigIt)->getBody()->SetEnabled(false);
+                    (*pigIt)->setActive(false);
 
                     // Update the iterator by catching the return value of erase()
-                    pigIt = pigPtr.erase(pigIt); //Erase the pig from the set.
+                    //pigIt = pigPtr.erase(pigIt); //Erase the pig from the set.
                     ui.getText(pigPtr.size());
                 }
 
@@ -377,8 +378,12 @@ int main() {
         if (ui.getGameStarted()) {
 
             // goes through all pigs in the pointer and updates its physics using an iterator.
-            for (auto it = pigPtr.begin(); it != pigPtr.end(); it++) {
-                (*it)->update();
+            for (auto& [id, pig] : pigMap) {
+                if (!pig->Active()) {
+                    continue;
+                }
+
+                pig->update();
 
             }
 
@@ -419,8 +424,12 @@ int main() {
 
             // draws the objects to the window.
             // goes through all pigs using an iterator and draws them to the window.
-            for (auto it = pigPtr.begin(); it != pigPtr.end(); it++) {
-                (*it)->draw(window);
+            for (auto& [id, pig] : pigMap) {
+
+                if (!pig->Active()) {
+                    continue;
+                }
+                pig->draw(window);
             }
 
             // goes through all birds using an iterator and draws them to the window.
