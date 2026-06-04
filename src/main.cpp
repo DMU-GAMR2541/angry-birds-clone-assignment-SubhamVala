@@ -5,6 +5,7 @@
 #include <list>
 #include <set>
 #include <iostream>
+#include <map>
 
 #include "DynamicObject.h"
 #include "StaticObject.h"
@@ -84,6 +85,8 @@ int main() {
     std::vector<std::shared_ptr<Plank>> plankPtr;
     std::vector<std::shared_ptr<NonInteractable>> Noninteractable;
     std::list<std::shared_ptr<Bird>> birdPtr;
+    std::map<int, Pig> pigMap;
+    
 
     // creates an instance of DynamicObjectType for birdsType.
     DynamicObject::DynamicObjectType birdtype;
@@ -109,6 +112,7 @@ int main() {
         else { plankType = DynamicObject::DynamicObjectType::HorizontalPlank; }
 
         auto& plank = plankPtr.emplace_back(std::make_shared<Plank>(world, plankPositions[i].x, plankPositions[i].y, 10.0f, 60.0f, "../assets/Ang_Birds/Plank.png", 1, plankType));
+       
         plank->getBody()->GetUserData().pointer = 10 + static_cast<uintptr_t>(i);
 
     }
@@ -123,7 +127,9 @@ int main() {
         else { pigtype = DynamicObject::DynamicObjectType::kingpig; }
         // gives each pig a different position, size and health.
         auto& pig = pigPtr.emplace_back(std::make_shared<Pig>(world, pigPositions[i].x, pigPositions[i].y, (15.0f + (i * 3)), (9 + (i * 2)), "../assets/Ang_Birds/Pigs.png", pigtype));
-        pig->getBody()->GetUserData().pointer = 3 + static_cast<uintptr_t>(i);
+
+        // gives the Pigs an ID to the pigMap, and disables them once destroyed for object pooling.
+        pigMap[pig->getBody()->GetUserData().pointer = 3 + static_cast<uintptr_t>(i)];
     }
 
     
@@ -147,11 +153,8 @@ int main() {
                     if (!birdPtr.front()->hasLaunched()) {
                         // calls dragging function from bird.h for the front bird.
                         birdPtr.front()->dragging();
-
-                    }
-                    
+                    }        
                 }
-
             }
 
             if (event.type == sf::Event::MouseButtonReleased) {
@@ -172,7 +175,7 @@ int main() {
             if (event.type == sf::Event::KeyPressed) {
                 auto& currentBird = birdPtr.front();
 
-
+                // once loading finished, press enter and sets the game to start.
                 if (event.key.code == sf::Keyboard::Enter && !load.isGameLoading()) {
                     ui.setGameStarted(true);
                 }
@@ -348,8 +351,8 @@ int main() {
                 (*pigIt)->markForDeletion();
 
                 if ((*pigIt)->checkIfPopped()) {
-                    // Remove from Box2D world first
-                    world.DestroyBody((*pigIt)->getBody()); //Remove the pig body from the world.
+                    // disables the body for the pig using the map, so it can be recycled if needed. Object Pooling,
+                    (*pigIt)->getBody()->SetEnabled(false);
 
                     // Update the iterator by catching the return value of erase()
                     pigIt = pigPtr.erase(pigIt); //Erase the pig from the set.
@@ -446,11 +449,7 @@ int main() {
             CompleteLevel.render(window);
         }
 
-        else if (!ui.getGameStarted() && load.isGameLoading()) {
-            StartLevel.endText(" ");
-        }
-
-        // when game starts tells user to press enter
+        // when game starts and loading is finished tells user to press enter to start game.
         else if (!ui.getGameStarted() && !load.isGameLoading()) {
             StartLevel.endText("Press Enter to start game");
             StartLevel.render(window);

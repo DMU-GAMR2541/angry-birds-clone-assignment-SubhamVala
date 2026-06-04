@@ -26,6 +26,7 @@ public:
 
 	Loading() = default;
 
+	// joins the threads on destructor
 	~Loading() {
 		if (m_physicsThread.joinable()) {
 			m_physicsThread.join();
@@ -43,9 +44,11 @@ public:
 
 		this->WorkingTime = LoadingTime;
 
+		// loads the font.
 		Font.loadFromFile(Textfont);
 		text.setFont(Font);
 		
+		// values for the text.
 		text.setCharacterSize(size);
 		text.setPosition(b2_pos.x, b2_pos.y);
 		text.setOutlineColor(sf::Color::Black);
@@ -55,9 +58,11 @@ public:
 		m_physicsThread = std::thread(&Loading::setupPhysics, this);	
 	}
 
+	// draw function which will lock before doing the text, so threads dont intefere with each other,
 	void draw(sf::RenderWindow& window) override {
 		mtx.lock();
 		text.setString("Loading... " + std::to_string(loadingPercent) + "%");
+		// once loading is complete the text is gone and replaced with "press enter to play"
 		if (!isPhysicsLoading && !isAssetsLoading) {
 			text.setString(" ");
 		}
@@ -66,12 +71,16 @@ public:
 		window.draw(text);
 	}
 
+	// thread to load physics
 	void setupPhysics() {
 
+		// as long as the physics is true, it will load.
 		if (isPhysicsLoading) {
+			// loads till it reaches 100%
 			for (int i = 0; i < WorkingTime; i++) {
 				std::cout << "Loading Physics... :  " << i << std::endl;
-				std::this_thread::sleep_for(std::chrono::milliseconds(50));
+				std::this_thread::sleep_for(std::chrono::milliseconds(40));
+				// locks so the other async thread cannot intefere.
 				mtx.lock();
 				loadingPercent = i;
 				mtx.unlock();
@@ -80,12 +89,16 @@ public:
 
 		isPhysicsLoading = false;
 	}
-
+	
+	// async thread to load assets.
 	void setupAssets() {
+		// as long as the assets is true, it loads.
 		if (isAssetsLoading) {
+			// loads till it reaches 100%
 			for (int i = 0; i < WorkingTime; i++) {
 				std::cout << "Loading Assets... " << i << std::endl;
-				std::this_thread::sleep_for(std::chrono::milliseconds(65));
+				std::this_thread::sleep_for(std::chrono::milliseconds(55));
+				// locks so other threads cant intefere.
 				mtx.lock();
 				loadingPercent = i;
 				mtx.unlock();
@@ -95,6 +108,7 @@ public:
 		isAssetsLoading = false;
 	}
 
+	// used to add "press enter to start" once loading is finished
 	bool isGameLoading() {
 		if (isPhysicsLoading && isAssetsLoading) {
 			return true;
